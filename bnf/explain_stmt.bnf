@@ -1,3 +1,0 @@
-explain_stmt ::=
-	'EXPLAIN' explainable_stmt
-	| 'EXPLAIN' '(' ( 'VERBOSE' | 'TYPES' | 'OPT' | 'DISTSQL' | 'VEC' ) ( ( ',' ( 'VERBOSE' | 'TYPES' | 'OPT' | 'DISTSQL' | 'VEC' ) ) )* ')' explainable_stmt

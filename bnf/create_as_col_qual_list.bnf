@@ -1,2 +1,0 @@
-create_as_col_qual_list ::=
-	 ( ( ( ( 'PRIMARY' 'KEY' ) | 'FAMILY' family_name ) ) )*
