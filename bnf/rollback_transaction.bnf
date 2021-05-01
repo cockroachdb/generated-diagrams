@@ -1,0 +1,5 @@
+rollback_stmt ::=
+	'ROLLBACK' 
+	| 'ROLLBACK' 
+	| 'ROLLBACK'  'TO' 'SAVEPOINT' savepoint_name
+	| 'ROLLBACK'  'TO' 'SAVEPOINT' savepoint_name
