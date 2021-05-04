@@ -1,0 +1,13 @@
+drop_index_stmt ::=
+	'DROP' 'INDEX' opt_concurrently table_name '@' index_name 'CASCADE'
+	| 'DROP' 'INDEX' opt_concurrently table_name '@' index_name 'RESTRICT'
+	| 'DROP' 'INDEX' opt_concurrently table_name '@' index_name 
+	| 'DROP' 'INDEX' opt_concurrently index_name 'CASCADE'
+	| 'DROP' 'INDEX' opt_concurrently index_name 'RESTRICT'
+	| 'DROP' 'INDEX' opt_concurrently index_name 
+	| 'DROP' 'INDEX' opt_concurrently 'IF' 'EXISTS' table_name '@' index_name 'CASCADE'
+	| 'DROP' 'INDEX' opt_concurrently 'IF' 'EXISTS' table_name '@' index_name 'RESTRICT'
+	| 'DROP' 'INDEX' opt_concurrently 'IF' 'EXISTS' table_name '@' index_name 
+	| 'DROP' 'INDEX' opt_concurrently 'IF' 'EXISTS' index_name 'CASCADE'
+	| 'DROP' 'INDEX' opt_concurrently 'IF' 'EXISTS' index_name 'RESTRICT'
+	| 'DROP' 'INDEX' opt_concurrently 'IF' 'EXISTS' index_name 
