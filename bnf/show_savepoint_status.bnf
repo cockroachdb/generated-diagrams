@@ -1,2 +1,0 @@
-show_savepoint_stmt ::=
-	'SHOW' 'SAVEPOINT' 'STATUS'
