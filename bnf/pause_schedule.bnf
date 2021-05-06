@@ -1,3 +1,0 @@
-pause_schedules_stmt ::=
-	'PAUSE' 'SCHEDULE' schedule_id
-	| 'PAUSE' 'SCHEDULES' select_stmt
