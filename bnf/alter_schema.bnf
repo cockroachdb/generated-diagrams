@@ -1,3 +1,0 @@
-alter_schema_stmt ::=
-	'ALTER' 'SCHEMA' ( name | name '.' name ) 'RENAME' 'TO' schema_name
-	| 'ALTER' 'SCHEMA' ( name | name '.' name ) 'OWNER' 'TO' role_spec
