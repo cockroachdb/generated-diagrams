@@ -2,4 +2,3 @@ cancel_stmt ::=
 	cancel_jobs_stmt
 	| cancel_queries_stmt
 	| cancel_sessions_stmt
-	| cancel_all_jobs_stmt
