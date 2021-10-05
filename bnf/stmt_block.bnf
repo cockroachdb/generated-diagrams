@@ -1048,6 +1048,7 @@ unreserved_keyword ::=
 	| 'SETTINGS'
 	| 'STATUS'
 	| 'SAVEPOINT'
+	| 'SCANS'
 	| 'SCATTER'
 	| 'SCHEMA'
 	| 'SCHEMAS'
@@ -1740,9 +1741,11 @@ alter_database_to_schema_stmt ::=
 
 alter_database_add_region_stmt ::=
 	'ALTER' 'DATABASE' database_name 'ADD' 'REGION' region_name
+	| 'ALTER' 'DATABASE' database_name 'ADD' 'REGION' 'IF' 'NOT' 'EXISTS' region_name
 
 alter_database_drop_region_stmt ::=
 	'ALTER' 'DATABASE' database_name 'DROP' 'REGION' region_name
+	| 'ALTER' 'DATABASE' database_name 'DROP' 'REGION' 'IF' 'EXISTS' region_name
 
 alter_database_survival_goal_stmt ::=
 	'ALTER' 'DATABASE' database_name survival_goal_clause
@@ -2538,6 +2541,7 @@ alter_table_cmd ::=
 	| 'ADD' 'COLUMN' column_def
 	| 'ADD' 'COLUMN' 'IF' 'NOT' 'EXISTS' column_def
 	| 'ALTER' opt_column column_name alter_column_default
+	| 'ALTER' opt_column column_name alter_column_visible
 	| 'ALTER' opt_column column_name 'DROP' 'NOT' 'NULL'
 	| 'ALTER' opt_column column_name 'DROP' 'STORED'
 	| 'ALTER' opt_column column_name 'SET' 'NOT' 'NULL'
@@ -2808,6 +2812,10 @@ opt_column ::=
 alter_column_default ::=
 	'SET' 'DEFAULT' a_expr
 	| 'DROP' 'DEFAULT'
+
+alter_column_visible ::=
+	'SET' 'VISIBLE'
+	| 'SET' 'NOT' 'VISIBLE'
 
 opt_set_data ::=
 	'SET' 'DATA'
