@@ -7133,8 +7133,10 @@
          </p><ul>
             <li><a href="#a_expr" title="a_expr">a_expr</a></li>
             <li><a href="#alter_column_default" title="alter_column_default">alter_column_default</a></li>
+            <li><a href="#alter_range_relocate_stmt" title="alter_range_relocate_stmt">alter_range_relocate_stmt</a></li>
             <li><a href="#alter_split_index_stmt" title="alter_split_index_stmt">alter_split_index_stmt</a></li>
             <li><a href="#alter_split_stmt" title="alter_split_stmt">alter_split_stmt</a></li>
+            <li><a href="#alter_zone_range_stmt" title="alter_zone_range_stmt">alter_zone_range_stmt</a></li>
             <li><a href="#array_subscript" title="array_subscript">array_subscript</a></li>
             <li><a href="#as_of_clause" title="as_of_clause">as_of_clause</a></li>
             <li><a href="#cancel_jobs_stmt" title="cancel_jobs_stmt">cancel_jobs_stmt</a></li>
@@ -8577,7 +8579,6 @@
          <polygon points="189 17 197 13 197 21"></polygon>
          <polygon points="189 17 181 13 181 21"></polygon></svg><p>referenced by:
          </p><ul>
-            <li><a href="#alter_zone_range_stmt" title="alter_zone_range_stmt">alter_zone_range_stmt</a></li>
             <li><a href="#show_zone_stmt" title="show_zone_stmt">show_zone_stmt</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_partition" href="#opt_partition">opt_partition:</a></p><svg width="173" height="57">
@@ -9803,7 +9804,7 @@
          </p><ul>
             <li><a href="#alter_database_stmt" title="alter_database_stmt">alter_database_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_zone_range_stmt" href="#alter_zone_range_stmt">alter_zone_range_stmt:</a></p><svg width="465" height="37">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_zone_range_stmt" href="#alter_zone_range_stmt">alter_zone_range_stmt:</a></p><svg width="435" height="37">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon>
@@ -9812,19 +9813,19 @@
          <text class="terminal" x="39" y="21">ALTER</text>
          <rect x="113" y="3" width="66" height="32" rx="10"></rect>
          <rect x="111" y="1" width="66" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="121" y="21">RANGE</text><a xlink:href="#zone_name" xlink:title="zone_name">
-            <rect x="199" y="3" width="94" height="32"></rect>
-            <rect x="197" y="1" width="94" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="207" y="21">zone_name</text></a><a xlink:href="#set_zone_config" xlink:title="set_zone_config">
-            <rect x="313" y="3" width="124" height="32"></rect>
-            <rect x="311" y="1" width="124" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="321" y="21">set_zone_config</text></a><path class="line" d="m17 17 h2 m0 0 h10 m62 0 h10 m0 0 h10 m66 0 h10 m0 0 h10 m94 0 h10 m0 0 h10 m124 0 h10 m3 0 h-3"></path>
-         <polygon points="455 17 463 13 463 21"></polygon>
-         <polygon points="455 17 447 13 447 21"></polygon></svg><p>referenced by:
+         <text class="terminal" x="121" y="21">RANGE</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="199" y="3" width="64" height="32"></rect>
+            <rect x="197" y="1" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="207" y="21">a_expr</text></a><a xlink:href="#set_zone_config" xlink:title="set_zone_config">
+            <rect x="283" y="3" width="124" height="32"></rect>
+            <rect x="281" y="1" width="124" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="291" y="21">set_zone_config</text></a><path class="line" d="m17 17 h2 m0 0 h10 m62 0 h10 m0 0 h10 m66 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m124 0 h10 m3 0 h-3"></path>
+         <polygon points="425 17 433 13 433 21"></polygon>
+         <polygon points="425 17 417 13 417 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#alter_range_stmt" title="alter_range_stmt">alter_range_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_range_relocate_stmt" href="#alter_range_relocate_stmt">alter_range_relocate_stmt:</a></p><svg width="949" height="235">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_range_relocate_stmt" href="#alter_range_relocate_stmt">alter_range_relocate_stmt:</a></p><svg width="929" height="235">
          
          <polygon points="11 17 3 13 3 21"></polygon>
          <polygon points="19 17 11 13 11 21"></polygon>
@@ -9843,46 +9844,43 @@
             <rect x="179" y="111" width="192" height="32" class="nonterminal"></rect>
             <text class="nonterminal" x="189" y="131">relocate_subject_nonlease</text></a><rect x="393" y="113" width="60" height="32" rx="10"></rect>
          <rect x="391" y="111" width="60" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="401" y="131">FROM</text>
-         <rect x="473" y="113" width="74" height="32" rx="10"></rect>
-         <rect x="471" y="111" width="74" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="481" y="131">ICONST</text>
-         <rect x="587" y="69" width="38" height="32" rx="10"></rect>
-         <rect x="585" y="67" width="38" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="595" y="87">TO</text>
-         <rect x="645" y="69" width="74" height="32" rx="10"></rect>
-         <rect x="643" y="67" width="74" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="653" y="87">ICONST</text>
-         <rect x="739" y="69" width="48" height="32" rx="10"></rect>
-         <rect x="737" y="67" width="48" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="747" y="87">FOR</text><a xlink:href="#select_stmt" xlink:title="select_stmt">
-            <rect x="807" y="69" width="94" height="32"></rect>
-            <rect x="805" y="67" width="94" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="815" y="87">select_stmt</text></a><rect x="45" y="157" width="74" height="32" rx="10"></rect>
-         <rect x="43" y="155" width="74" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="53" y="175">ICONST</text><a xlink:href="#relocate_kw" xlink:title="relocate_kw">
-            <rect x="139" y="157" width="96" height="32"></rect>
-            <rect x="137" y="155" width="96" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="147" y="175">relocate_kw</text></a><rect x="275" y="157" width="62" height="32" rx="10"></rect>
-         <rect x="273" y="155" width="62" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="283" y="175">LEASE</text><a xlink:href="#relocate_subject_nonlease" xlink:title="relocate_subject_nonlease">
-            <rect x="275" y="201" width="192" height="32"></rect>
-            <rect x="273" y="199" width="192" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="283" y="219">relocate_subject_nonlease</text></a><rect x="487" y="201" width="60" height="32" rx="10"></rect>
-         <rect x="485" y="199" width="60" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="495" y="219">FROM</text>
-         <rect x="567" y="201" width="74" height="32" rx="10"></rect>
-         <rect x="565" y="199" width="74" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="575" y="219">ICONST</text>
-         <rect x="681" y="157" width="38" height="32" rx="10"></rect>
-         <rect x="679" y="155" width="38" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="689" y="175">TO</text>
-         <rect x="739" y="157" width="74" height="32" rx="10"></rect>
-         <rect x="737" y="155" width="74" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="747" y="175">ICONST</text>
-         <path class="line" d="m19 17 h2 m0 0 h10 m62 0 h10 m0 0 h10 m66 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-200 66 l2 0 m2 0 l2 0 m2 0 l2 0 m22 0 h10 m96 0 h10 m20 0 h10 m62 0 h10 m0 0 h304 m-406 0 h20 m386 0 h20 m-426 0 q10 0 10 10 m406 0 q0 -10 10 -10 m-416 10 v24 m406 0 v-24 m-406 24 q0 10 10 10 m386 0 q10 0 10 -10 m-396 10 h10 m192 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m74 0 h10 m20 -44 h10 m38 0 h10 m0 0 h10 m74 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m94 0 h10 m-896 0 h20 m876 0 h20 m-916 0 q10 0 10 10 m896 0 q0 -10 10 -10 m-906 10 v68 m896 0 v-68 m-896 68 q0 10 10 10 m876 0 q10 0 10 -10 m-886 10 h10 m74 0 h10 m0 0 h10 m96 0 h10 m20 0 h10 m62 0 h10 m0 0 h304 m-406 0 h20 m386 0 h20 m-426 0 q10 0 10 10 m406 0 q0 -10 10 -10 m-416 10 v24 m406 0 v-24 m-406 24 q0 10 10 10 m386 0 q10 0 10 -10 m-396 10 h10 m192 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m74 0 h10 m20 -44 h10 m38 0 h10 m0 0 h10 m74 0 h10 m0 0 h88 m23 -88 h-3"></path>
-         <polygon points="939 83 947 79 947 87"></polygon>
-         <polygon points="939 83 931 79 931 87"></polygon></svg><p>referenced by:
+         <text class="terminal" x="401" y="131">FROM</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="473" y="113" width="64" height="32"></rect>
+            <rect x="471" y="111" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="481" y="131">a_expr</text></a><rect x="577" y="69" width="38" height="32" rx="10"></rect>
+         <rect x="575" y="67" width="38" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="585" y="87">TO</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="635" y="69" width="64" height="32"></rect>
+            <rect x="633" y="67" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="643" y="87">a_expr</text></a><rect x="719" y="69" width="48" height="32" rx="10"></rect>
+         <rect x="717" y="67" width="48" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="727" y="87">FOR</text><a xlink:href="#select_stmt" xlink:title="select_stmt">
+            <rect x="787" y="69" width="94" height="32"></rect>
+            <rect x="785" y="67" width="94" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="795" y="87">select_stmt</text></a><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="45" y="157" width="64" height="32"></rect>
+            <rect x="43" y="155" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="53" y="175">a_expr</text></a><a xlink:href="#relocate_kw" xlink:title="relocate_kw">
+            <rect x="129" y="157" width="96" height="32"></rect>
+            <rect x="127" y="155" width="96" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="137" y="175">relocate_kw</text></a><rect x="265" y="157" width="62" height="32" rx="10"></rect>
+         <rect x="263" y="155" width="62" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="273" y="175">LEASE</text><a xlink:href="#relocate_subject_nonlease" xlink:title="relocate_subject_nonlease">
+            <rect x="265" y="201" width="192" height="32"></rect>
+            <rect x="263" y="199" width="192" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="273" y="219">relocate_subject_nonlease</text></a><rect x="477" y="201" width="60" height="32" rx="10"></rect>
+         <rect x="475" y="199" width="60" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="485" y="219">FROM</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="557" y="201" width="64" height="32"></rect>
+            <rect x="555" y="199" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="565" y="219">a_expr</text></a><rect x="661" y="157" width="38" height="32" rx="10"></rect>
+         <rect x="659" y="155" width="38" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="669" y="175">TO</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="719" y="157" width="64" height="32"></rect>
+            <rect x="717" y="155" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="727" y="175">a_expr</text></a><path class="line" d="m19 17 h2 m0 0 h10 m62 0 h10 m0 0 h10 m66 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-200 66 l2 0 m2 0 l2 0 m2 0 l2 0 m22 0 h10 m96 0 h10 m20 0 h10 m62 0 h10 m0 0 h294 m-396 0 h20 m376 0 h20 m-416 0 q10 0 10 10 m396 0 q0 -10 10 -10 m-406 10 v24 m396 0 v-24 m-396 24 q0 10 10 10 m376 0 q10 0 10 -10 m-386 10 h10 m192 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m64 0 h10 m20 -44 h10 m38 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m94 0 h10 m-876 0 h20 m856 0 h20 m-896 0 q10 0 10 10 m876 0 q0 -10 10 -10 m-886 10 v68 m876 0 v-68 m-876 68 q0 10 10 10 m856 0 q10 0 10 -10 m-866 10 h10 m64 0 h10 m0 0 h10 m96 0 h10 m20 0 h10 m62 0 h10 m0 0 h294 m-396 0 h20 m376 0 h20 m-416 0 q10 0 10 10 m396 0 q0 -10 10 -10 m-406 10 v24 m396 0 v-24 m-396 24 q0 10 10 10 m376 0 q10 0 10 -10 m-386 10 h10 m192 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m64 0 h10 m20 -44 h10 m38 0 h10 m0 0 h10 m64 0 h10 m0 0 h98 m23 -88 h-3"></path>
+         <polygon points="919 83 927 79 927 87"></polygon>
+         <polygon points="919 83 911 79 911 87"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#alter_range_stmt" title="alter_range_stmt">alter_range_stmt</a></li>
          </ul>
