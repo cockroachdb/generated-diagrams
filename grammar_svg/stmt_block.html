@@ -7189,7 +7189,7 @@
             <li><a href="#limit_clause" title="limit_clause">limit_clause</a></li>
             <li><a href="#offset_clause" title="offset_clause">offset_clause</a></li>
             <li><a href="#opt_alter_column_using" title="opt_alter_column_using">opt_alter_column_using</a></li>
-            <li><a href="#opt_hash_sharded" title="opt_hash_sharded">opt_hash_sharded</a></li>
+            <li><a href="#opt_hash_sharded_bucket_count" title="opt_hash_sharded_bucket_count">opt_hash_sharded_bucket_count</a></li>
             <li><a href="#opt_slice_bound" title="opt_slice_bound">opt_slice_bound</a></li>
             <li><a href="#overlay_list" title="overlay_list">overlay_list</a></li>
             <li><a href="#overlay_placing" title="overlay_placing">overlay_placing</a></li>
@@ -10647,7 +10647,7 @@
             <li><a href="#create_index_stmt" title="create_index_stmt">create_index_stmt</a></li>
             <li><a href="#index_def" title="index_def">index_def</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_hash_sharded" href="#opt_hash_sharded">opt_hash_sharded:</a></p><svg width="643" height="89">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_hash_sharded" href="#opt_hash_sharded">opt_hash_sharded:</a></p><svg width="495" height="57">
          
          <polygon points="9 5 1 1 1 9"></polygon>
          <polygon points="17 5 9 1 9 9"></polygon>
@@ -10656,21 +10656,12 @@
          <text class="terminal" x="59" y="41">USING</text>
          <rect x="135" y="23" width="58" height="32" rx="10"></rect>
          <rect x="133" y="21" width="58" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="143" y="41">HASH</text>
-         <rect x="233" y="55" width="58" height="32" rx="10"></rect>
-         <rect x="231" y="53" width="58" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="241" y="73">WITH</text>
-         <rect x="311" y="55" width="130" height="32" rx="10"></rect>
-         <rect x="309" y="53" width="130" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="319" y="73">BUCKET_COUNT</text>
-         <rect x="461" y="55" width="30" height="32" rx="10"></rect>
-         <rect x="459" y="53" width="30" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="469" y="73">=</text><a xlink:href="#a_expr" xlink:title="a_expr">
-            <rect x="511" y="55" width="64" height="32"></rect>
-            <rect x="509" y="53" width="64" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="519" y="73">a_expr</text></a><path class="line" d="m17 5 h2 m20 0 h10 m0 0 h554 m-584 0 h20 m564 0 h20 m-604 0 q10 0 10 10 m584 0 q0 -10 10 -10 m-594 10 v12 m584 0 v-12 m-584 12 q0 10 10 10 m564 0 q10 0 10 -10 m-574 10 h10 m64 0 h10 m0 0 h10 m58 0 h10 m20 0 h10 m0 0 h352 m-382 0 h20 m362 0 h20 m-402 0 q10 0 10 10 m382 0 q0 -10 10 -10 m-392 10 v12 m382 0 v-12 m-382 12 q0 10 10 10 m362 0 q10 0 10 -10 m-372 10 h10 m58 0 h10 m0 0 h10 m130 0 h10 m0 0 h10 m30 0 h10 m0 0 h10 m64 0 h10 m43 -64 h-3"></path>
-         <polygon points="633 5 641 1 641 9"></polygon>
-         <polygon points="633 5 625 1 625 9"></polygon></svg><p>referenced by:
+         <text class="terminal" x="143" y="41">HASH</text><a xlink:href="#opt_hash_sharded_bucket_count" xlink:title="opt_hash_sharded_bucket_count">
+            <rect x="213" y="23" width="234" height="32"></rect>
+            <rect x="211" y="21" width="234" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="221" y="41">opt_hash_sharded_bucket_count</text></a><path class="line" d="m17 5 h2 m20 0 h10 m0 0 h406 m-436 0 h20 m416 0 h20 m-456 0 q10 0 10 10 m436 0 q0 -10 10 -10 m-446 10 v12 m436 0 v-12 m-436 12 q0 10 10 10 m416 0 q10 0 10 -10 m-426 10 h10 m64 0 h10 m0 0 h10 m58 0 h10 m0 0 h10 m234 0 h10 m23 -32 h-3"></path>
+         <polygon points="485 5 493 1 493 9"></polygon>
+         <polygon points="485 5 477 1 477 9"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#alter_table_cmd" title="alter_table_cmd">alter_table_cmd</a></li>
             <li><a href="#constraint_elem" title="constraint_elem">constraint_elem</a></li>
@@ -10732,6 +10723,11 @@
          <polygon points="389 17 397 13 397 21"></polygon>
          <polygon points="389 17 381 13 381 21"></polygon></svg><p>referenced by:
          </p><ul>
+            <li><a href="#alter_table_cmd" title="alter_table_cmd">alter_table_cmd</a></li>
+            <li><a href="#col_qualification_elem" title="col_qualification_elem">col_qualification_elem</a></li>
+            <li><a href="#constraint_elem" title="constraint_elem">constraint_elem</a></li>
+            <li><a href="#create_as_col_qualification_elem" title="create_as_col_qualification_elem">create_as_col_qualification_elem</a></li>
+            <li><a href="#create_as_constraint_elem" title="create_as_constraint_elem">create_as_constraint_elem</a></li>
             <li><a href="#create_index_stmt" title="create_index_stmt">create_index_stmt</a></li>
             <li><a href="#index_def" title="index_def">index_def</a></li>
             <li><a href="#opt_table_with" title="opt_table_with">opt_table_with</a></li>
@@ -12705,6 +12701,28 @@
          </p><ul>
             <li><a href="#index_params" title="index_params">index_params</a></li>
          </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_hash_sharded_bucket_count" href="#opt_hash_sharded_bucket_count">opt_hash_sharded_bucket_count:</a></p><svg width="441" height="57">
+         
+         <polygon points="9 5 1 1 1 9"></polygon>
+         <polygon points="17 5 9 1 9 9"></polygon>
+         <rect x="51" y="23" width="58" height="32" rx="10"></rect>
+         <rect x="49" y="21" width="58" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="41">WITH</text>
+         <rect x="129" y="23" width="130" height="32" rx="10"></rect>
+         <rect x="127" y="21" width="130" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="137" y="41">BUCKET_COUNT</text>
+         <rect x="279" y="23" width="30" height="32" rx="10"></rect>
+         <rect x="277" y="21" width="30" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="287" y="41">=</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="329" y="23" width="64" height="32"></rect>
+            <rect x="327" y="21" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="337" y="41">a_expr</text></a><path class="line" d="m17 5 h2 m20 0 h10 m0 0 h352 m-382 0 h20 m362 0 h20 m-402 0 q10 0 10 10 m382 0 q0 -10 10 -10 m-392 10 v12 m382 0 v-12 m-382 12 q0 10 10 10 m362 0 q10 0 10 -10 m-372 10 h10 m58 0 h10 m0 0 h10 m130 0 h10 m0 0 h10 m30 0 h10 m0 0 h10 m64 0 h10 m23 -32 h-3"></path>
+         <polygon points="431 5 439 1 439 9"></polygon>
+         <polygon points="431 5 423 1 423 9"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#col_qualification_elem" title="col_qualification_elem">col_qualification_elem</a></li>
+            <li><a href="#opt_hash_sharded" title="opt_hash_sharded">opt_hash_sharded</a></li>
+         </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="storing" href="#storing">storing:</a></p><svg width="191" height="125">
          
          <polygon points="9 17 1 13 1 21"></polygon>
@@ -13554,7 +13572,7 @@
          </p><ul>
             <li><a href="#transaction_user_priority" title="transaction_user_priority">transaction_user_priority</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_table_cmd" href="#alter_table_cmd">alter_table_cmd:</a></p><svg width="1091" height="969">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_table_cmd" href="#alter_table_cmd">alter_table_cmd:</a></p><svg width="1199" height="969">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon>
@@ -13686,7 +13704,10 @@
          <text class="terminal" x="699" y="581">)</text><a xlink:href="#opt_hash_sharded" xlink:title="opt_hash_sharded">
             <rect x="737" y="563" width="140" height="32"></rect>
             <rect x="735" y="561" width="140" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="745" y="581">opt_hash_sharded</text></a><rect x="51" y="607" width="58" height="32" rx="10"></rect>
+            <text class="nonterminal" x="745" y="581">opt_hash_sharded</text></a><a xlink:href="#opt_with_storage_parameter_list" xlink:title="opt_with_storage_parameter_list">
+            <rect x="897" y="563" width="234" height="32"></rect>
+            <rect x="895" y="561" width="234" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="905" y="581">opt_with_storage_parameter_list</text></a><rect x="51" y="607" width="58" height="32" rx="10"></rect>
          <rect x="49" y="605" width="58" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="59" y="625">DROP</text><a xlink:href="#opt_column" xlink:title="opt_column">
             <rect x="149" y="607" width="94" height="32"></rect>
@@ -13751,9 +13772,9 @@
             <text class="nonterminal" x="207" y="953">storage_parameter_key_list</text></a><rect x="439" y="891" width="26" height="32" rx="10"></rect>
          <rect x="437" y="889" width="26" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="447" y="909">)</text>
-         <path class="line" d="m17 17 h2 m20 0 h10 m76 0 h10 m20 0 h10 m94 0 h10 m0 0 h16 m-150 0 h20 m130 0 h20 m-170 0 q10 0 10 10 m150 0 q0 -10 10 -10 m-160 10 v24 m150 0 v-24 m-150 24 q0 10 10 10 m130 0 q10 0 10 -10 m-140 10 h10 m110 0 h10 m20 -44 h10 m108 0 h10 m0 0 h10 m38 0 h10 m0 0 h10 m108 0 h10 m0 0 h432 m-1032 0 h20 m1012 0 h20 m-1052 0 q10 0 10 10 m1032 0 q0 -10 10 -10 m-1042 10 v68 m1032 0 v-68 m-1032 68 q0 10 10 10 m1012 0 q10 0 10 -10 m-1022 10 h10 m48 0 h10 m40 0 h10 m0 0 h88 m-118 0 h20 m98 0 h20 m-138 0 q10 0 10 10 m118 0 q0 -10 10 -10 m-128 10 v12 m118 0 v-12 m-118 12 q0 10 10 10 m98 0 q10 0 10 -10 m-108 10 h10 m78 0 h10 m40 -32 h10 m0 0 h202 m-232 0 h20 m212 0 h20 m-252 0 q10 0 10 10 m232 0 q0 -10 10 -10 m-242 10 v12 m232 0 v-12 m-232 12 q0 10 10 10 m212 0 q10 0 10 -10 m-222 10 h10 m34 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m92 0 h10 m0 0 h350 m-872 0 h20 m852 0 h20 m-892 0 q10 0 10 10 m872 0 q0 -10 10 -10 m-882 10 v56 m872 0 v-56 m-872 56 q0 10 10 10 m852 0 q10 0 10 -10 m-842 10 h10 m124 0 h10 m0 0 h486 m-650 0 h20 m630 0 h20 m-670 0 q10 0 10 10 m650 0 q0 -10 10 -10 m-660 10 v24 m650 0 v-24 m-650 24 q0 10 10 10 m630 0 q10 0 10 -10 m-640 10 h10 m110 0 h10 m0 0 h10 m34 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m70 0 h10 m0 0 h10 m126 0 h10 m0 0 h10 m122 0 h10 m20 -44 h10 m162 0 h10 m20 -76 h52 m-1022 -10 v20 m1032 0 v-20 m-1032 20 v144 m1032 0 v-144 m-1032 144 q0 10 10 10 m1012 0 q10 0 10 -10 m-1022 10 h10 m62 0 h10 m20 0 h10 m94 0 h10 m0 0 h10 m108 0 h10 m20 0 h10 m154 0 h10 m0 0 h434 m-628 0 h20 m608 0 h20 m-648 0 q10 0 10 10 m628 0 q0 -10 10 -10 m-638 10 v24 m628 0 v-24 m-628 24 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m180 0 h10 m0 0 h408 m-618 -10 v20 m628 0 v-20 m-628 20 v24 m628 0 v-24 m-628 24 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m150 0 h10 m0 0 h438 m-618 -10 v20 m628 0 v-20 m-628 20 v24 m628 0 v-24 m-628 24 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m58 0 h10 m20 0 h10 m48 0 h10 m0 0 h10 m56 0 h10 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v24 m164 0 v-24 m-164 24 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m76 0 h10 m0 0 h48 m20 -44 h346 m-618 -10 v20 m628 0 v-20 m-628 20 v68 m628 0 v-68 m-628 68 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m44 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m56 0 h10 m0 0 h400 m-618 -10 v20 m628 0 v-20 m-628 20 v24 m628 0 v-24 m-628 24 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m106 0 h10 m0 0 h10 m54 0 h10 m0 0 h10 m84 0 h10 m0 0 h10 m90 0 h10 m0 0 h10 m174 0 h10 m-890 -264 h20 m890 0 h20 m-930 0 q10 0 10 10 m910 0 q0 -10 10 -10 m-920 10 v288 m910 0 v-288 m-910 288 q0 10 10 10 m890 0 q10 0 10 -10 m-900 10 h10 m84 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m88 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m140 0 h10 m0 0 h146 m-1002 -318 v20 m1032 0 v-20 m-1032 20 v332 m1032 0 v-332 m-1032 332 q0 10 10 10 m1012 0 q10 0 10 -10 m-1022 10 h10 m58 0 h10 m20 0 h10 m94 0 h10 m20 0 h10 m0 0 h134 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v12 m164 0 v-12 m-164 12 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m34 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m108 0 h10 m0 0 h34 m-480 0 h20 m460 0 h20 m-500 0 q10 0 10 10 m480 0 q0 -10 10 -10 m-490 10 v56 m480 0 v-56 m-480 56 q0 10 10 10 m460 0 q10 0 10 -10 m-470 10 h10 m110 0 h10 m20 0 h10 m0 0 h134 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v12 m164 0 v-12 m-164 12 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m34 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m126 0 h10 m20 -76 h10 m142 0 h10 m0 0 h272 m-1022 -10 v20 m1032 0 v-20 m-1032 20 v132 m1032 0 v-132 m-1032 132 q0 10 10 10 m1012 0 q10 0 10 -10 m-1022 10 h10 m88 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m126 0 h10 m0 0 h628 m-1022 -10 v20 m1032 0 v-20 m-1032 20 v24 m1032 0 v-24 m-1032 24 q0 10 10 10 m1012 0 q10 0 10 -10 m-1022 10 h10 m178 0 h10 m0 0 h10 m44 0 h10 m0 0 h10 m96 0 h10 m0 0 h634 m-1022 -10 v20 m1032 0 v-20 m-1032 20 v24 m1032 0 v-24 m-1032 24 q0 10 10 10 m1012 0 q10 0 10 -10 m-1022 10 h10 m136 0 h10 m0 0 h856 m-1022 -10 v20 m1032 0 v-20 m-1032 20 v24 m1032 0 v-24 m-1032 24 q0 10 10 10 m1012 0 q10 0 10 -10 m-1002 10 h10 m44 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m170 0 h10 m0 0 h48 m-368 0 h20 m348 0 h20 m-388 0 q10 0 10 10 m368 0 q0 -10 10 -10 m-378 10 v24 m368 0 v-24 m-368 24 q0 10 10 10 m348 0 q10 0 10 -10 m-358 10 h10 m62 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m200 0 h10 m20 -44 h10 m26 0 h10 m0 0 h578 m23 -888 h-3"></path>
-         <polygon points="1081 17 1089 13 1089 21"></polygon>
-         <polygon points="1081 17 1073 13 1073 21"></polygon></svg><p>referenced by:
+         <path class="line" d="m17 17 h2 m20 0 h10 m76 0 h10 m20 0 h10 m94 0 h10 m0 0 h16 m-150 0 h20 m130 0 h20 m-170 0 q10 0 10 10 m150 0 q0 -10 10 -10 m-160 10 v24 m150 0 v-24 m-150 24 q0 10 10 10 m130 0 q10 0 10 -10 m-140 10 h10 m110 0 h10 m20 -44 h10 m108 0 h10 m0 0 h10 m38 0 h10 m0 0 h10 m108 0 h10 m0 0 h540 m-1140 0 h20 m1120 0 h20 m-1160 0 q10 0 10 10 m1140 0 q0 -10 10 -10 m-1150 10 v68 m1140 0 v-68 m-1140 68 q0 10 10 10 m1120 0 q10 0 10 -10 m-1130 10 h10 m48 0 h10 m40 0 h10 m0 0 h88 m-118 0 h20 m98 0 h20 m-138 0 q10 0 10 10 m118 0 q0 -10 10 -10 m-128 10 v12 m118 0 v-12 m-118 12 q0 10 10 10 m98 0 q10 0 10 -10 m-108 10 h10 m78 0 h10 m40 -32 h10 m0 0 h202 m-232 0 h20 m212 0 h20 m-252 0 q10 0 10 10 m232 0 q0 -10 10 -10 m-242 10 v12 m232 0 v-12 m-232 12 q0 10 10 10 m212 0 q10 0 10 -10 m-222 10 h10 m34 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m92 0 h10 m0 0 h350 m-872 0 h20 m852 0 h20 m-892 0 q10 0 10 10 m872 0 q0 -10 10 -10 m-882 10 v56 m872 0 v-56 m-872 56 q0 10 10 10 m852 0 q10 0 10 -10 m-842 10 h10 m124 0 h10 m0 0 h486 m-650 0 h20 m630 0 h20 m-670 0 q10 0 10 10 m650 0 q0 -10 10 -10 m-660 10 v24 m650 0 v-24 m-650 24 q0 10 10 10 m630 0 q10 0 10 -10 m-640 10 h10 m110 0 h10 m0 0 h10 m34 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m70 0 h10 m0 0 h10 m126 0 h10 m0 0 h10 m122 0 h10 m20 -44 h10 m162 0 h10 m20 -76 h160 m-1130 -10 v20 m1140 0 v-20 m-1140 20 v144 m1140 0 v-144 m-1140 144 q0 10 10 10 m1120 0 q10 0 10 -10 m-1130 10 h10 m62 0 h10 m20 0 h10 m94 0 h10 m0 0 h10 m108 0 h10 m20 0 h10 m154 0 h10 m0 0 h434 m-628 0 h20 m608 0 h20 m-648 0 q10 0 10 10 m628 0 q0 -10 10 -10 m-638 10 v24 m628 0 v-24 m-628 24 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m180 0 h10 m0 0 h408 m-618 -10 v20 m628 0 v-20 m-628 20 v24 m628 0 v-24 m-628 24 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m150 0 h10 m0 0 h438 m-618 -10 v20 m628 0 v-20 m-628 20 v24 m628 0 v-24 m-628 24 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m58 0 h10 m20 0 h10 m48 0 h10 m0 0 h10 m56 0 h10 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v24 m164 0 v-24 m-164 24 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m76 0 h10 m0 0 h48 m20 -44 h346 m-618 -10 v20 m628 0 v-20 m-628 20 v68 m628 0 v-68 m-628 68 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m44 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m56 0 h10 m0 0 h400 m-618 -10 v20 m628 0 v-20 m-628 20 v24 m628 0 v-24 m-628 24 q0 10 10 10 m608 0 q10 0 10 -10 m-618 10 h10 m106 0 h10 m0 0 h10 m54 0 h10 m0 0 h10 m84 0 h10 m0 0 h10 m90 0 h10 m0 0 h10 m174 0 h10 m20 -264 h108 m-1018 0 h20 m998 0 h20 m-1038 0 q10 0 10 10 m1018 0 q0 -10 10 -10 m-1028 10 v288 m1018 0 v-288 m-1018 288 q0 10 10 10 m998 0 q10 0 10 -10 m-1008 10 h10 m84 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m88 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m140 0 h10 m0 0 h10 m234 0 h10 m-1110 -318 v20 m1140 0 v-20 m-1140 20 v332 m1140 0 v-332 m-1140 332 q0 10 10 10 m1120 0 q10 0 10 -10 m-1130 10 h10 m58 0 h10 m20 0 h10 m94 0 h10 m20 0 h10 m0 0 h134 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v12 m164 0 v-12 m-164 12 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m34 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m108 0 h10 m0 0 h34 m-480 0 h20 m460 0 h20 m-500 0 q10 0 10 10 m480 0 q0 -10 10 -10 m-490 10 v56 m480 0 v-56 m-480 56 q0 10 10 10 m460 0 q10 0 10 -10 m-470 10 h10 m110 0 h10 m20 0 h10 m0 0 h134 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v12 m164 0 v-12 m-164 12 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m34 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m126 0 h10 m20 -76 h10 m142 0 h10 m0 0 h380 m-1130 -10 v20 m1140 0 v-20 m-1140 20 v132 m1140 0 v-132 m-1140 132 q0 10 10 10 m1120 0 q10 0 10 -10 m-1130 10 h10 m88 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m126 0 h10 m0 0 h736 m-1130 -10 v20 m1140 0 v-20 m-1140 20 v24 m1140 0 v-24 m-1140 24 q0 10 10 10 m1120 0 q10 0 10 -10 m-1130 10 h10 m178 0 h10 m0 0 h10 m44 0 h10 m0 0 h10 m96 0 h10 m0 0 h742 m-1130 -10 v20 m1140 0 v-20 m-1140 20 v24 m1140 0 v-24 m-1140 24 q0 10 10 10 m1120 0 q10 0 10 -10 m-1130 10 h10 m136 0 h10 m0 0 h964 m-1130 -10 v20 m1140 0 v-20 m-1140 20 v24 m1140 0 v-24 m-1140 24 q0 10 10 10 m1120 0 q10 0 10 -10 m-1110 10 h10 m44 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m170 0 h10 m0 0 h48 m-368 0 h20 m348 0 h20 m-388 0 q10 0 10 10 m368 0 q0 -10 10 -10 m-378 10 v24 m368 0 v-24 m-368 24 q0 10 10 10 m348 0 q10 0 10 -10 m-358 10 h10 m62 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m200 0 h10 m20 -44 h10 m26 0 h10 m0 0 h686 m23 -888 h-3"></path>
+         <polygon points="1189 17 1197 13 1197 21"></polygon>
+         <polygon points="1189 17 1181 13 1181 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#alter_table_cmds" title="alter_table_cmds">alter_table_cmds</a></li>
          </ul>
@@ -15129,7 +15150,10 @@
          <text class="terminal" x="405" y="109">)</text><a xlink:href="#opt_hash_sharded" xlink:title="opt_hash_sharded">
             <rect x="443" y="91" width="140" height="32"></rect>
             <rect x="441" y="89" width="140" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="451" y="109">opt_hash_sharded</text></a><rect x="51" y="135" width="82" height="32" rx="10"></rect>
+            <text class="nonterminal" x="451" y="109">opt_hash_sharded</text></a><a xlink:href="#opt_with_storage_parameter_list" xlink:title="opt_with_storage_parameter_list">
+            <rect x="603" y="91" width="234" height="32"></rect>
+            <rect x="601" y="89" width="234" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="611" y="109">opt_with_storage_parameter_list</text></a><rect x="51" y="135" width="82" height="32" rx="10"></rect>
          <rect x="49" y="133" width="82" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="59" y="153">FOREIGN</text>
          <rect x="153" y="135" width="46" height="32" rx="10"></rect>
@@ -15157,7 +15181,7 @@
             <text class="nonterminal" x="805" y="153">key_match</text></a><a xlink:href="#reference_actions" xlink:title="reference_actions">
             <rect x="905" y="135" width="134" height="32"></rect>
             <rect x="903" y="133" width="134" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="913" y="153">reference_actions</text></a><path class="line" d="m17 17 h2 m20 0 h10 m64 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m26 0 h10 m0 0 h748 m-1028 0 h20 m1008 0 h20 m-1048 0 q10 0 10 10 m1028 0 q0 -10 10 -10 m-1038 10 v24 m1028 0 v-24 m-1028 24 q0 10 10 10 m1008 0 q10 0 10 -10 m-1018 10 h10 m74 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m92 0 h10 m0 0 h10 m168 0 h10 m0 0 h10 m136 0 h10 m0 0 h236 m-1018 -10 v20 m1028 0 v-20 m-1028 20 v24 m1028 0 v-24 m-1028 24 q0 10 10 10 m1008 0 q10 0 10 -10 m-1018 10 h10 m84 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m140 0 h10 m0 0 h456 m-1018 -10 v20 m1028 0 v-20 m-1028 20 v24 m1028 0 v-24 m-1028 24 q0 10 10 10 m1008 0 q10 0 10 -10 m-1018 10 h10 m82 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m82 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m108 0 h10 m0 0 h10 m96 0 h10 m0 0 h10 m120 0 h10 m0 0 h10 m88 0 h10 m0 0 h10 m134 0 h10 m23 -132 h-3"></path>
+            <text class="nonterminal" x="913" y="153">reference_actions</text></a><path class="line" d="m17 17 h2 m20 0 h10 m64 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m26 0 h10 m0 0 h748 m-1028 0 h20 m1008 0 h20 m-1048 0 q10 0 10 10 m1028 0 q0 -10 10 -10 m-1038 10 v24 m1028 0 v-24 m-1028 24 q0 10 10 10 m1008 0 q10 0 10 -10 m-1018 10 h10 m74 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m92 0 h10 m0 0 h10 m168 0 h10 m0 0 h10 m136 0 h10 m0 0 h236 m-1018 -10 v20 m1028 0 v-20 m-1028 20 v24 m1028 0 v-24 m-1028 24 q0 10 10 10 m1008 0 q10 0 10 -10 m-1018 10 h10 m84 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m140 0 h10 m0 0 h10 m234 0 h10 m0 0 h202 m-1018 -10 v20 m1028 0 v-20 m-1028 20 v24 m1028 0 v-24 m-1028 24 q0 10 10 10 m1008 0 q10 0 10 -10 m-1018 10 h10 m82 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m82 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m108 0 h10 m0 0 h10 m96 0 h10 m0 0 h10 m120 0 h10 m0 0 h10 m88 0 h10 m0 0 h10 m134 0 h10 m23 -132 h-3"></path>
          <polygon points="1077 17 1085 13 1085 21"></polygon>
          <polygon points="1077 17 1069 13 1069 21"></polygon></svg><p>referenced by:
          </p><ul>
@@ -15730,7 +15754,7 @@
          </p><ul>
             <li><a href="#family_def" title="family_def">family_def</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_as_constraint_elem" href="#create_as_constraint_elem">create_as_constraint_elem:</a></p><svg width="459" height="37">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_as_constraint_elem" href="#create_as_constraint_elem">create_as_constraint_elem:</a></p><svg width="713" height="37">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon>
@@ -15747,10 +15771,12 @@
             <rect x="245" y="1" width="138" height="32" class="nonterminal"></rect>
             <text class="nonterminal" x="255" y="21">create_as_params</text></a><rect x="405" y="3" width="26" height="32" rx="10"></rect>
          <rect x="403" y="1" width="26" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="413" y="21">)</text>
-         <path class="line" d="m17 17 h2 m0 0 h10 m84 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m138 0 h10 m0 0 h10 m26 0 h10 m3 0 h-3"></path>
-         <polygon points="449 17 457 13 457 21"></polygon>
-         <polygon points="449 17 441 13 441 21"></polygon></svg><p>referenced by:
+         <text class="terminal" x="413" y="21">)</text><a xlink:href="#opt_with_storage_parameter_list" xlink:title="opt_with_storage_parameter_list">
+            <rect x="451" y="3" width="234" height="32"></rect>
+            <rect x="449" y="1" width="234" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="459" y="21">opt_with_storage_parameter_list</text></a><path class="line" d="m17 17 h2 m0 0 h10 m84 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m138 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m234 0 h10 m3 0 h-3"></path>
+         <polygon points="703 17 711 13 711 21"></polygon>
+         <polygon points="703 17 695 13 695 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#create_as_constraint_def" title="create_as_constraint_def">create_as_constraint_def</a></li>
          </ul>
@@ -16368,7 +16394,7 @@
          </p><ul>
             <li><a href="#like_table_option_list" title="like_table_option_list">like_table_option_list</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_as_col_qualification_elem" href="#create_as_col_qualification_elem">create_as_col_qualification_elem:</a></p><svg width="209" height="37">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_as_col_qualification_elem" href="#create_as_col_qualification_elem">create_as_col_qualification_elem:</a></p><svg width="463" height="37">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon>
@@ -16377,10 +16403,12 @@
          <text class="terminal" x="39" y="21">PRIMARY</text>
          <rect x="135" y="3" width="46" height="32" rx="10"></rect>
          <rect x="133" y="1" width="46" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="143" y="21">KEY</text>
-         <path class="line" d="m17 17 h2 m0 0 h10 m84 0 h10 m0 0 h10 m46 0 h10 m3 0 h-3"></path>
-         <polygon points="199 17 207 13 207 21"></polygon>
-         <polygon points="199 17 191 13 191 21"></polygon></svg><p>referenced by:
+         <text class="terminal" x="143" y="21">KEY</text><a xlink:href="#opt_with_storage_parameter_list" xlink:title="opt_with_storage_parameter_list">
+            <rect x="201" y="3" width="234" height="32"></rect>
+            <rect x="199" y="1" width="234" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="209" y="21">opt_with_storage_parameter_list</text></a><path class="line" d="m17 17 h2 m0 0 h10 m84 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m234 0 h10 m3 0 h-3"></path>
+         <polygon points="453 17 461 13 461 21"></polygon>
+         <polygon points="453 17 445 13 445 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#create_as_col_qualification" title="create_as_col_qualification">create_as_col_qualification</a></li>
          </ul>
@@ -16700,7 +16728,7 @@
          </p><ul>
             <li><a href="#create_as_params" title="create_as_params">create_as_params</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="col_qualification_elem" href="#col_qualification_elem">col_qualification_elem:</a></p><svg width="853" height="629">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="col_qualification_elem" href="#col_qualification_elem">col_qualification_elem:</a></p><svg width="959" height="597">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon>
@@ -16730,90 +16758,84 @@
          <text class="terminal" x="249" y="229">USING</text>
          <rect x="325" y="211" width="58" height="32" rx="10"></rect>
          <rect x="323" y="209" width="58" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="333" y="229">HASH</text>
-         <rect x="423" y="243" width="58" height="32" rx="10"></rect>
-         <rect x="421" y="241" width="58" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="431" y="261">WITH</text>
-         <rect x="501" y="243" width="130" height="32" rx="10"></rect>
-         <rect x="499" y="241" width="130" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="509" y="261">BUCKET_COUNT</text>
-         <rect x="651" y="243" width="30" height="32" rx="10"></rect>
-         <rect x="649" y="241" width="30" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="659" y="261">=</text><a xlink:href="#a_expr" xlink:title="a_expr">
-            <rect x="701" y="243" width="64" height="32"></rect>
-            <rect x="699" y="241" width="64" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="709" y="261">a_expr</text></a><rect x="51" y="287" width="64" height="32" rx="10"></rect>
-         <rect x="49" y="285" width="64" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="59" y="305">CHECK</text>
-         <rect x="135" y="287" width="26" height="32" rx="10"></rect>
-         <rect x="133" y="285" width="26" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="143" y="305">(</text><a xlink:href="#a_expr" xlink:title="a_expr">
-            <rect x="181" y="287" width="64" height="32"></rect>
-            <rect x="179" y="285" width="64" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="189" y="305">a_expr</text></a><rect x="265" y="287" width="26" height="32" rx="10"></rect>
-         <rect x="263" y="285" width="26" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="273" y="305">)</text>
-         <rect x="71" y="331" width="80" height="32" rx="10"></rect>
-         <rect x="69" y="329" width="80" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="79" y="349">DEFAULT</text>
-         <rect x="71" y="375" width="40" height="32" rx="10"></rect>
-         <rect x="69" y="373" width="40" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="79" y="393">ON</text>
-         <rect x="131" y="375" width="74" height="32" rx="10"></rect>
-         <rect x="129" y="373" width="74" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="139" y="393">UPDATE</text><a xlink:href="#b_expr" xlink:title="b_expr">
-            <rect x="245" y="331" width="64" height="32"></rect>
-            <rect x="243" y="329" width="64" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="253" y="349">b_expr</text></a><rect x="51" y="419" width="108" height="32" rx="10"></rect>
-         <rect x="49" y="417" width="108" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="59" y="437">REFERENCES</text><a xlink:href="#table_name" xlink:title="table_name">
-            <rect x="179" y="419" width="96" height="32"></rect>
-            <rect x="177" y="417" width="96" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="187" y="437">table_name</text></a><a xlink:href="#opt_name_parens" xlink:title="opt_name_parens">
-            <rect x="295" y="419" width="136" height="32"></rect>
-            <rect x="293" y="417" width="136" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="303" y="437">opt_name_parens</text></a><a xlink:href="#key_match" xlink:title="key_match">
-            <rect x="451" y="419" width="88" height="32"></rect>
-            <rect x="449" y="417" width="88" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="459" y="437">key_match</text></a><a xlink:href="#reference_actions" xlink:title="reference_actions">
-            <rect x="559" y="419" width="134" height="32"></rect>
-            <rect x="557" y="417" width="134" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="567" y="437">reference_actions</text></a><a xlink:href="#generated_as" xlink:title="generated_as">
-            <rect x="51" y="463" width="108" height="32"></rect>
-            <rect x="49" y="461" width="108" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="481">generated_as</text></a><rect x="179" y="463" width="26" height="32" rx="10"></rect>
-         <rect x="177" y="461" width="26" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="187" y="481">(</text><a xlink:href="#a_expr" xlink:title="a_expr">
-            <rect x="225" y="463" width="64" height="32"></rect>
-            <rect x="223" y="461" width="64" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="233" y="481">a_expr</text></a><rect x="309" y="463" width="26" height="32" rx="10"></rect>
-         <rect x="307" y="461" width="26" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="317" y="481">)</text>
-         <rect x="375" y="463" width="76" height="32" rx="10"></rect>
-         <rect x="373" y="461" width="76" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="383" y="481">STORED</text>
-         <rect x="375" y="507" width="80" height="32" rx="10"></rect>
-         <rect x="373" y="505" width="80" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="383" y="525">VIRTUAL</text><a xlink:href="#generated_always_as" xlink:title="generated_always_as">
-            <rect x="71" y="551" width="160" height="32"></rect>
-            <rect x="69" y="549" width="160" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="79" y="569">generated_always_as</text></a><a xlink:href="#generated_by_default_as" xlink:title="generated_by_default_as">
-            <rect x="71" y="595" width="184" height="32"></rect>
-            <rect x="69" y="593" width="184" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="79" y="613">generated_by_default_as</text></a><rect x="295" y="551" width="86" height="32" rx="10"></rect>
-         <rect x="293" y="549" width="86" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="303" y="569">IDENTITY</text>
-         <rect x="421" y="583" width="26" height="32" rx="10"></rect>
-         <rect x="419" y="581" width="26" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="429" y="601">(</text><a xlink:href="#opt_sequence_option_list" xlink:title="opt_sequence_option_list">
-            <rect x="467" y="583" width="184" height="32"></rect>
-            <rect x="465" y="581" width="184" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="475" y="601">opt_sequence_option_list</text></a><rect x="671" y="583" width="26" height="32" rx="10"></rect>
-         <rect x="669" y="581" width="26" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="679" y="601">)</text>
-         <path class="line" d="m17 17 h2 m20 0 h10 m48 0 h10 m20 0 h10 m56 0 h10 m0 0 h20 m-116 0 h20 m96 0 h20 m-136 0 q10 0 10 10 m116 0 q0 -10 10 -10 m-126 10 v24 m116 0 v-24 m-116 24 q0 10 10 10 m96 0 q10 0 10 -10 m-106 10 h10 m76 0 h10 m20 -44 h570 m-794 0 h20 m774 0 h20 m-814 0 q10 0 10 10 m794 0 q0 -10 10 -10 m-804 10 v68 m794 0 v-68 m-794 68 q0 10 10 10 m774 0 q10 0 10 -10 m-784 10 h10 m56 0 h10 m0 0 h698 m-784 -10 v20 m794 0 v-20 m-794 20 v24 m794 0 v-24 m-794 24 q0 10 10 10 m774 0 q10 0 10 -10 m-784 10 h10 m74 0 h10 m0 0 h680 m-784 -10 v20 m794 0 v-20 m-794 20 v24 m794 0 v-24 m-794 24 q0 10 10 10 m774 0 q10 0 10 -10 m-784 10 h10 m84 0 h10 m0 0 h10 m46 0 h10 m20 0 h10 m0 0 h554 m-584 0 h20 m564 0 h20 m-604 0 q10 0 10 10 m584 0 q0 -10 10 -10 m-594 10 v12 m584 0 v-12 m-584 12 q0 10 10 10 m564 0 q10 0 10 -10 m-574 10 h10 m64 0 h10 m0 0 h10 m58 0 h10 m20 0 h10 m0 0 h352 m-382 0 h20 m362 0 h20 m-402 0 q10 0 10 10 m382 0 q0 -10 10 -10 m-392 10 v12 m382 0 v-12 m-382 12 q0 10 10 10 m362 0 q10 0 10 -10 m-372 10 h10 m58 0 h10 m0 0 h10 m130 0 h10 m0 0 h10 m30 0 h10 m0 0 h10 m64 0 h10 m-744 -74 v20 m794 0 v-20 m-794 20 v88 m794 0 v-88 m-794 88 q0 10 10 10 m774 0 q10 0 10 -10 m-784 10 h10 m64 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m26 0 h10 m0 0 h514 m-784 -10 v20 m794 0 v-20 m-794 20 v24 m794 0 v-24 m-794 24 q0 10 10 10 m774 0 q10 0 10 -10 m-764 10 h10 m80 0 h10 m0 0 h54 m-174 0 h20 m154 0 h20 m-194 0 q10 0 10 10 m174 0 q0 -10 10 -10 m-184 10 v24 m174 0 v-24 m-174 24 q0 10 10 10 m154 0 q10 0 10 -10 m-164 10 h10 m40 0 h10 m0 0 h10 m74 0 h10 m20 -44 h10 m64 0 h10 m0 0 h496 m-784 -10 v20 m794 0 v-20 m-794 20 v68 m794 0 v-68 m-794 68 q0 10 10 10 m774 0 q10 0 10 -10 m-784 10 h10 m108 0 h10 m0 0 h10 m96 0 h10 m0 0 h10 m136 0 h10 m0 0 h10 m88 0 h10 m0 0 h10 m134 0 h10 m0 0 h112 m-784 -10 v20 m794 0 v-20 m-794 20 v24 m794 0 v-24 m-794 24 q0 10 10 10 m774 0 q10 0 10 -10 m-784 10 h10 m108 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m26 0 h10 m20 0 h10 m76 0 h10 m0 0 h4 m-120 0 h20 m100 0 h20 m-140 0 q10 0 10 10 m120 0 q0 -10 10 -10 m-130 10 v24 m120 0 v-24 m-120 24 q0 10 10 10 m100 0 q10 0 10 -10 m-110 10 h10 m80 0 h10 m20 -44 h330 m-784 -10 v20 m794 0 v-20 m-794 20 v68 m794 0 v-68 m-794 68 q0 10 10 10 m774 0 q10 0 10 -10 m-764 10 h10 m160 0 h10 m0 0 h24 m-224 0 h20 m204 0 h20 m-244 0 q10 0 10 10 m224 0 q0 -10 10 -10 m-234 10 v24 m224 0 v-24 m-224 24 q0 10 10 10 m204 0 q10 0 10 -10 m-214 10 h10 m184 0 h10 m20 -44 h10 m86 0 h10 m20 0 h10 m0 0 h286 m-316 0 h20 m296 0 h20 m-336 0 q10 0 10 10 m316 0 q0 -10 10 -10 m-326 10 v12 m316 0 v-12 m-316 12 q0 10 10 10 m296 0 q10 0 10 -10 m-306 10 h10 m26 0 h10 m0 0 h10 m184 0 h10 m0 0 h10 m26 0 h10 m20 -32 h88 m23 -548 h-3"></path>
-         <polygon points="843 17 851 13 851 21"></polygon>
-         <polygon points="843 17 835 13 835 21"></polygon></svg><p>referenced by:
+         <text class="terminal" x="333" y="229">HASH</text><a xlink:href="#opt_hash_sharded_bucket_count" xlink:title="opt_hash_sharded_bucket_count">
+            <rect x="403" y="211" width="234" height="32"></rect>
+            <rect x="401" y="209" width="234" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="411" y="229">opt_hash_sharded_bucket_count</text></a><a xlink:href="#opt_with_storage_parameter_list" xlink:title="opt_with_storage_parameter_list">
+            <rect x="677" y="179" width="234" height="32"></rect>
+            <rect x="675" y="177" width="234" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="685" y="197">opt_with_storage_parameter_list</text></a><rect x="51" y="255" width="64" height="32" rx="10"></rect>
+         <rect x="49" y="253" width="64" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="273">CHECK</text>
+         <rect x="135" y="255" width="26" height="32" rx="10"></rect>
+         <rect x="133" y="253" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="143" y="273">(</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="181" y="255" width="64" height="32"></rect>
+            <rect x="179" y="253" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="189" y="273">a_expr</text></a><rect x="265" y="255" width="26" height="32" rx="10"></rect>
+         <rect x="263" y="253" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="273" y="273">)</text>
+         <rect x="71" y="299" width="80" height="32" rx="10"></rect>
+         <rect x="69" y="297" width="80" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="317">DEFAULT</text>
+         <rect x="71" y="343" width="40" height="32" rx="10"></rect>
+         <rect x="69" y="341" width="40" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="361">ON</text>
+         <rect x="131" y="343" width="74" height="32" rx="10"></rect>
+         <rect x="129" y="341" width="74" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="139" y="361">UPDATE</text><a xlink:href="#b_expr" xlink:title="b_expr">
+            <rect x="245" y="299" width="64" height="32"></rect>
+            <rect x="243" y="297" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="253" y="317">b_expr</text></a><rect x="51" y="387" width="108" height="32" rx="10"></rect>
+         <rect x="49" y="385" width="108" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="405">REFERENCES</text><a xlink:href="#table_name" xlink:title="table_name">
+            <rect x="179" y="387" width="96" height="32"></rect>
+            <rect x="177" y="385" width="96" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="187" y="405">table_name</text></a><a xlink:href="#opt_name_parens" xlink:title="opt_name_parens">
+            <rect x="295" y="387" width="136" height="32"></rect>
+            <rect x="293" y="385" width="136" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="303" y="405">opt_name_parens</text></a><a xlink:href="#key_match" xlink:title="key_match">
+            <rect x="451" y="387" width="88" height="32"></rect>
+            <rect x="449" y="385" width="88" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="459" y="405">key_match</text></a><a xlink:href="#reference_actions" xlink:title="reference_actions">
+            <rect x="559" y="387" width="134" height="32"></rect>
+            <rect x="557" y="385" width="134" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="567" y="405">reference_actions</text></a><a xlink:href="#generated_as" xlink:title="generated_as">
+            <rect x="51" y="431" width="108" height="32"></rect>
+            <rect x="49" y="429" width="108" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="449">generated_as</text></a><rect x="179" y="431" width="26" height="32" rx="10"></rect>
+         <rect x="177" y="429" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="187" y="449">(</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="225" y="431" width="64" height="32"></rect>
+            <rect x="223" y="429" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="233" y="449">a_expr</text></a><rect x="309" y="431" width="26" height="32" rx="10"></rect>
+         <rect x="307" y="429" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="317" y="449">)</text>
+         <rect x="375" y="431" width="76" height="32" rx="10"></rect>
+         <rect x="373" y="429" width="76" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="383" y="449">STORED</text>
+         <rect x="375" y="475" width="80" height="32" rx="10"></rect>
+         <rect x="373" y="473" width="80" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="383" y="493">VIRTUAL</text><a xlink:href="#generated_always_as" xlink:title="generated_always_as">
+            <rect x="71" y="519" width="160" height="32"></rect>
+            <rect x="69" y="517" width="160" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="79" y="537">generated_always_as</text></a><a xlink:href="#generated_by_default_as" xlink:title="generated_by_default_as">
+            <rect x="71" y="563" width="184" height="32"></rect>
+            <rect x="69" y="561" width="184" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="79" y="581">generated_by_default_as</text></a><rect x="295" y="519" width="86" height="32" rx="10"></rect>
+         <rect x="293" y="517" width="86" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="303" y="537">IDENTITY</text>
+         <rect x="421" y="551" width="26" height="32" rx="10"></rect>
+         <rect x="419" y="549" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="429" y="569">(</text><a xlink:href="#opt_sequence_option_list" xlink:title="opt_sequence_option_list">
+            <rect x="467" y="551" width="184" height="32"></rect>
+            <rect x="465" y="549" width="184" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="475" y="569">opt_sequence_option_list</text></a><rect x="671" y="551" width="26" height="32" rx="10"></rect>
+         <rect x="669" y="549" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="679" y="569">)</text>
+         <path class="line" d="m17 17 h2 m20 0 h10 m48 0 h10 m20 0 h10 m56 0 h10 m0 0 h20 m-116 0 h20 m96 0 h20 m-136 0 q10 0 10 10 m116 0 q0 -10 10 -10 m-126 10 v24 m116 0 v-24 m-116 24 q0 10 10 10 m96 0 q10 0 10 -10 m-106 10 h10 m76 0 h10 m20 -44 h676 m-900 0 h20 m880 0 h20 m-920 0 q10 0 10 10 m900 0 q0 -10 10 -10 m-910 10 v68 m900 0 v-68 m-900 68 q0 10 10 10 m880 0 q10 0 10 -10 m-890 10 h10 m56 0 h10 m0 0 h804 m-890 -10 v20 m900 0 v-20 m-900 20 v24 m900 0 v-24 m-900 24 q0 10 10 10 m880 0 q10 0 10 -10 m-890 10 h10 m74 0 h10 m0 0 h786 m-890 -10 v20 m900 0 v-20 m-900 20 v24 m900 0 v-24 m-900 24 q0 10 10 10 m880 0 q10 0 10 -10 m-890 10 h10 m84 0 h10 m0 0 h10 m46 0 h10 m20 0 h10 m0 0 h406 m-436 0 h20 m416 0 h20 m-456 0 q10 0 10 10 m436 0 q0 -10 10 -10 m-446 10 v12 m436 0 v-12 m-436 12 q0 10 10 10 m416 0 q10 0 10 -10 m-426 10 h10 m64 0 h10 m0 0 h10 m58 0 h10 m0 0 h10 m234 0 h10 m20 -32 h10 m234 0 h10 m-890 -10 v20 m900 0 v-20 m-900 20 v56 m900 0 v-56 m-900 56 q0 10 10 10 m880 0 q10 0 10 -10 m-890 10 h10 m64 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m26 0 h10 m0 0 h620 m-890 -10 v20 m900 0 v-20 m-900 20 v24 m900 0 v-24 m-900 24 q0 10 10 10 m880 0 q10 0 10 -10 m-870 10 h10 m80 0 h10 m0 0 h54 m-174 0 h20 m154 0 h20 m-194 0 q10 0 10 10 m174 0 q0 -10 10 -10 m-184 10 v24 m174 0 v-24 m-174 24 q0 10 10 10 m154 0 q10 0 10 -10 m-164 10 h10 m40 0 h10 m0 0 h10 m74 0 h10 m20 -44 h10 m64 0 h10 m0 0 h602 m-890 -10 v20 m900 0 v-20 m-900 20 v68 m900 0 v-68 m-900 68 q0 10 10 10 m880 0 q10 0 10 -10 m-890 10 h10 m108 0 h10 m0 0 h10 m96 0 h10 m0 0 h10 m136 0 h10 m0 0 h10 m88 0 h10 m0 0 h10 m134 0 h10 m0 0 h218 m-890 -10 v20 m900 0 v-20 m-900 20 v24 m900 0 v-24 m-900 24 q0 10 10 10 m880 0 q10 0 10 -10 m-890 10 h10 m108 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m26 0 h10 m20 0 h10 m76 0 h10 m0 0 h4 m-120 0 h20 m100 0 h20 m-140 0 q10 0 10 10 m120 0 q0 -10 10 -10 m-130 10 v24 m120 0 v-24 m-120 24 q0 10 10 10 m100 0 q10 0 10 -10 m-110 10 h10 m80 0 h10 m20 -44 h436 m-890 -10 v20 m900 0 v-20 m-900 20 v68 m900 0 v-68 m-900 68 q0 10 10 10 m880 0 q10 0 10 -10 m-870 10 h10 m160 0 h10 m0 0 h24 m-224 0 h20 m204 0 h20 m-244 0 q10 0 10 10 m224 0 q0 -10 10 -10 m-234 10 v24 m224 0 v-24 m-224 24 q0 10 10 10 m204 0 q10 0 10 -10 m-214 10 h10 m184 0 h10 m20 -44 h10 m86 0 h10 m20 0 h10 m0 0 h286 m-316 0 h20 m296 0 h20 m-336 0 q10 0 10 10 m316 0 q0 -10 10 -10 m-326 10 v12 m316 0 v-12 m-316 12 q0 10 10 10 m296 0 q10 0 10 -10 m-306 10 h10 m26 0 h10 m0 0 h10 m184 0 h10 m0 0 h10 m26 0 h10 m20 -32 h194 m23 -516 h-3"></path>
+         <polygon points="949 17 957 13 957 21"></polygon>
+         <polygon points="949 17 941 13 941 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#col_qualification" title="col_qualification">col_qualification</a></li>
          </ul>
