@@ -1417,6 +1417,7 @@
             <li><a href="#alter_zone_partition_stmt" title="alter_zone_partition_stmt">alter_zone_partition_stmt</a></li>
             <li><a href="#alter_zone_table_stmt" title="alter_zone_table_stmt">alter_zone_table_stmt</a></li>
             <li><a href="#analyze_target" title="analyze_target">analyze_target</a></li>
+            <li><a href="#changefeed_target" title="changefeed_target">changefeed_target</a></li>
             <li><a href="#col_qualification_elem" title="col_qualification_elem">col_qualification_elem</a></li>
             <li><a href="#comment_stmt" title="comment_stmt">comment_stmt</a></li>
             <li><a href="#constraint_elem" title="constraint_elem">constraint_elem</a></li>
@@ -1438,7 +1439,6 @@
             <li><a href="#show_ranges_stmt" title="show_ranges_stmt">show_ranges_stmt</a></li>
             <li><a href="#show_stats_stmt" title="show_stats_stmt">show_stats_stmt</a></li>
             <li><a href="#show_zone_stmt" title="show_zone_stmt">show_zone_stmt</a></li>
-            <li><a href="#single_table_pattern_list" title="single_table_pattern_list">single_table_pattern_list</a></li>
             <li><a href="#sortby" title="sortby">sortby</a></li>
             <li><a href="#table_elem" title="table_elem">table_elem</a></li>
             <li><a href="#table_index_name" title="table_index_name">table_index_name</a></li>
@@ -8405,18 +8405,18 @@
          </p><ul>
             <li><a href="#create_schedule_for_backup_stmt" title="create_schedule_for_backup_stmt">create_schedule_for_backup_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="changefeed_targets" href="#changefeed_targets">changefeed_targets:</a></p><svg width="361" height="69">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="changefeed_targets" href="#changefeed_targets">changefeed_targets:</a></p><svg width="241" height="81">
          
-         <polygon points="9 17 1 13 1 21"></polygon>
-         <polygon points="17 17 9 13 9 21"></polygon>
-         <rect x="51" y="35" width="62" height="32" rx="10"></rect>
-         <rect x="49" y="33" width="62" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="59" y="53">TABLE</text><a xlink:href="#single_table_pattern_list" xlink:title="single_table_pattern_list">
-            <rect x="153" y="3" width="180" height="32"></rect>
-            <rect x="151" y="1" width="180" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="161" y="21">single_table_pattern_list</text></a><path class="line" d="m17 17 h2 m20 0 h10 m0 0 h72 m-102 0 h20 m82 0 h20 m-122 0 q10 0 10 10 m102 0 q0 -10 10 -10 m-112 10 v12 m102 0 v-12 m-102 12 q0 10 10 10 m82 0 q10 0 10 -10 m-92 10 h10 m62 0 h10 m20 -32 h10 m180 0 h10 m3 0 h-3"></path>
-         <polygon points="351 17 359 13 359 21"></polygon>
-         <polygon points="351 17 343 13 343 21"></polygon></svg><p>referenced by:
+         <polygon points="9 61 1 57 1 65"></polygon>
+         <polygon points="17 61 9 57 9 65"></polygon><a xlink:href="#changefeed_target" xlink:title="changefeed_target">
+            <rect x="51" y="47" width="142" height="32"></rect>
+            <rect x="49" y="45" width="142" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="65">changefeed_target</text></a><rect x="51" y="3" width="24" height="32" rx="10"></rect>
+         <rect x="49" y="1" width="24" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="21">,</text>
+         <path class="line" d="m17 61 h2 m20 0 h10 m142 0 h10 m-182 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m162 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-162 0 h10 m24 0 h10 m0 0 h118 m23 44 h-3"></path>
+         <polygon points="231 61 239 57 239 65"></polygon>
+         <polygon points="231 61 223 57 223 65"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#alter_changefeed_cmd" title="alter_changefeed_cmd">alter_changefeed_cmd</a></li>
             <li><a href="#create_changefeed_stmt" title="create_changefeed_stmt">create_changefeed_stmt</a></li>
@@ -11822,18 +11822,23 @@
             <li><a href="#col_qualification_elem" title="col_qualification_elem">col_qualification_elem</a></li>
             <li><a href="#create_sequence_stmt" title="create_sequence_stmt">create_sequence_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="single_table_pattern_list" href="#single_table_pattern_list">single_table_pattern_list:</a></p><svg width="195" height="81">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="changefeed_target" href="#changefeed_target">changefeed_target:</a></p><svg width="529" height="69">
          
-         <polygon points="9 61 1 57 1 65"></polygon>
-         <polygon points="17 61 9 57 9 65"></polygon><a xlink:href="#table_name" xlink:title="table_name">
-            <rect x="51" y="47" width="96" height="32"></rect>
-            <rect x="49" y="45" width="96" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="65">table_name</text></a><rect x="51" y="3" width="24" height="32" rx="10"></rect>
-         <rect x="49" y="1" width="24" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="59" y="21">,</text>
-         <path class="line" d="m17 61 h2 m20 0 h10 m96 0 h10 m-136 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m116 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-116 0 h10 m24 0 h10 m0 0 h72 m23 44 h-3"></path>
-         <polygon points="185 61 193 57 193 65"></polygon>
-         <polygon points="185 61 177 57 177 65"></polygon></svg><p>referenced by:
+         <polygon points="9 17 1 13 1 21"></polygon>
+         <polygon points="17 17 9 13 9 21"></polygon>
+         <rect x="51" y="35" width="62" height="32" rx="10"></rect>
+         <rect x="49" y="33" width="62" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="53">TABLE</text><a xlink:href="#table_name" xlink:title="table_name">
+            <rect x="153" y="3" width="96" height="32"></rect>
+            <rect x="151" y="1" width="96" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="161" y="21">table_name</text></a><rect x="289" y="35" width="72" height="32" rx="10"></rect>
+         <rect x="287" y="33" width="72" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="297" y="53">FAMILY</text><a xlink:href="#family_name" xlink:title="family_name">
+            <rect x="381" y="35" width="100" height="32"></rect>
+            <rect x="379" y="33" width="100" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="389" y="53">family_name</text></a><path class="line" d="m17 17 h2 m20 0 h10 m0 0 h72 m-102 0 h20 m82 0 h20 m-122 0 q10 0 10 10 m102 0 q0 -10 10 -10 m-112 10 v12 m102 0 v-12 m-102 12 q0 10 10 10 m82 0 q10 0 10 -10 m-92 10 h10 m62 0 h10 m20 -32 h10 m96 0 h10 m20 0 h10 m0 0 h202 m-232 0 h20 m212 0 h20 m-252 0 q10 0 10 10 m232 0 q0 -10 10 -10 m-242 10 v12 m232 0 v-12 m-232 12 q0 10 10 10 m212 0 q10 0 10 -10 m-222 10 h10 m72 0 h10 m0 0 h10 m100 0 h10 m23 -32 h-3"></path>
+         <polygon points="519 17 527 13 527 21"></polygon>
+         <polygon points="519 17 511 13 511 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#changefeed_targets" title="changefeed_targets">changefeed_targets</a></li>
          </ul>
@@ -14062,6 +14067,20 @@
          <polygon points="165 61 157 57 157 65"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#opt_enum_val_list" title="opt_enum_val_list">opt_enum_val_list</a></li>
+         </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="family_name" href="#family_name">family_name:</a></p><svg width="115" height="37">
+         
+         <polygon points="9 17 1 13 1 21"></polygon>
+         <polygon points="17 17 9 13 9 21"></polygon><a xlink:href="#name" xlink:title="name">
+            <rect x="31" y="3" width="56" height="32"></rect>
+            <rect x="29" y="1" width="56" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="39" y="21">name</text></a><path class="line" d="m17 17 h2 m0 0 h10 m56 0 h10 m3 0 h-3"></path>
+         <polygon points="105 17 113 13 113 21"></polygon>
+         <polygon points="105 17 97 13 97 21"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#changefeed_target" title="changefeed_target">changefeed_target</a></li>
+            <li><a href="#col_qualification" title="col_qualification">col_qualification</a></li>
+            <li><a href="#create_as_col_qualification" title="create_as_col_qualification">create_as_col_qualification</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="replication_options" href="#replication_options">replication_options:</a></p><svg width="311" height="81">
          
@@ -17401,19 +17420,6 @@
          <polygon points="453 17 461 13 461 21"></polygon>
          <polygon points="453 17 445 13 445 21"></polygon></svg><p>referenced by:
          </p><ul>
-            <li><a href="#create_as_col_qualification" title="create_as_col_qualification">create_as_col_qualification</a></li>
-         </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="family_name" href="#family_name">family_name:</a></p><svg width="115" height="37">
-         
-         <polygon points="9 17 1 13 1 21"></polygon>
-         <polygon points="17 17 9 13 9 21"></polygon><a xlink:href="#name" xlink:title="name">
-            <rect x="31" y="3" width="56" height="32"></rect>
-            <rect x="29" y="1" width="56" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="39" y="21">name</text></a><path class="line" d="m17 17 h2 m0 0 h10 m56 0 h10 m3 0 h-3"></path>
-         <polygon points="105 17 113 13 113 21"></polygon>
-         <polygon points="105 17 97 13 97 21"></polygon></svg><p>referenced by:
-         </p><ul>
-            <li><a href="#col_qualification" title="col_qualification">col_qualification</a></li>
             <li><a href="#create_as_col_qualification" title="create_as_col_qualification">create_as_col_qualification</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_as_params" href="#create_as_params">create_as_params:</a></p><svg width="231" height="81">
