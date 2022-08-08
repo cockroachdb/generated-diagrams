@@ -1636,6 +1636,7 @@
             <li><a href="#alter_database_owner" title="alter_database_owner">alter_database_owner</a></li>
             <li><a href="#alter_database_primary_region_stmt" title="alter_database_primary_region_stmt">alter_database_primary_region_stmt</a></li>
             <li><a href="#alter_database_set_secondary_region_stmt" title="alter_database_set_secondary_region_stmt">alter_database_set_secondary_region_stmt</a></li>
+            <li><a href="#alter_database_set_zone_config_extension_stmt" title="alter_database_set_zone_config_extension_stmt">alter_database_set_zone_config_extension_stmt</a></li>
             <li><a href="#alter_database_survival_goal_stmt" title="alter_database_survival_goal_stmt">alter_database_survival_goal_stmt</a></li>
             <li><a href="#alter_database_to_schema_stmt" title="alter_database_to_schema_stmt">alter_database_to_schema_stmt</a></li>
             <li><a href="#alter_rename_database_stmt" title="alter_rename_database_stmt">alter_rename_database_stmt</a></li>
@@ -6976,7 +6977,7 @@
          </p><ul>
             <li><a href="#alter_ddl_stmt" title="alter_ddl_stmt">alter_ddl_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_database_stmt" href="#alter_database_stmt">alter_database_stmt:</a></p><svg width="403" height="565">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_database_stmt" href="#alter_database_stmt">alter_database_stmt:</a></p><svg width="435" height="609">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon><a xlink:href="#alter_rename_database_stmt" xlink:title="alter_rename_database_stmt">
@@ -7018,9 +7019,12 @@
             <text class="nonterminal" x="59" y="505">alter_database_set_secondary_region_stmt</text></a><a xlink:href="#alter_database_drop_secondary_region" xlink:title="alter_database_drop_secondary_region">
             <rect x="51" y="531" width="276" height="32"></rect>
             <rect x="49" y="529" width="276" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="549">alter_database_drop_secondary_region</text></a><path class="line" d="m17 17 h2 m20 0 h10 m210 0 h10 m0 0 h94 m-344 0 h20 m324 0 h20 m-364 0 q10 0 10 10 m344 0 q0 -10 10 -10 m-354 10 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m192 0 h10 m0 0 h112 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m164 0 h10 m0 0 h140 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m232 0 h10 m0 0 h72 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m234 0 h10 m0 0 h70 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m240 0 h10 m0 0 h64 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m246 0 h10 m0 0 h58 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m258 0 h10 m0 0 h46 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m242 0 h10 m0 0 h62 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m246 0 h10 m0 0 h58 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m246 0 h10 m0 0 h58 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m304 0 h10 m-334 -10 v20 m344 0 v-20 m-344 20 v24 m344 0 v-24 m-344 24 q0 10 10 10 m324 0 q10 0 10 -10 m-334 10 h10 m276 0 h10 m0 0 h28 m23 -528 h-3"></path>
-         <polygon points="393 17 401 13 401 21"></polygon>
-         <polygon points="393 17 385 13 385 21"></polygon></svg><p>referenced by:
+            <text class="nonterminal" x="59" y="549">alter_database_drop_secondary_region</text></a><a xlink:href="#alter_database_set_zone_config_extension_stmt" xlink:title="alter_database_set_zone_config_extension_stmt">
+            <rect x="51" y="575" width="336" height="32"></rect>
+            <rect x="49" y="573" width="336" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="593">alter_database_set_zone_config_extension_stmt</text></a><path class="line" d="m17 17 h2 m20 0 h10 m210 0 h10 m0 0 h126 m-376 0 h20 m356 0 h20 m-396 0 q10 0 10 10 m376 0 q0 -10 10 -10 m-386 10 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m192 0 h10 m0 0 h144 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m164 0 h10 m0 0 h172 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m232 0 h10 m0 0 h104 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m234 0 h10 m0 0 h102 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m240 0 h10 m0 0 h96 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m246 0 h10 m0 0 h90 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m258 0 h10 m0 0 h78 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m242 0 h10 m0 0 h94 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m246 0 h10 m0 0 h90 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m246 0 h10 m0 0 h90 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m304 0 h10 m0 0 h32 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m276 0 h10 m0 0 h60 m-366 -10 v20 m376 0 v-20 m-376 20 v24 m376 0 v-24 m-376 24 q0 10 10 10 m356 0 q10 0 10 -10 m-366 10 h10 m336 0 h10 m23 -572 h-3"></path>
+         <polygon points="425 17 433 13 433 21"></polygon>
+         <polygon points="425 17 417 13 417 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#alter_ddl_stmt" title="alter_ddl_stmt">alter_ddl_stmt</a></li>
          </ul>
@@ -11158,6 +11162,44 @@
          </p><ul>
             <li><a href="#alter_database_stmt" title="alter_database_stmt">alter_database_stmt</a></li>
          </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_database_set_zone_config_extension_stmt" href="#alter_database_set_zone_config_extension_stmt">alter_database_set_zone_config_extension_stmt:</a></p><svg width="561" height="179">
+         
+         <polygon points="9 17 1 13 1 21"></polygon>
+         <polygon points="17 17 9 13 9 21"></polygon>
+         <rect x="31" y="3" width="62" height="32" rx="10"></rect>
+         <rect x="29" y="1" width="62" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="39" y="21">ALTER</text>
+         <rect x="113" y="3" width="92" height="32" rx="10"></rect>
+         <rect x="111" y="1" width="92" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="121" y="21">DATABASE</text><a xlink:href="#database_name" xlink:title="database_name">
+            <rect x="225" y="3" width="124" height="32"></rect>
+            <rect x="223" y="1" width="124" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="233" y="21">database_name</text></a><rect x="369" y="3" width="62" height="32" rx="10"></rect>
+         <rect x="367" y="1" width="62" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="377" y="21">ALTER</text>
+         <rect x="451" y="3" width="88" height="32" rx="10"></rect>
+         <rect x="449" y="1" width="88" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="459" y="21">LOCALITY</text>
+         <rect x="57" y="69" width="74" height="32" rx="10"></rect>
+         <rect x="55" y="67" width="74" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="65" y="87">GLOBAL</text>
+         <rect x="57" y="113" width="92" height="32" rx="10"></rect>
+         <rect x="55" y="111" width="92" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="65" y="131">REGIONAL</text>
+         <rect x="189" y="145" width="36" height="32" rx="10"></rect>
+         <rect x="187" y="143" width="36" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="197" y="163">IN</text><a xlink:href="#region_name" xlink:title="region_name">
+            <rect x="245" y="145" width="104" height="32"></rect>
+            <rect x="243" y="143" width="104" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="253" y="163">region_name</text></a><a xlink:href="#set_zone_config" xlink:title="set_zone_config">
+            <rect x="409" y="69" width="124" height="32"></rect>
+            <rect x="407" y="67" width="124" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="417" y="87">set_zone_config</text></a><path class="line" d="m17 17 h2 m0 0 h10 m62 0 h10 m0 0 h10 m92 0 h10 m0 0 h10 m124 0 h10 m0 0 h10 m62 0 h10 m0 0 h10 m88 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-546 66 l2 0 m2 0 l2 0 m2 0 l2 0 m22 0 h10 m74 0 h10 m0 0 h238 m-352 0 h20 m332 0 h20 m-372 0 q10 0 10 10 m352 0 q0 -10 10 -10 m-362 10 v24 m352 0 v-24 m-352 24 q0 10 10 10 m332 0 q10 0 10 -10 m-342 10 h10 m92 0 h10 m20 0 h10 m0 0 h170 m-200 0 h20 m180 0 h20 m-220 0 q10 0 10 10 m200 0 q0 -10 10 -10 m-210 10 v12 m200 0 v-12 m-200 12 q0 10 10 10 m180 0 q10 0 10 -10 m-190 10 h10 m36 0 h10 m0 0 h10 m104 0 h10 m40 -76 h10 m124 0 h10 m3 0 h-3"></path>
+         <polygon points="551 83 559 79 559 87"></polygon>
+         <polygon points="551 83 543 79 543 87"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#alter_database_stmt" title="alter_database_stmt">alter_database_stmt</a></li>
+         </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_zone_range_stmt" href="#alter_zone_range_stmt">alter_zone_range_stmt:</a></p><svg width="435" height="37">
          
          <polygon points="9 17 1 13 1 21"></polygon>
@@ -13843,6 +13885,7 @@
          <polygon points="467 17 475 13 475 21"></polygon>
          <polygon points="467 17 459 13 459 21"></polygon></svg><p>referenced by:
          </p><ul>
+            <li><a href="#alter_database_set_zone_config_extension_stmt" title="alter_database_set_zone_config_extension_stmt">alter_database_set_zone_config_extension_stmt</a></li>
             <li><a href="#alter_zone_database_stmt" title="alter_zone_database_stmt">alter_zone_database_stmt</a></li>
             <li><a href="#alter_zone_index_stmt" title="alter_zone_index_stmt">alter_zone_index_stmt</a></li>
             <li><a href="#alter_zone_partition_stmt" title="alter_zone_partition_stmt">alter_zone_partition_stmt</a></li>
@@ -13945,6 +13988,7 @@
          </p><ul>
             <li><a href="#alter_database_add_region_stmt" title="alter_database_add_region_stmt">alter_database_add_region_stmt</a></li>
             <li><a href="#alter_database_drop_region_stmt" title="alter_database_drop_region_stmt">alter_database_drop_region_stmt</a></li>
+            <li><a href="#alter_database_set_zone_config_extension_stmt" title="alter_database_set_zone_config_extension_stmt">alter_database_set_zone_config_extension_stmt</a></li>
             <li><a href="#locality" title="locality">locality</a></li>
             <li><a href="#primary_region_clause" title="primary_region_clause">primary_region_clause</a></li>
             <li><a href="#secondary_region_clause" title="secondary_region_clause">secondary_region_clause</a></li>
