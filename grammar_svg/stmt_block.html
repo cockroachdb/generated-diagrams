@@ -991,7 +991,7 @@
             <li><a href="#preparable_stmt" title="preparable_stmt">preparable_stmt</a></li>
             <li><a href="#row_source_extension_stmt" title="row_source_extension_stmt">row_source_extension_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="drop_stmt" href="#drop_stmt">drop_stmt:</a></p><svg width="321" height="169">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="drop_stmt" href="#drop_stmt">drop_stmt:</a></p><svg width="321" height="213">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon><a xlink:href="#drop_ddl_stmt" xlink:title="drop_ddl_stmt">
@@ -1006,7 +1006,10 @@
             <text class="nonterminal" x="59" y="109">drop_schedule_stmt</text></a><a xlink:href="#drop_external_connection_stmt" xlink:title="drop_external_connection_stmt">
             <rect x="51" y="135" width="222" height="32"></rect>
             <rect x="49" y="133" width="222" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="153">drop_external_connection_stmt</text></a><path class="line" d="m17 17 h2 m20 0 h10 m112 0 h10 m0 0 h110 m-262 0 h20 m242 0 h20 m-282 0 q10 0 10 10 m262 0 q0 -10 10 -10 m-272 10 v24 m262 0 v-24 m-262 24 q0 10 10 10 m242 0 q10 0 10 -10 m-252 10 h10 m118 0 h10 m0 0 h104 m-252 -10 v20 m262 0 v-20 m-262 20 v24 m262 0 v-24 m-262 24 q0 10 10 10 m242 0 q10 0 10 -10 m-252 10 h10 m150 0 h10 m0 0 h72 m-252 -10 v20 m262 0 v-20 m-262 20 v24 m262 0 v-24 m-262 24 q0 10 10 10 m242 0 q10 0 10 -10 m-252 10 h10 m222 0 h10 m23 -132 h-3"></path>
+            <text class="nonterminal" x="59" y="153">drop_external_connection_stmt</text></a><a xlink:href="#drop_tenant_stmt" xlink:title="drop_tenant_stmt">
+            <rect x="51" y="179" width="136" height="32"></rect>
+            <rect x="49" y="177" width="136" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="197">drop_tenant_stmt</text></a><path class="line" d="m17 17 h2 m20 0 h10 m112 0 h10 m0 0 h110 m-262 0 h20 m242 0 h20 m-282 0 q10 0 10 10 m262 0 q0 -10 10 -10 m-272 10 v24 m262 0 v-24 m-262 24 q0 10 10 10 m242 0 q10 0 10 -10 m-252 10 h10 m118 0 h10 m0 0 h104 m-252 -10 v20 m262 0 v-20 m-262 20 v24 m262 0 v-24 m-262 24 q0 10 10 10 m242 0 q10 0 10 -10 m-252 10 h10 m150 0 h10 m0 0 h72 m-252 -10 v20 m262 0 v-20 m-262 20 v24 m262 0 v-24 m-262 24 q0 10 10 10 m242 0 q10 0 10 -10 m-252 10 h10 m222 0 h10 m-252 -10 v20 m262 0 v-20 m-262 20 v24 m262 0 v-24 m-262 24 q0 10 10 10 m242 0 q10 0 10 -10 m-252 10 h10 m136 0 h10 m0 0 h86 m23 -176 h-3"></path>
          <polygon points="311 17 319 13 319 21"></polygon>
          <polygon points="311 17 303 13 303 21"></polygon></svg><p>referenced by:
          </p><ul>
@@ -1874,6 +1877,7 @@
             <li><a href="#database_name" title="database_name">database_name</a></li>
             <li><a href="#db_object_name_component" title="db_object_name_component">db_object_name_component</a></li>
             <li><a href="#deallocate_stmt" title="deallocate_stmt">deallocate_stmt</a></li>
+            <li><a href="#drop_tenant_stmt" title="drop_tenant_stmt">drop_tenant_stmt</a></li>
             <li><a href="#family_name" title="family_name">family_name</a></li>
             <li><a href="#import_format" title="import_format">import_format</a></li>
             <li><a href="#index_def" title="index_def">index_def</a></li>
@@ -3285,6 +3289,30 @@
             <text class="nonterminal" x="359" y="21">string_or_placeholder</text></a><path class="line" d="m17 17 h2 m0 0 h10 m58 0 h10 m0 0 h10 m90 0 h10 m0 0 h10 m112 0 h10 m0 0 h10 m158 0 h10 m3 0 h-3"></path>
          <polygon points="527 17 535 13 535 21"></polygon>
          <polygon points="527 17 519 13 519 21"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#drop_stmt" title="drop_stmt">drop_stmt</a></li>
+         </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="drop_tenant_stmt" href="#drop_tenant_stmt">drop_tenant_stmt:</a></p><svg width="471" height="69">
+         
+         <polygon points="9 17 1 13 1 21"></polygon>
+         <polygon points="17 17 9 13 9 21"></polygon>
+         <rect x="31" y="3" width="58" height="32" rx="10"></rect>
+         <rect x="29" y="1" width="58" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="39" y="21">DROP</text>
+         <rect x="109" y="3" width="74" height="32" rx="10"></rect>
+         <rect x="107" y="1" width="74" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="117" y="21">TENANT</text>
+         <rect x="223" y="35" width="34" height="32" rx="10"></rect>
+         <rect x="221" y="33" width="34" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="231" y="53">IF</text>
+         <rect x="277" y="35" width="70" height="32" rx="10"></rect>
+         <rect x="275" y="33" width="70" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="285" y="53">EXISTS</text><a xlink:href="#name" xlink:title="name">
+            <rect x="387" y="3" width="56" height="32"></rect>
+            <rect x="385" y="1" width="56" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="395" y="21">name</text></a><path class="line" d="m17 17 h2 m0 0 h10 m58 0 h10 m0 0 h10 m74 0 h10 m20 0 h10 m0 0 h134 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v12 m164 0 v-12 m-164 12 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m34 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m56 0 h10 m3 0 h-3"></path>
+         <polygon points="461 17 469 13 469 21"></polygon>
+         <polygon points="461 17 453 13 453 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#drop_stmt" title="drop_stmt">drop_stmt</a></li>
          </ul>
