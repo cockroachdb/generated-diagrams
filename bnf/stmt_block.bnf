@@ -198,7 +198,7 @@ create_stmt ::=
 	| create_schedule_stmt
 
 delete_stmt ::=
-	opt_with_clause 'DELETE' opt_batch_clause 'FROM' table_expr_opt_alias_idx opt_using_clause opt_where_clause opt_sort_clause opt_limit_clause returning_clause
+	opt_with_clause 'DELETE' 'FROM' table_expr_opt_alias_idx opt_using_clause opt_where_clause opt_sort_clause opt_limit_clause returning_clause
 
 drop_stmt ::=
 	drop_ddl_stmt
@@ -577,7 +577,6 @@ create_ddl_stmt ::=
 	| create_view_stmt
 	| create_sequence_stmt
 	| create_func_stmt
-	| create_proc_stmt
 
 create_stats_stmt ::=
 	'CREATE' 'STATISTICS' statistics_name opt_stats_columns 'FROM' create_stats_target opt_create_stats_options
@@ -599,11 +598,6 @@ create_schedule_stmt ::=
 
 opt_with_clause ::=
 	with_clause
-	| 
-
-opt_batch_clause ::=
-	'BATCH'
-	| 'BATCH' '(' batch_param_list ')'
 	| 
 
 table_expr_opt_alias_idx ::=
@@ -846,15 +840,12 @@ show_partitions_stmt ::=
 show_jobs_stmt ::=
 	'SHOW' 'AUTOMATIC' 'JOBS'
 	| 'SHOW' 'JOBS'
-	| 'SHOW' 'JOBS' 'WITH' show_job_options_list
 	| 'SHOW' 'CHANGEFEED' 'JOBS'
 	| 'SHOW' 'JOBS' select_stmt
-	| 'SHOW' 'JOBS' select_stmt 'WITH' show_job_options_list
 	| 'SHOW' 'JOBS' 'WHEN' 'COMPLETE' select_stmt
 	| 'SHOW' 'JOBS' for_schedules_clause
 	| 'SHOW' 'CHANGEFEED' 'JOBS' select_stmt
 	| 'SHOW' 'JOB' a_expr
-	| 'SHOW' 'JOB' a_expr 'WITH' show_job_options_list
 	| 'SHOW' 'CHANGEFEED' 'JOB' a_expr
 	| 'SHOW' 'JOB' 'WHEN' 'COMPLETE' a_expr
 
@@ -1026,7 +1017,6 @@ unreserved_keyword ::=
 	| 'BACKUP'
 	| 'BACKUPS'
 	| 'BACKWARD'
-	| 'BATCH'
 	| 'BEFORE'
 	| 'BEGIN'
 	| 'BINARY'
@@ -1034,7 +1024,6 @@ unreserved_keyword ::=
 	| 'BUNDLE'
 	| 'BY'
 	| 'CACHE'
-	| 'CALL'
 	| 'CALLED'
 	| 'CANCEL'
 	| 'CANCELQUERY'
@@ -1249,7 +1238,6 @@ unreserved_keyword ::=
 	| 'NOLOGIN'
 	| 'NOMODIFYCLUSTERSETTING'
 	| 'NONVOTERS'
-	| 'NOREPLICATION'
 	| 'NOSQLLOGIN'
 	| 'NOVIEWACTIVITY'
 	| 'NOVIEWACTIVITYREDACTED'
@@ -1295,7 +1283,6 @@ unreserved_keyword ::=
 	| 'PRIOR'
 	| 'PRIORITY'
 	| 'PRIVILEGES'
-	| 'PROCEDURE'
 	| 'PUBLIC'
 	| 'PUBLICATION'
 	| 'QUERIES'
@@ -1455,7 +1442,6 @@ unreserved_keyword ::=
 	| 'VIRTUAL_CLUSTER_NAME'
 	| 'VIRTUAL_CLUSTER'
 	| 'VISIBLE'
-	| 'VISIBILITY'
 	| 'VOLATILE'
 	| 'VOTERS'
 	| 'WITHIN'
@@ -1747,10 +1733,7 @@ create_sequence_stmt ::=
 	| 'CREATE' opt_temp 'SEQUENCE' 'IF' 'NOT' 'EXISTS' sequence_name opt_sequence_option_list
 
 create_func_stmt ::=
-	'CREATE' opt_or_replace 'FUNCTION' routine_create_name '(' opt_routine_param_with_default_list ')' 'RETURNS' opt_return_set routine_return_type opt_create_routine_opt_list opt_routine_body
-
-create_proc_stmt ::=
-	'CREATE' opt_or_replace 'PROCEDURE' routine_create_name '(' opt_routine_param_with_default_list ')' opt_create_routine_opt_list opt_routine_body
+	'CREATE' opt_or_replace 'FUNCTION' func_create_name '(' opt_func_param_with_default_list ')' 'RETURNS' opt_return_set func_return_type opt_create_func_opt_list opt_routine_body
 
 statistics_name ::=
 	name
@@ -1793,9 +1776,6 @@ create_schedule_for_backup_stmt ::=
 with_clause ::=
 	'WITH' cte_list
 	| 'WITH' 'RECURSIVE' cte_list
-
-batch_param_list ::=
-	( batch_param ) ( ( ',' batch_param ) )*
 
 table_name_opt_idx ::=
 	opt_only table_name opt_index_flags opt_descendant
@@ -1952,9 +1932,6 @@ opt_on_targets_roles ::=
 for_grantee_clause ::=
 	'FOR' role_spec_list
 	| 
-
-show_job_options_list ::=
-	( show_job_options ) ( ( ',' show_job_options ) )*
 
 opt_schedule_executor_type ::=
 	'FOR' 'BACKUP'
@@ -2425,7 +2402,6 @@ opt_index_visible ::=
 	'NOT' 'VISIBLE'
 	| 'INVISIBLE'
 	| 'VISIBLE'
-	| 'VISIBILITY' 'FCONST'
 	| 
 
 opt_schema_name ::=
@@ -2490,22 +2466,22 @@ opt_or_replace ::=
 	'OR' 'REPLACE'
 	| 
 
-routine_create_name ::=
+func_create_name ::=
 	db_object_name
 
-opt_routine_param_with_default_list ::=
-	routine_param_with_default_list
+opt_func_param_with_default_list ::=
+	func_param_with_default_list
 	| 
 
 opt_return_set ::=
 	'SETOF'
 	| 
 
-routine_return_type ::=
-	routine_param_type
+func_return_type ::=
+	func_param_type
 
-opt_create_routine_opt_list ::=
-	create_routine_opt_list
+opt_create_func_opt_list ::=
+	create_func_opt_list
 	| 
 
 opt_routine_body ::=
@@ -2547,9 +2523,6 @@ opt_full_backup_clause ::=
 
 cte_list ::=
 	( common_table_expr ) ( ( ',' common_table_expr ) )*
-
-batch_param ::=
-	'SIZE' a_expr
 
 opt_only ::=
 	'ONLY'
@@ -2645,8 +2618,6 @@ restore_options ::=
 	| 'SCHEMA_ONLY'
 	| 'VERIFY_BACKUP_TABLE_DATA'
 	| 'UNSAFE_RESTORE_INCOMPATIBLE_VERSION'
-	| 'EXECUTION' 'LOCALITY' '=' string_or_placeholder
-	| 'EXPERIMENTAL' 'DEFERRED' 'COPY'
 
 scrub_option_list ::=
 	( scrub_option ) ( ( ',' scrub_option ) )*
@@ -2696,9 +2667,6 @@ targets_roles ::=
 	| 'SCHEMA' schema_wildcard
 	| 'TYPE' type_name_list
 	| grant_targets
-
-show_job_options ::=
-	'EXECUTION' 'DETAILS'
 
 show_ranges_options ::=
 	( 'TABLES' | 'INDEXES' | 'DETAILS' | 'KEYS' | 'EXPLAIN' ) ( ( ',' 'TABLES' | ',' 'INDEXES' | ',' 'DETAILS' | ',' 'EXPLAIN' | ',' 'KEYS' ) )*
@@ -2862,7 +2830,6 @@ alter_index_visible ::=
 	'NOT' 'VISIBLE'
 	| 'INVISIBLE'
 	| 'VISIBLE'
-	| 'VISIBILITY' 'FCONST'
 
 sequence_option_list ::=
 	( sequence_option_elem ) ( ( sequence_option_elem ) )*
@@ -2915,7 +2882,7 @@ alter_backup_cmd ::=
 	'ADD' backup_kms
 
 alter_func_opt_list ::=
-	( common_routine_opt_item ) ( ( common_routine_opt_item ) )*
+	( common_func_opt_item ) ( ( common_func_opt_item ) )*
 
 opt_restrict ::=
 	'RESTRICT'
@@ -2961,8 +2928,6 @@ role_option ::=
 	| 'NOVIEWCLUSTERSETTING'
 	| password_clause
 	| valid_until_clause
-	| 'REPLICATION'
-	| 'NOREPLICATION'
 
 include_all_clusters ::=
 	'INCLUDE_ALL_VIRTUAL_CLUSTERS'
@@ -3101,14 +3066,14 @@ enum_val_list ::=
 composite_type_list ::=
 	( name simple_typename ) ( ( ',' name simple_typename ) )*
 
-routine_param_with_default_list ::=
-	( routine_param_with_default ) ( ( ',' routine_param_with_default ) )*
+func_param_with_default_list ::=
+	( func_param_with_default ) ( ( ',' func_param_with_default ) )*
 
-routine_param_type ::=
+func_param_type ::=
 	typename
 
-create_routine_opt_list ::=
-	( create_routine_opt_item ) ( ( create_routine_opt_item ) )*
+create_func_opt_list ::=
+	( create_func_opt_item ) ( ( create_func_opt_item ) )*
 
 routine_return_stmt ::=
 	'RETURN' a_expr
@@ -3277,7 +3242,7 @@ type_func_name_no_crdb_extra_keyword ::=
 	| 'SIMILAR'
 
 func_params_list ::=
-	( routine_param ) ( ( ',' routine_param ) )*
+	( func_param ) ( ( ',' func_param ) )*
 
 general_type_name ::=
 	type_function_name_no_crdb_extra
@@ -3363,7 +3328,7 @@ sequence_option_elem ::=
 backup_kms ::=
 	'NEW_KMS' '=' string_or_placeholder_opt_list 'WITH' 'OLD_KMS' '=' string_or_placeholder_opt_list
 
-common_routine_opt_item ::=
+common_func_opt_item ::=
 	'CALLED' 'ON' 'NULL' 'INPUT'
 	| 'RETURNS' 'NULL' 'ON' 'NULL' 'INPUT'
 	| 'STRICT'
@@ -3462,15 +3427,15 @@ family_def ::=
 create_as_constraint_def ::=
 	create_as_constraint_elem
 
-routine_param_with_default ::=
-	routine_param
-	| routine_param 'DEFAULT' a_expr
-	| routine_param '=' a_expr
+func_param_with_default ::=
+	func_param
+	| func_param 'DEFAULT' a_expr
+	| func_param '=' a_expr
 
-create_routine_opt_item ::=
-	'AS' routine_as opt_link_sym
+create_func_opt_item ::=
+	'AS' func_as
 	| 'LANGUAGE' non_reserved_word_or_sconst
-	| common_routine_opt_item
+	| common_func_opt_item
 
 routine_body_stmt ::=
 	stmt_without_legacy_transaction
@@ -3509,7 +3474,6 @@ bare_label_keywords ::=
 	| 'BACKUP'
 	| 'BACKUPS'
 	| 'BACKWARD'
-	| 'BATCH'
 	| 'BEFORE'
 	| 'BEGIN'
 	| 'BETWEEN'
@@ -3523,7 +3487,6 @@ bare_label_keywords ::=
 	| 'BUNDLE'
 	| 'BY'
 	| 'CACHE'
-	| 'CALL'
 	| 'CALLED'
 	| 'CANCEL'
 	| 'CANCELQUERY'
@@ -3795,7 +3758,6 @@ bare_label_keywords ::=
 	| 'NONE'
 	| 'NONVOTERS'
 	| 'NORMAL'
-	| 'NOREPLICATION'
 	| 'NOSQLLOGIN'
 	| 'NOT'
 	| 'NOTHING'
@@ -3857,7 +3819,6 @@ bare_label_keywords ::=
 	| 'PRIOR'
 	| 'PRIORITY'
 	| 'PRIVILEGES'
-	| 'PROCEDURE'
 	| 'PUBLIC'
 	| 'PUBLICATION'
 	| 'QUERIES'
@@ -4046,7 +4007,6 @@ bare_label_keywords ::=
 	| 'VIRTUAL_CLUSTER_NAME'
 	| 'VIRTUAL_CLUSTER'
 	| 'VISIBLE'
-	| 'VISIBILITY'
 	| 'VOLATILE'
 	| 'VOTERS'
 	| 'WHEN'
@@ -4127,12 +4087,12 @@ opt_nowait_or_skip ::=
 wildcard_pattern ::=
 	name '.' '*'
 
-routine_param ::=
-	routine_param_class param_name routine_param_type
-	| param_name routine_param_class routine_param_type
-	| param_name routine_param_type
-	| routine_param_class routine_param_type
-	| routine_param_type
+func_param ::=
+	func_param_class param_name func_param_type
+	| param_name func_param_class func_param_type
+	| param_name func_param_type
+	| func_param_class func_param_type
+	| func_param_type
 
 type_function_name_no_crdb_extra ::=
 	'identifier'
@@ -4354,12 +4314,8 @@ opt_family_name ::=
 create_as_constraint_elem ::=
 	'PRIMARY' 'KEY' '(' create_as_params ')' opt_with_storage_parameter_list
 
-routine_as ::=
+func_as ::=
 	'SCONST'
-
-opt_link_sym ::=
-	',' 'SCONST'
-	| 
 
 col_def_list_no_types ::=
 	( name ) ( ( ',' name ) )*
@@ -4380,7 +4336,7 @@ group_by_item ::=
 window_definition ::=
 	window_name 'AS' window_specification
 
-routine_param_class ::=
+func_param_class ::=
 	'IN'
 
 param_name ::=
