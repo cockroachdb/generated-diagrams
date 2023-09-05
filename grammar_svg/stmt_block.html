@@ -1618,7 +1618,7 @@
             <li><a href="#show_ranges_stmt" title="show_ranges_stmt">show_ranges_stmt</a></li>
             <li><a href="#show_stats_stmt" title="show_stats_stmt">show_stats_stmt</a></li>
             <li><a href="#show_zone_stmt" title="show_zone_stmt">show_zone_stmt</a></li>
-            <li><a href="#sortby" title="sortby">sortby</a></li>
+            <li><a href="#sortby_index" title="sortby_index">sortby_index</a></li>
             <li><a href="#table_elem" title="table_elem">table_elem</a></li>
             <li><a href="#table_index_name" title="table_index_name">table_index_name</a></li>
             <li><a href="#table_name_opt_idx" title="table_name_opt_idx">table_name_opt_idx</a></li>
@@ -5355,7 +5355,7 @@
             <li><a href="#create_index_stmt" title="create_index_stmt">create_index_stmt</a></li>
             <li><a href="#index_flags_param" title="index_flags_param">index_flags_param</a></li>
             <li><a href="#opt_index_flags" title="opt_index_flags">opt_index_flags</a></li>
-            <li><a href="#sortby" title="sortby">sortby</a></li>
+            <li><a href="#sortby_index" title="sortby_index">sortby_index</a></li>
             <li><a href="#table_index_name" title="table_index_name">table_index_name</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="standalone_index_name" href="#standalone_index_name">standalone_index_name:</a></p><svg width="185" height="37">
@@ -13532,18 +13532,21 @@
             <li><a href="#joined_table" title="joined_table">joined_table</a></li>
             <li><a href="#table_clause" title="table_clause">table_clause</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="sortby_list" href="#sortby_list">sortby_list:</a></p><svg width="159" height="81">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="sortby_list" href="#sortby_list">sortby_list:</a></p><svg width="241" height="125">
          
          <polygon points="9 61 1 57 1 65"></polygon>
          <polygon points="17 61 9 57 9 65"></polygon><a xlink:href="#sortby" xlink:title="sortby">
-            <rect x="51" y="47" width="60" height="32"></rect>
-            <rect x="49" y="45" width="60" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="65">sortby</text></a><rect x="51" y="3" width="24" height="32" rx="10"></rect>
+            <rect x="71" y="47" width="60" height="32"></rect>
+            <rect x="69" y="45" width="60" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="79" y="65">sortby</text></a><a xlink:href="#sortby_index" xlink:title="sortby_index">
+            <rect x="71" y="91" width="102" height="32"></rect>
+            <rect x="69" y="89" width="102" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="79" y="109">sortby_index</text></a><rect x="51" y="3" width="24" height="32" rx="10"></rect>
          <rect x="49" y="1" width="24" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="59" y="21">,</text>
-         <path class="line" d="m17 61 h2 m20 0 h10 m60 0 h10 m-100 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m80 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-80 0 h10 m24 0 h10 m0 0 h36 m23 44 h-3"></path>
-         <polygon points="149 61 157 57 157 65"></polygon>
-         <polygon points="149 61 141 57 141 65"></polygon></svg><p>referenced by:
+         <path class="line" d="m17 61 h2 m40 0 h10 m60 0 h10 m0 0 h42 m-142 0 h20 m122 0 h20 m-162 0 q10 0 10 10 m142 0 q0 -10 10 -10 m-152 10 v24 m142 0 v-24 m-142 24 q0 10 10 10 m122 0 q10 0 10 -10 m-132 10 h10 m102 0 h10 m-162 -44 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m162 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-162 0 h10 m24 0 h10 m0 0 h118 m23 44 h-3"></path>
+         <polygon points="231 61 239 57 239 65"></polygon>
+         <polygon points="231 61 223 57 223 65"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#single_sort_clause" title="single_sort_clause">single_sort_clause</a></li>
             <li><a href="#sort_clause" title="sort_clause">sort_clause</a></li>
@@ -16134,42 +16137,53 @@
          </p><ul>
             <li><a href="#table_ref" title="table_ref">table_ref</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="sortby" href="#sortby">sortby:</a></p><svg width="615" height="125">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="sortby" href="#sortby">sortby:</a></p><svg width="389" height="37">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon><a xlink:href="#a_expr" xlink:title="a_expr">
-            <rect x="51" y="3" width="64" height="32"></rect>
-            <rect x="49" y="1" width="64" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="21">a_expr</text></a><a xlink:href="#opt_asc_desc" xlink:title="opt_asc_desc">
-            <rect x="135" y="3" width="106" height="32"></rect>
-            <rect x="133" y="1" width="106" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="143" y="21">opt_asc_desc</text></a><a xlink:href="#opt_nulls_order" xlink:title="opt_nulls_order">
-            <rect x="261" y="3" width="120" height="32"></rect>
-            <rect x="259" y="1" width="120" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="269" y="21">opt_nulls_order</text></a><rect x="71" y="47" width="84" height="32" rx="10"></rect>
-         <rect x="69" y="45" width="84" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="79" y="65">PRIMARY</text>
-         <rect x="175" y="47" width="46" height="32" rx="10"></rect>
-         <rect x="173" y="45" width="46" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="183" y="65">KEY</text><a xlink:href="#table_name" xlink:title="table_name">
-            <rect x="241" y="47" width="96" height="32"></rect>
-            <rect x="239" y="45" width="96" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="249" y="65">table_name</text></a><rect x="71" y="91" width="64" height="32" rx="10"></rect>
-         <rect x="69" y="89" width="64" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="79" y="109">INDEX</text><a xlink:href="#table_name" xlink:title="table_name">
-            <rect x="155" y="91" width="96" height="32"></rect>
-            <rect x="153" y="89" width="96" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="163" y="109">table_name</text></a><rect x="271" y="91" width="32" height="32" rx="10"></rect>
-         <rect x="269" y="89" width="32" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="279" y="109">@</text><a xlink:href="#index_name" xlink:title="index_name">
-            <rect x="323" y="91" width="98" height="32"></rect>
-            <rect x="321" y="89" width="98" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="331" y="109">index_name</text></a><a xlink:href="#opt_asc_desc" xlink:title="opt_asc_desc">
-            <rect x="461" y="47" width="106" height="32"></rect>
-            <rect x="459" y="45" width="106" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="469" y="65">opt_asc_desc</text></a><path class="line" d="m17 17 h2 m20 0 h10 m64 0 h10 m0 0 h10 m106 0 h10 m0 0 h10 m120 0 h10 m0 0 h186 m-556 0 h20 m536 0 h20 m-576 0 q10 0 10 10 m556 0 q0 -10 10 -10 m-566 10 v24 m556 0 v-24 m-556 24 q0 10 10 10 m536 0 q10 0 10 -10 m-526 10 h10 m84 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m96 0 h10 m0 0 h84 m-390 0 h20 m370 0 h20 m-410 0 q10 0 10 10 m390 0 q0 -10 10 -10 m-400 10 v24 m390 0 v-24 m-390 24 q0 10 10 10 m370 0 q10 0 10 -10 m-380 10 h10 m64 0 h10 m0 0 h10 m96 0 h10 m0 0 h10 m32 0 h10 m0 0 h10 m98 0 h10 m20 -44 h10 m106 0 h10 m23 -44 h-3"></path>
-         <polygon points="605 17 613 13 613 21"></polygon>
-         <polygon points="605 17 597 13 597 21"></polygon></svg><p>referenced by:
+            <rect x="31" y="3" width="64" height="32"></rect>
+            <rect x="29" y="1" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="39" y="21">a_expr</text></a><a xlink:href="#opt_asc_desc" xlink:title="opt_asc_desc">
+            <rect x="115" y="3" width="106" height="32"></rect>
+            <rect x="113" y="1" width="106" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="123" y="21">opt_asc_desc</text></a><a xlink:href="#opt_nulls_order" xlink:title="opt_nulls_order">
+            <rect x="241" y="3" width="120" height="32"></rect>
+            <rect x="239" y="1" width="120" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="249" y="21">opt_nulls_order</text></a><path class="line" d="m17 17 h2 m0 0 h10 m64 0 h10 m0 0 h10 m106 0 h10 m0 0 h10 m120 0 h10 m3 0 h-3"></path>
+         <polygon points="379 17 387 13 387 21"></polygon>
+         <polygon points="379 17 371 13 371 21"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#single_sort_clause" title="single_sort_clause">single_sort_clause</a></li>
+            <li><a href="#sortby_list" title="sortby_list">sortby_list</a></li>
+         </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="sortby_index" href="#sortby_index">sortby_index:</a></p><svg width="575" height="81">
+         
+         <polygon points="9 17 1 13 1 21"></polygon>
+         <polygon points="17 17 9 13 9 21"></polygon>
+         <rect x="51" y="3" width="84" height="32" rx="10"></rect>
+         <rect x="49" y="1" width="84" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="21">PRIMARY</text>
+         <rect x="155" y="3" width="46" height="32" rx="10"></rect>
+         <rect x="153" y="1" width="46" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="163" y="21">KEY</text><a xlink:href="#table_name" xlink:title="table_name">
+            <rect x="221" y="3" width="96" height="32"></rect>
+            <rect x="219" y="1" width="96" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="229" y="21">table_name</text></a><rect x="51" y="47" width="64" height="32" rx="10"></rect>
+         <rect x="49" y="45" width="64" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="65">INDEX</text><a xlink:href="#table_name" xlink:title="table_name">
+            <rect x="135" y="47" width="96" height="32"></rect>
+            <rect x="133" y="45" width="96" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="143" y="65">table_name</text></a><rect x="251" y="47" width="32" height="32" rx="10"></rect>
+         <rect x="249" y="45" width="32" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="259" y="65">@</text><a xlink:href="#index_name" xlink:title="index_name">
+            <rect x="303" y="47" width="98" height="32"></rect>
+            <rect x="301" y="45" width="98" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="311" y="65">index_name</text></a><a xlink:href="#opt_asc_desc" xlink:title="opt_asc_desc">
+            <rect x="441" y="3" width="106" height="32"></rect>
+            <rect x="439" y="1" width="106" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="449" y="21">opt_asc_desc</text></a><path class="line" d="m17 17 h2 m20 0 h10 m84 0 h10 m0 0 h10 m46 0 h10 m0 0 h10 m96 0 h10 m0 0 h84 m-390 0 h20 m370 0 h20 m-410 0 q10 0 10 10 m390 0 q0 -10 10 -10 m-400 10 v24 m390 0 v-24 m-390 24 q0 10 10 10 m370 0 q10 0 10 -10 m-380 10 h10 m64 0 h10 m0 0 h10 m96 0 h10 m0 0 h10 m32 0 h10 m0 0 h10 m98 0 h10 m20 -44 h10 m106 0 h10 m3 0 h-3"></path>
+         <polygon points="565 17 573 13 573 21"></polygon>
+         <polygon points="565 17 557 13 557 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#single_sort_clause" title="single_sort_clause">single_sort_clause</a></li>
             <li><a href="#sortby_list" title="sortby_list">sortby_list</a></li>
@@ -19521,6 +19535,7 @@
          </p><ul>
             <li><a href="#index_elem_options" title="index_elem_options">index_elem_options</a></li>
             <li><a href="#sortby" title="sortby">sortby</a></li>
+            <li><a href="#sortby_index" title="sortby_index">sortby_index</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_nulls_order" href="#opt_nulls_order">opt_nulls_order:</a></p><svg width="283" height="101">
          
@@ -21216,7 +21231,7 @@
          </p><ul>
             <li><a href="#func_application" title="func_application">func_application</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="single_sort_clause" href="#single_sort_clause">single_sort_clause:</a></p><svg width="455" height="69">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="single_sort_clause" href="#single_sort_clause">single_sort_clause:</a></p><svg width="497" height="113">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon>
@@ -21226,16 +21241,24 @@
          <rect x="119" y="3" width="38" height="32" rx="10"></rect>
          <rect x="117" y="1" width="38" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="127" y="21">BY</text><a xlink:href="#sortby" xlink:title="sortby">
-            <rect x="177" y="3" width="60" height="32"></rect>
-            <rect x="175" y="1" width="60" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="185" y="21">sortby</text></a><rect x="277" y="35" width="24" height="32" rx="10"></rect>
-         <rect x="275" y="33" width="24" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="285" y="53">,</text><a xlink:href="#sortby_list" xlink:title="sortby_list">
-            <rect x="321" y="35" width="86" height="32"></rect>
-            <rect x="319" y="33" width="86" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="329" y="53">sortby_list</text></a><path class="line" d="m17 17 h2 m0 0 h10 m68 0 h10 m0 0 h10 m38 0 h10 m0 0 h10 m60 0 h10 m20 0 h10 m0 0 h140 m-170 0 h20 m150 0 h20 m-190 0 q10 0 10 10 m170 0 q0 -10 10 -10 m-180 10 v12 m170 0 v-12 m-170 12 q0 10 10 10 m150 0 q10 0 10 -10 m-160 10 h10 m24 0 h10 m0 0 h10 m86 0 h10 m23 -32 h-3"></path>
-         <polygon points="445 17 453 13 453 21"></polygon>
-         <polygon points="445 17 437 13 437 21"></polygon></svg><p>referenced by:
+            <rect x="197" y="3" width="60" height="32"></rect>
+            <rect x="195" y="1" width="60" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="205" y="21">sortby</text></a><rect x="297" y="35" width="24" height="32" rx="10"></rect>
+         <rect x="295" y="33" width="24" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="305" y="53">,</text><a xlink:href="#sortby_list" xlink:title="sortby_list">
+            <rect x="341" y="35" width="86" height="32"></rect>
+            <rect x="339" y="33" width="86" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="349" y="53">sortby_list</text></a><a xlink:href="#sortby_index" xlink:title="sortby_index">
+            <rect x="197" y="79" width="102" height="32"></rect>
+            <rect x="195" y="77" width="102" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="205" y="97">sortby_index</text></a><rect x="319" y="79" width="24" height="32" rx="10"></rect>
+         <rect x="317" y="77" width="24" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="327" y="97">,</text><a xlink:href="#sortby_list" xlink:title="sortby_list">
+            <rect x="363" y="79" width="86" height="32"></rect>
+            <rect x="361" y="77" width="86" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="371" y="97">sortby_list</text></a><path class="line" d="m17 17 h2 m0 0 h10 m68 0 h10 m0 0 h10 m38 0 h10 m20 0 h10 m60 0 h10 m20 0 h10 m0 0 h140 m-170 0 h20 m150 0 h20 m-190 0 q10 0 10 10 m170 0 q0 -10 10 -10 m-180 10 v12 m170 0 v-12 m-170 12 q0 10 10 10 m150 0 q10 0 10 -10 m-160 10 h10 m24 0 h10 m0 0 h10 m86 0 h10 m20 -32 h2 m-292 0 h20 m272 0 h20 m-312 0 q10 0 10 10 m292 0 q0 -10 10 -10 m-302 10 v56 m292 0 v-56 m-292 56 q0 10 10 10 m272 0 q10 0 10 -10 m-282 10 h10 m102 0 h10 m0 0 h10 m24 0 h10 m0 0 h10 m86 0 h10 m23 -76 h-3"></path>
+         <polygon points="487 17 495 13 495 21"></polygon>
+         <polygon points="487 17 479 13 479 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#within_group_clause" title="within_group_clause">within_group_clause</a></li>
          </ul>
