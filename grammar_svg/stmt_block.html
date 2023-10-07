@@ -2256,6 +2256,7 @@
             <li><a href="#drop_func_stmt" title="drop_func_stmt">drop_func_stmt</a></li>
             <li><a href="#drop_index_stmt" title="drop_index_stmt">drop_index_stmt</a></li>
             <li><a href="#drop_owned_by_stmt" title="drop_owned_by_stmt">drop_owned_by_stmt</a></li>
+            <li><a href="#drop_proc_stmt" title="drop_proc_stmt">drop_proc_stmt</a></li>
             <li><a href="#drop_schema_stmt" title="drop_schema_stmt">drop_schema_stmt</a></li>
             <li><a href="#drop_sequence_stmt" title="drop_sequence_stmt">drop_sequence_stmt</a></li>
             <li><a href="#drop_table_stmt" title="drop_table_stmt">drop_table_stmt</a></li>
@@ -3253,7 +3254,7 @@
             <li><a href="#update_stmt" title="update_stmt">update_stmt</a></li>
             <li><a href="#upsert_stmt" title="upsert_stmt">upsert_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="drop_ddl_stmt" href="#drop_ddl_stmt">drop_ddl_stmt:</a></p><svg width="253" height="345">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="drop_ddl_stmt" href="#drop_ddl_stmt">drop_ddl_stmt:</a></p><svg width="253" height="389">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon><a xlink:href="#drop_database_stmt" xlink:title="drop_database_stmt">
@@ -3280,7 +3281,10 @@
             <text class="nonterminal" x="59" y="285">drop_type_stmt</text></a><a xlink:href="#drop_func_stmt" xlink:title="drop_func_stmt">
             <rect x="51" y="311" width="120" height="32"></rect>
             <rect x="49" y="309" width="120" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="329">drop_func_stmt</text></a><path class="line" d="m17 17 h2 m20 0 h10 m154 0 h10 m-194 0 h20 m174 0 h20 m-214 0 q10 0 10 10 m194 0 q0 -10 10 -10 m-204 10 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m128 0 h10 m0 0 h26 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m126 0 h10 m0 0 h28 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m122 0 h10 m0 0 h32 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m154 0 h10 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m142 0 h10 m0 0 h12 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m122 0 h10 m0 0 h32 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m120 0 h10 m0 0 h34 m23 -308 h-3"></path>
+            <text class="nonterminal" x="59" y="329">drop_func_stmt</text></a><a xlink:href="#drop_proc_stmt" xlink:title="drop_proc_stmt">
+            <rect x="51" y="355" width="120" height="32"></rect>
+            <rect x="49" y="353" width="120" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="373">drop_proc_stmt</text></a><path class="line" d="m17 17 h2 m20 0 h10 m154 0 h10 m-194 0 h20 m174 0 h20 m-214 0 q10 0 10 10 m194 0 q0 -10 10 -10 m-204 10 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m128 0 h10 m0 0 h26 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m126 0 h10 m0 0 h28 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m122 0 h10 m0 0 h32 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m154 0 h10 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m142 0 h10 m0 0 h12 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m122 0 h10 m0 0 h32 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m120 0 h10 m0 0 h34 m-184 -10 v20 m194 0 v-20 m-194 20 v24 m194 0 v-24 m-194 24 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m120 0 h10 m0 0 h34 m23 -352 h-3"></path>
          <polygon points="243 17 251 13 251 21"></polygon>
          <polygon points="243 17 235 13 235 21"></polygon></svg><p>referenced by:
          </p><ul>
@@ -7151,6 +7155,7 @@
          <polygon points="277 61 269 57 269 65"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#drop_func_stmt" title="drop_func_stmt">drop_func_stmt</a></li>
+            <li><a href="#drop_proc_stmt" title="drop_proc_stmt">drop_proc_stmt</a></li>
             <li><a href="#grant_targets" title="grant_targets">grant_targets</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="privilege" href="#privilege">privilege:</a></p><svg width="171" height="169">
@@ -9692,6 +9697,33 @@
             <text class="nonterminal" x="479" y="119">opt_drop_behavior</text></a><path class="line" d="m17 17 h2 m0 0 h10 m58 0 h10 m0 0 h10 m92 0 h10 m20 0 h10 m0 0 h134 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v12 m164 0 v-12 m-164 12 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m34 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m214 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-192 98 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m142 0 h10 m3 0 h-3"></path>
          <polygon points="631 115 639 111 639 119"></polygon>
          <polygon points="631 115 623 111 623 119"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#drop_ddl_stmt" title="drop_ddl_stmt">drop_ddl_stmt</a></li>
+         </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="drop_proc_stmt" href="#drop_proc_stmt">drop_proc_stmt:</a></p><svg width="653" height="135">
+         
+         <polygon points="9 17 1 13 1 21"></polygon>
+         <polygon points="17 17 9 13 9 21"></polygon>
+         <rect x="31" y="3" width="58" height="32" rx="10"></rect>
+         <rect x="29" y="1" width="58" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="39" y="21">DROP</text>
+         <rect x="109" y="3" width="104" height="32" rx="10"></rect>
+         <rect x="107" y="1" width="104" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="117" y="21">PROCEDURE</text>
+         <rect x="253" y="35" width="34" height="32" rx="10"></rect>
+         <rect x="251" y="33" width="34" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="261" y="53">IF</text>
+         <rect x="307" y="35" width="70" height="32" rx="10"></rect>
+         <rect x="305" y="33" width="70" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="315" y="53">EXISTS</text><a xlink:href="#function_with_paramtypes_list" xlink:title="function_with_paramtypes_list">
+            <rect x="417" y="3" width="214" height="32"></rect>
+            <rect x="415" y="1" width="214" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="425" y="21">function_with_paramtypes_list</text></a><a xlink:href="#opt_drop_behavior" xlink:title="opt_drop_behavior">
+            <rect x="483" y="101" width="142" height="32"></rect>
+            <rect x="481" y="99" width="142" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="491" y="119">opt_drop_behavior</text></a><path class="line" d="m17 17 h2 m0 0 h10 m58 0 h10 m0 0 h10 m104 0 h10 m20 0 h10 m0 0 h134 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v12 m164 0 v-12 m-164 12 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m34 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m214 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-192 98 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m142 0 h10 m3 0 h-3"></path>
+         <polygon points="643 115 651 111 651 119"></polygon>
+         <polygon points="643 115 635 111 635 119"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#drop_ddl_stmt" title="drop_ddl_stmt">drop_ddl_stmt</a></li>
          </ul>
