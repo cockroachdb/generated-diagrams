@@ -1183,7 +1183,6 @@ unreserved_keyword ::=
 	| 'HOUR'
 	| 'IDENTITY'
 	| 'IMMEDIATE'
-	| 'IMMEDIATELY'
 	| 'IMMUTABLE'
 	| 'IMPORT'
 	| 'INCLUDE'
@@ -2998,8 +2997,6 @@ alter_backup_schedule_cmd ::=
 	| 'SET' 'FULL' 'BACKUP' 'ALWAYS'
 	| 'SET' 'FULL' 'BACKUP' sconst_or_placeholder
 	| 'SET' 'SCHEDULE' 'OPTION' kv_option
-	| 'EXECUTE' 'IMMEDIATELY'
-	| 'EXECUTE' 'FULL' 'IMMEDIATELY'
 
 role_option ::=
 	'CREATEROLE'
@@ -3757,7 +3754,6 @@ bare_label_keywords ::=
 	| 'IGNORE_FOREIGN_KEYS'
 	| 'ILIKE'
 	| 'IMMEDIATE'
-	| 'IMMEDIATELY'
 	| 'IMMUTABLE'
 	| 'IMPORT'
 	| 'IN'
