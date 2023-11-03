@@ -1,3 +1,0 @@
-create_schedule_stmt ::=
-	create_schedule_for_changefeed_stmt
-	| create_schedule_for_backup_stmt
