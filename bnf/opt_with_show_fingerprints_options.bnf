@@ -1,3 +1,0 @@
-opt_with_show_fingerprints_options ::=
-	'WITH' fingerprint_options_list
-	| 'WITH' 'OPTIONS' '(' fingerprint_options_list ')'
