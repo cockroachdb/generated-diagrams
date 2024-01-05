@@ -9286,6 +9286,7 @@
          </p><ul>
             <li><a href="#create_changefeed_stmt" title="create_changefeed_stmt">create_changefeed_stmt</a></li>
             <li><a href="#create_schedule_for_changefeed_stmt" title="create_schedule_for_changefeed_stmt">create_schedule_for_changefeed_stmt</a></li>
+            <li><a href="#opt_target_list" title="opt_target_list">opt_target_list</a></li>
             <li><a href="#returning_clause" title="returning_clause">returning_clause</a></li>
             <li><a href="#simple_select_clause" title="simple_select_clause">simple_select_clause</a></li>
          </ul>
@@ -14196,7 +14197,7 @@
          </p><ul>
             <li><a href="#opt_scrub_options_clause" title="opt_scrub_options_clause">opt_scrub_options_clause</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="simple_select_clause" href="#simple_select_clause">simple_select_clause:</a></p><svg width="699" height="191">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="simple_select_clause" href="#simple_select_clause">simple_select_clause:</a></p><svg width="739" height="191">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon>
@@ -14205,32 +14206,35 @@
          <text class="terminal" x="39" y="21">SELECT</text><a xlink:href="#opt_all_clause" xlink:title="opt_all_clause">
             <rect x="141" y="3" width="112" height="32"></rect>
             <rect x="139" y="1" width="112" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="149" y="21">opt_all_clause</text></a><rect x="141" y="47" width="86" height="32" rx="10"></rect>
-         <rect x="139" y="45" width="86" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="149" y="65">DISTINCT</text><a xlink:href="#distinct_on_clause" xlink:title="distinct_on_clause">
-            <rect x="141" y="91" width="138" height="32"></rect>
-            <rect x="139" y="89" width="138" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="149" y="109">distinct_on_clause</text></a><a xlink:href="#target_list" xlink:title="target_list">
-            <rect x="319" y="3" width="86" height="32"></rect>
-            <rect x="317" y="1" width="86" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="327" y="21">target_list</text></a><a xlink:href="#from_clause" xlink:title="from_clause">
-            <rect x="425" y="3" width="96" height="32"></rect>
-            <rect x="423" y="1" width="96" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="433" y="21">from_clause</text></a><a xlink:href="#opt_where_clause" xlink:title="opt_where_clause">
-            <rect x="541" y="3" width="136" height="32"></rect>
-            <rect x="539" y="1" width="136" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="549" y="21">opt_where_clause</text></a><a xlink:href="#group_clause" xlink:title="group_clause">
-            <rect x="301" y="157" width="106" height="32"></rect>
-            <rect x="299" y="155" width="106" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="309" y="175">group_clause</text></a><a xlink:href="#having_clause" xlink:title="having_clause">
-            <rect x="427" y="157" width="110" height="32"></rect>
-            <rect x="425" y="155" width="110" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="435" y="175">having_clause</text></a><a xlink:href="#window_clause" xlink:title="window_clause">
-            <rect x="557" y="157" width="114" height="32"></rect>
-            <rect x="555" y="155" width="114" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="565" y="175">window_clause</text></a><path class="line" d="m17 17 h2 m0 0 h10 m70 0 h10 m20 0 h10 m112 0 h10 m0 0 h26 m-178 0 h20 m158 0 h20 m-198 0 q10 0 10 10 m178 0 q0 -10 10 -10 m-188 10 v24 m178 0 v-24 m-178 24 q0 10 10 10 m158 0 q10 0 10 -10 m-168 10 h10 m86 0 h10 m0 0 h52 m-168 -10 v20 m178 0 v-20 m-178 20 v24 m178 0 v-24 m-178 24 q0 10 10 10 m158 0 q10 0 10 -10 m-168 10 h10 m138 0 h10 m20 -88 h10 m86 0 h10 m0 0 h10 m96 0 h10 m0 0 h10 m136 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-420 154 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m106 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m114 0 h10 m3 0 h-3"></path>
-         <polygon points="689 171 697 167 697 175"></polygon>
-         <polygon points="689 171 681 167 681 175"></polygon></svg><p>referenced by:
+            <text class="nonterminal" x="149" y="21">opt_all_clause</text></a><a xlink:href="#opt_target_list" xlink:title="opt_target_list">
+            <rect x="273" y="3" width="114" height="32"></rect>
+            <rect x="271" y="1" width="114" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="281" y="21">opt_target_list</text></a><rect x="161" y="47" width="86" height="32" rx="10"></rect>
+         <rect x="159" y="45" width="86" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="169" y="65">DISTINCT</text><a xlink:href="#distinct_on_clause" xlink:title="distinct_on_clause">
+            <rect x="161" y="91" width="138" height="32"></rect>
+            <rect x="159" y="89" width="138" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="169" y="109">distinct_on_clause</text></a><a xlink:href="#target_list" xlink:title="target_list">
+            <rect x="339" y="47" width="86" height="32"></rect>
+            <rect x="337" y="45" width="86" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="347" y="65">target_list</text></a><a xlink:href="#from_clause" xlink:title="from_clause">
+            <rect x="465" y="3" width="96" height="32"></rect>
+            <rect x="463" y="1" width="96" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="473" y="21">from_clause</text></a><a xlink:href="#opt_where_clause" xlink:title="opt_where_clause">
+            <rect x="581" y="3" width="136" height="32"></rect>
+            <rect x="579" y="1" width="136" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="589" y="21">opt_where_clause</text></a><a xlink:href="#group_clause" xlink:title="group_clause">
+            <rect x="341" y="157" width="106" height="32"></rect>
+            <rect x="339" y="155" width="106" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="349" y="175">group_clause</text></a><a xlink:href="#having_clause" xlink:title="having_clause">
+            <rect x="467" y="157" width="110" height="32"></rect>
+            <rect x="465" y="155" width="110" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="475" y="175">having_clause</text></a><a xlink:href="#window_clause" xlink:title="window_clause">
+            <rect x="597" y="157" width="114" height="32"></rect>
+            <rect x="595" y="155" width="114" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="605" y="175">window_clause</text></a><path class="line" d="m17 17 h2 m0 0 h10 m70 0 h10 m20 0 h10 m112 0 h10 m0 0 h10 m114 0 h10 m0 0 h38 m-324 0 h20 m304 0 h20 m-344 0 q10 0 10 10 m324 0 q0 -10 10 -10 m-334 10 v24 m324 0 v-24 m-324 24 q0 10 10 10 m304 0 q10 0 10 -10 m-294 10 h10 m86 0 h10 m0 0 h52 m-178 0 h20 m158 0 h20 m-198 0 q10 0 10 10 m178 0 q0 -10 10 -10 m-188 10 v24 m178 0 v-24 m-178 24 q0 10 10 10 m158 0 q10 0 10 -10 m-168 10 h10 m138 0 h10 m20 -44 h10 m86 0 h10 m20 -44 h10 m96 0 h10 m0 0 h10 m136 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-420 154 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m106 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m114 0 h10 m3 0 h-3"></path>
+         <polygon points="729 171 737 167 737 175"></polygon>
+         <polygon points="729 171 721 167 721 175"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#simple_select" title="simple_select">simple_select</a></li>
          </ul>
@@ -16638,6 +16642,18 @@
          <path class="line" d="m17 5 h2 m20 0 h10 m0 0 h54 m-84 0 h20 m64 0 h20 m-104 0 q10 0 10 10 m84 0 q0 -10 10 -10 m-94 10 v12 m84 0 v-12 m-84 12 q0 10 10 10 m64 0 q10 0 10 -10 m-74 10 h10 m44 0 h10 m23 -32 h-3"></path>
          <polygon points="133 5 141 1 141 9"></polygon>
          <polygon points="133 5 125 1 125 9"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#simple_select_clause" title="simple_select_clause">simple_select_clause</a></li>
+         </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_target_list" href="#opt_target_list">opt_target_list:</a></p><svg width="185" height="57">
+         
+         <polygon points="9 5 1 1 1 9"></polygon>
+         <polygon points="17 5 9 1 9 9"></polygon><a xlink:href="#target_list" xlink:title="target_list">
+            <rect x="51" y="23" width="86" height="32"></rect>
+            <rect x="49" y="21" width="86" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="41">target_list</text></a><path class="line" d="m17 5 h2 m20 0 h10 m0 0 h96 m-126 0 h20 m106 0 h20 m-146 0 q10 0 10 10 m126 0 q0 -10 10 -10 m-136 10 v12 m126 0 v-12 m-126 12 q0 10 10 10 m106 0 q10 0 10 -10 m-116 10 h10 m86 0 h10 m23 -32 h-3"></path>
+         <polygon points="175 5 183 1 183 9"></polygon>
+         <polygon points="175 5 167 1 167 9"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#simple_select_clause" title="simple_select_clause">simple_select_clause</a></li>
          </ul>
