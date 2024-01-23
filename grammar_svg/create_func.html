@@ -1,95 +1,89 @@
-<div style="overflow-x:auto;"><svg width="747" height="725">
-<polygon points="11 17 3 13 3 21"></polygon>
-<polygon points="19 17 11 13 11 21"></polygon>
-<rect x="33" y="3" width="72" height="32" rx="10"></rect>
-<rect x="31" y="1" width="72" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="41" y="21">CREATE</text>
-<rect x="145" y="35" width="40" height="32" rx="10"></rect>
-<rect x="143" y="33" width="40" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="153" y="53">OR</text>
-<rect x="205" y="35" width="80" height="32" rx="10"></rect>
-<rect x="203" y="33" width="80" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="213" y="53">REPLACE</text>
-<rect x="325" y="3" width="92" height="32" rx="10"></rect>
-<rect x="323" y="1" width="92" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="333" y="21">FUNCTION</text><a xlink:href="sql-grammar.html#routine_create_name" xlink:title="routine_create_name">
-<rect x="437" y="3" width="156" height="32"></rect>
-<rect x="435" y="1" width="156" height="32" class="nonterminal"></rect>
-<text class="nonterminal" x="445" y="21">routine_create_name</text></a><rect x="613" y="3" width="26" height="32" rx="10"></rect>
-<rect x="611" y="1" width="26" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="621" y="21">(</text><a xlink:href="sql-grammar.html#routine_param" xlink:title="routine_param">
-<rect x="98" y="145" width="114" height="32"></rect>
-<rect x="96" y="143" width="114" height="32" class="nonterminal"></rect>
-<text class="nonterminal" x="106" y="163">routine_param</text></a><rect x="98" y="101" width="24" height="32" rx="10"></rect>
-<rect x="96" y="99" width="24" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="106" y="119">,</text>
-<rect x="272" y="145" width="26" height="32" rx="10"></rect>
-<rect x="270" y="143" width="26" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="280" y="163">)</text>
-<rect x="318" y="145" width="84" height="32" rx="10"></rect>
-<rect x="316" y="143" width="84" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="326" y="163">RETURNS</text>
-<rect x="442" y="177" width="64" height="32" rx="10"></rect>
-<rect x="440" y="175" width="64" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="450" y="195">SETOF</text><a xlink:href="sql-grammar.html#routine_return_type" xlink:title="routine_return_type">
-<rect x="546" y="145" width="148" height="32"></rect>
-<rect x="544" y="143" width="148" height="32" class="nonterminal"></rect>
-<text class="nonterminal" x="554" y="163">routine_return_type</text></a><rect x="85" y="259" width="38" height="32" rx="10"></rect>
-<rect x="83" y="257" width="38" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="93" y="277">AS</text>
-<rect x="143" y="259" width="76" height="32" rx="10"></rect>
-<rect x="141" y="257" width="76" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="151" y="277">SCONST</text>
-<rect x="259" y="291" width="24" height="32" rx="10"></rect>
-<rect x="257" y="289" width="24" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="267" y="309">,</text>
-<rect x="303" y="291" width="76" height="32" rx="10"></rect>
-<rect x="301" y="289" width="76" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="311" y="309">SCONST</text>
-<rect x="85" y="335" width="94" height="32" rx="10"></rect>
-<rect x="83" y="333" width="94" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="93" y="353">LANGUAGE</text>
-<rect x="199" y="335" width="48" height="32" rx="10"></rect>
-<rect x="197" y="333" width="48" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="207" y="353">SQL</text>
-<rect x="105" y="379" width="72" height="32" rx="10"></rect>
-<rect x="103" y="377" width="72" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="113" y="397">CALLED</text>
-<rect x="105" y="423" width="84" height="32" rx="10"></rect>
-<rect x="103" y="421" width="84" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="113" y="441">RETURNS</text>
-<rect x="209" y="423" width="56" height="32" rx="10"></rect>
-<rect x="207" y="421" width="56" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="217" y="441">NULL</text>
-<rect x="305" y="379" width="40" height="32" rx="10"></rect>
-<rect x="303" y="377" width="40" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="313" y="397">ON</text>
-<rect x="365" y="379" width="56" height="32" rx="10"></rect>
-<rect x="363" y="377" width="56" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="373" y="397">NULL</text>
-<rect x="441" y="379" width="64" height="32" rx="10"></rect>
-<rect x="439" y="377" width="64" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="449" y="397">INPUT</text>
-<rect x="85" y="467" width="70" height="32" rx="10"></rect>
-<rect x="83" y="465" width="70" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="93" y="485">STRICT</text>
-<rect x="85" y="511" width="102" height="32" rx="10"></rect>
-<rect x="83" y="509" width="102" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="93" y="529">IMMUTABLE</text>
-<rect x="85" y="555" width="72" height="32" rx="10"></rect>
-<rect x="83" y="553" width="72" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="93" y="573">STABLE</text>
-<rect x="85" y="599" width="88" height="32" rx="10"></rect>
-<rect x="83" y="597" width="88" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="93" y="617">VOLATILE</text>
-<rect x="105" y="675" width="48" height="32" rx="10"></rect>
-<rect x="103" y="673" width="48" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="113" y="693">NOT</text>
-<rect x="193" y="643" width="102" height="32" rx="10"></rect>
-<rect x="191" y="641" width="102" height="32" class="terminal" rx="10"></rect>
-<text class="terminal" x="201" y="661">LEAKPROOF</text><a xlink:href="sql-grammar.html#opt_routine_body" xlink:title="opt_routine_body">
-<rect x="585" y="259" width="134" height="32"></rect>
-<rect x="583" y="257" width="134" height="32" class="nonterminal"></rect>
-<text class="nonterminal" x="593" y="277">opt_routine_body</text></a><path class="line" d="m19 17 h2 m0 0 h10 m72 0 h10 m20 0 h10 m0 0 h150 m-180 0 h20 m160 0 h20 m-200 0 q10 0 10 10 m180 0 q0 -10 10 -10 m-190 10 v12 m180 0 v-12 m-180 12 q0 10 10 10 m160 0 q10 0 10 -10 m-170 10 h10 m40 0 h10 m0 0 h10 m80 0 h10 m20 -32 h10 m92 0 h10 m0 0 h10 m156 0 h10 m0 0 h10 m26 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-625 142 l2 0 m2 0 l2 0 m2 0 l2 0 m42 0 h10 m114 0 h10 m-154 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m134 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-134 0 h10 m24 0 h10 m0 0 h90 m-174 44 h20 m174 0 h20 m-214 0 q10 0 10 10 m194 0 q0 -10 10 -10 m-204 10 v14 m194 0 v-14 m-194 14 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m0 0 h164 m20 -34 h10 m26 0 h10 m0 0 h10 m84 0 h10 m20 0 h10 m0 0 h74 m-104 0 h20 m84 0 h20 m-124 0 q10 0 10 10 m104 0 q0 -10 10 -10 m-114 10 v12 m104 0 v-12 m-104 12 q0 10 10 10 m84 0 q10 0 10 -10 m-94 10 h10 m64 0 h10 m20 -32 h10 m148 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-713 114 l2 0 m2 0 l2 0 m2 0 l2 0 m62 0 h10 m38 0 h10 m0 0 h10 m76 0 h10 m20 0 h10 m0 0 h130 m-160 0 h20 m140 0 h20 m-180 0 q10 0 10 10 m160 0 q0 -10 10 -10 m-170 10 v12 m160 0 v-12 m-160 12 q0 10 10 10 m140 0 q10 0 10 -10 m-150 10 h10 m24 0 h10 m0 0 h10 m76 0 h10 m20 -32 h106 m-460 0 h20 m440 0 h20 m-480 0 q10 0 10 10 m460 0 q0 -10 10 -10 m-470 10 v56 m460 0 v-56 m-460 56 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m94 0 h10 m0 0 h10 m48 0 h10 m0 0 h258 m-450 -10 v20 m460 0 v-20 m-460 20 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-430 10 h10 m72 0 h10 m0 0 h88 m-200 0 h20 m180 0 h20 m-220 0 q10 0 10 10 m200 0 q0 -10 10 -10 m-210 10 v24 m200 0 v-24 m-200 24 q0 10 10 10 m180 0 q10 0 10 -10 m-190 10 h10 m84 0 h10 m0 0 h10 m56 0 h10 m20 -44 h10 m40 0 h10 m0 0 h10 m56 0 h10 m0 0 h10 m64 0 h10 m-450 -10 v20 m460 0 v-20 m-460 20 v68 m460 0 v-68 m-460 68 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m70 0 h10 m0 0 h350 m-450 -10 v20 m460 0 v-20 m-460 20 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m102 0 h10 m0 0 h318 m-450 -10 v20 m460 0 v-20 m-460 20 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m72 0 h10 m0 0 h348 m-450 -10 v20 m460 0 v-20 m-460 20 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m88 0 h10 m0 0 h332 m-450 -10 v20 m460 0 v-20 m-460 20 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-430 10 h10 m0 0 h58 m-88 0 h20 m68 0 h20 m-108 0 q10 0 10 10 m88 0 q0 -10 10 -10 m-98 10 v12 m88 0 v-12 m-88 12 q0 10 10 10 m68 0 q10 0 10 -10 m-78 10 h10 m48 0 h10 m20 -32 h10 m102 0 h10 m0 0 h210 m-480 -384 l20 0 m-1 0 q-9 0 -9 -10 l0 -12 q0 -10 10 -10 m480 32 l20 0 m-20 0 q10 0 10 -10 l0 -12 q0 -10 -10 -10 m-480 0 h10 m0 0 h470 m-520 32 h20 m520 0 h20 m-560 0 q10 0 10 10 m540 0 q0 -10 10 -10 m-550 10 v430 m540 0 v-430 m-540 430 q0 10 10 10 m520 0 q10 0 10 -10 m-530 10 h10 m0 0 h510 m20 -450 h10 m134 0 h10 m3 0 h-3"></path>
-<polygon points="737 273 745 269 745 277"></polygon>
-<polygon points="737 273 729 269 729 277"></polygon></svg></div>
+<div style="overflow-x:auto;"><svg width="683" height="737">
+<polygon points="9 17 1 13 1 21"></polygon>
+<polygon points="17 17 9 13 9 21"></polygon>
+<rect x="31" y="3" width="72" height="32" rx="10"></rect>
+<rect x="29" y="1" width="72" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="39" y="21">CREATE</text>
+<rect x="143" y="35" width="40" height="32" rx="10"></rect>
+<rect x="141" y="33" width="40" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="151" y="53">OR</text>
+<rect x="203" y="35" width="80" height="32" rx="10"></rect>
+<rect x="201" y="33" width="80" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="211" y="53">REPLACE</text>
+<rect x="323" y="3" width="92" height="32" rx="10"></rect>
+<rect x="321" y="1" width="92" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="331" y="21">FUNCTION</text><a xlink:href="sql-grammar.html#routine_create_name" xlink:title="routine_create_name">
+<rect x="435" y="3" width="156" height="32"></rect>
+<rect x="433" y="1" width="156" height="32" class="nonterminal"></rect>
+<text class="nonterminal" x="443" y="21">routine_create_name</text></a><rect x="611" y="3" width="26" height="32" rx="10"></rect>
+<rect x="609" y="1" width="26" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="619" y="21">(</text><a xlink:href="sql-grammar.html#routine_param" xlink:title="routine_param">
+<rect x="65" y="145" width="114" height="32"></rect>
+<rect x="63" y="143" width="114" height="32" class="nonterminal"></rect>
+<text class="nonterminal" x="73" y="163">routine_param</text></a><rect x="65" y="101" width="24" height="32" rx="10"></rect>
+<rect x="63" y="99" width="24" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="73" y="119">,</text>
+<rect x="239" y="145" width="26" height="32" rx="10"></rect>
+<rect x="237" y="143" width="26" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="247" y="163">)</text>
+<rect x="285" y="145" width="84" height="32" rx="10"></rect>
+<rect x="283" y="143" width="84" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="293" y="163">RETURNS</text>
+<rect x="409" y="177" width="64" height="32" rx="10"></rect>
+<rect x="407" y="175" width="64" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="417" y="195">SETOF</text><a xlink:href="sql-grammar.html#routine_return_type" xlink:title="routine_return_type">
+<rect x="513" y="145" width="148" height="32"></rect>
+<rect x="511" y="143" width="148" height="32" class="nonterminal"></rect>
+<text class="nonterminal" x="521" y="163">routine_return_type</text></a><rect x="175" y="259" width="38" height="32" rx="10"></rect>
+<rect x="173" y="257" width="38" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="183" y="277">AS</text><a xlink:href="sql-grammar.html#routine_body_str" xlink:title="routine_body_str">
+<rect x="233" y="259" width="130" height="32"></rect>
+<rect x="231" y="257" width="130" height="32" class="nonterminal"></rect>
+<text class="nonterminal" x="241" y="277">routine_body_str</text></a><rect x="175" y="303" width="94" height="32" rx="10"></rect>
+<rect x="173" y="301" width="94" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="183" y="321">LANGUAGE</text>
+<rect x="309" y="303" width="48" height="32" rx="10"></rect>
+<rect x="307" y="301" width="48" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="317" y="321">SQL</text>
+<rect x="309" y="347" width="84" height="32" rx="10"></rect>
+<rect x="307" y="345" width="84" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="317" y="365">PLPGSQL</text>
+<rect x="195" y="391" width="72" height="32" rx="10"></rect>
+<rect x="193" y="389" width="72" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="203" y="409">CALLED</text>
+<rect x="195" y="435" width="84" height="32" rx="10"></rect>
+<rect x="193" y="433" width="84" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="203" y="453">RETURNS</text>
+<rect x="299" y="435" width="56" height="32" rx="10"></rect>
+<rect x="297" y="433" width="56" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="307" y="453">NULL</text>
+<rect x="395" y="391" width="40" height="32" rx="10"></rect>
+<rect x="393" y="389" width="40" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="403" y="409">ON</text>
+<rect x="455" y="391" width="56" height="32" rx="10"></rect>
+<rect x="453" y="389" width="56" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="463" y="409">NULL</text>
+<rect x="531" y="391" width="64" height="32" rx="10"></rect>
+<rect x="529" y="389" width="64" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="539" y="409">INPUT</text>
+<rect x="175" y="479" width="70" height="32" rx="10"></rect>
+<rect x="173" y="477" width="70" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="183" y="497">STRICT</text>
+<rect x="175" y="523" width="102" height="32" rx="10"></rect>
+<rect x="173" y="521" width="102" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="183" y="541">IMMUTABLE</text>
+<rect x="175" y="567" width="72" height="32" rx="10"></rect>
+<rect x="173" y="565" width="72" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="183" y="585">STABLE</text>
+<rect x="175" y="611" width="88" height="32" rx="10"></rect>
+<rect x="173" y="609" width="88" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="183" y="629">VOLATILE</text>
+<rect x="195" y="687" width="48" height="32" rx="10"></rect>
+<rect x="193" y="685" width="48" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="203" y="705">NOT</text>
+<rect x="283" y="655" width="102" height="32" rx="10"></rect>
+<rect x="281" y="653" width="102" height="32" class="terminal" rx="10"></rect>
+<text class="terminal" x="291" y="673">LEAKPROOF</text>
+<path class="line" d="m17 17 h2 m0 0 h10 m72 0 h10 m20 0 h10 m0 0 h150 m-180 0 h20 m160 0 h20 m-200 0 q10 0 10 10 m180 0 q0 -10 10 -10 m-190 10 v12 m180 0 v-12 m-180 12 q0 10 10 10 m160 0 q10 0 10 -10 m-170 10 h10 m40 0 h10 m0 0 h10 m80 0 h10 m20 -32 h10 m92 0 h10 m0 0 h10 m156 0 h10 m0 0 h10 m26 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-656 142 l2 0 m2 0 l2 0 m2 0 l2 0 m42 0 h10 m114 0 h10 m-154 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m134 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-134 0 h10 m24 0 h10 m0 0 h90 m-174 44 h20 m174 0 h20 m-214 0 q10 0 10 10 m194 0 q0 -10 10 -10 m-204 10 v14 m194 0 v-14 m-194 14 q0 10 10 10 m174 0 q10 0 10 -10 m-184 10 h10 m0 0 h164 m20 -34 h10 m26 0 h10 m0 0 h10 m84 0 h10 m20 0 h10 m0 0 h74 m-104 0 h20 m84 0 h20 m-124 0 q10 0 10 10 m104 0 q0 -10 10 -10 m-114 10 v12 m104 0 v-12 m-104 12 q0 10 10 10 m84 0 q10 0 10 -10 m-94 10 h10 m64 0 h10 m20 -32 h10 m148 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-590 114 l2 0 m2 0 l2 0 m2 0 l2 0 m62 0 h10 m38 0 h10 m0 0 h10 m130 0 h10 m0 0 h232 m-460 0 h20 m440 0 h20 m-480 0 q10 0 10 10 m460 0 q0 -10 10 -10 m-470 10 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m94 0 h10 m20 0 h10 m48 0 h10 m0 0 h36 m-124 0 h20 m104 0 h20 m-144 0 q10 0 10 10 m124 0 q0 -10 10 -10 m-134 10 v24 m124 0 v-24 m-124 24 q0 10 10 10 m104 0 q10 0 10 -10 m-114 10 h10 m84 0 h10 m20 -44 h182 m-450 -10 v20 m460 0 v-20 m-460 20 v68 m460 0 v-68 m-460 68 q0 10 10 10 m440 0 q10 0 10 -10 m-430 10 h10 m72 0 h10 m0 0 h88 m-200 0 h20 m180 0 h20 m-220 0 q10 0 10 10 m200 0 q0 -10 10 -10 m-210 10 v24 m200 0 v-24 m-200 24 q0 10 10 10 m180 0 q10 0 10 -10 m-190 10 h10 m84 0 h10 m0 0 h10 m56 0 h10 m20 -44 h10 m40 0 h10 m0 0 h10 m56 0 h10 m0 0 h10 m64 0 h10 m-450 -10 v20 m460 0 v-20 m-460 20 v68 m460 0 v-68 m-460 68 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m70 0 h10 m0 0 h350 m-450 -10 v20 m460 0 v-20 m-460 20 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m102 0 h10 m0 0 h318 m-450 -10 v20 m460 0 v-20 m-460 20 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m72 0 h10 m0 0 h348 m-450 -10 v20 m460 0 v-20 m-460 20 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-450 10 h10 m88 0 h10 m0 0 h332 m-450 -10 v20 m460 0 v-20 m-460 20 v24 m460 0 v-24 m-460 24 q0 10 10 10 m440 0 q10 0 10 -10 m-430 10 h10 m0 0 h58 m-88 0 h20 m68 0 h20 m-108 0 q10 0 10 10 m88 0 q0 -10 10 -10 m-98 10 v12 m88 0 v-12 m-88 12 q0 10 10 10 m68 0 q10 0 10 -10 m-78 10 h10 m48 0 h10 m20 -32 h10 m102 0 h10 m0 0 h210 m-480 -396 l20 0 m-1 0 q-9 0 -9 -10 l0 -12 q0 -10 10 -10 m480 32 l20 0 m-20 0 q10 0 10 -10 l0 -12 q0 -10 -10 -10 m-480 0 h10 m0 0 h470 m-520 32 h20 m520 0 h20 m-560 0 q10 0 10 10 m540 0 q0 -10 10 -10 m-550 10 v442 m540 0 v-442 m-540 442 q0 10 10 10 m520 0 q10 0 10 -10 m-530 10 h10 m0 0 h510 m23 -462 h-3"></path>
+<polygon points="673 273 681 269 681 277"></polygon>
+<polygon points="673 273 665 269 665 277"></polygon></svg></div>
