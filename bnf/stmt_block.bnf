@@ -305,7 +305,6 @@ show_stmt ::=
 	| show_transactions_stmt
 	| show_transfer_stmt
 	| show_users_stmt
-	| show_default_session_variables_for_role_stmt
 	| show_zone_stmt
 	| show_full_scans_stmt
 	| show_default_privileges_stmt
@@ -963,11 +962,6 @@ show_transfer_stmt ::=
 show_users_stmt ::=
 	'SHOW' 'USERS'
 
-show_default_session_variables_for_role_stmt ::=
-	'SHOW' 'DEFAULT' 'SESSION' 'VARIABLES' 'FOR' role_or_group_or_user role_spec
-	| 'SHOW' 'DEFAULT' 'SESSION' 'VARIABLES' 'FOR' 'ROLE_ALL' 'ALL'
-	| 'SHOW' 'DEFAULT' 'SESSION' 'VARIABLES' 'FOR' 'USER_ALL' 'ALL'
-
 show_zone_stmt ::=
 	'SHOW' 'ZONE' 'CONFIGURATION' from_with_implicit_for_alias 'RANGE' zone_name
 	| 'SHOW' 'ZONE' 'CONFIGURATION' from_with_implicit_for_alias 'DATABASE' database_name
@@ -1194,7 +1188,6 @@ unreserved_keyword ::=
 	| 'HOUR'
 	| 'IDENTITY'
 	| 'IMMEDIATE'
-	| 'IMMEDIATELY'
 	| 'IMMUTABLE'
 	| 'IMPORT'
 	| 'INCLUDE'
@@ -1485,7 +1478,6 @@ unreserved_keyword ::=
 	| 'VALID'
 	| 'VALIDATE'
 	| 'VALUE'
-	| 'VARIABLES'
 	| 'VARYING'
 	| 'VERIFY_BACKUP_TABLE_DATA'
 	| 'VIEW'
@@ -1795,7 +1787,6 @@ create_sequence_stmt ::=
 
 create_func_stmt ::=
 	'CREATE' opt_or_replace 'FUNCTION' routine_create_name '(' opt_routine_param_with_default_list ')' 'RETURNS' opt_return_set routine_return_type opt_create_routine_opt_list opt_routine_body
-	| 'CREATE' opt_or_replace 'FUNCTION' routine_create_name '(' opt_routine_param_with_default_list ')' opt_create_routine_opt_list opt_routine_body
 
 create_proc_stmt ::=
 	'CREATE' opt_or_replace 'PROCEDURE' routine_create_name '(' opt_routine_param_with_default_list ')' opt_create_routine_opt_list opt_routine_body
@@ -2093,7 +2084,6 @@ copy_options ::=
 	| 'HEADER'
 	| 'QUOTE' 'SCONST'
 	| 'ESCAPE' 'SCONST'
-	| 'ENCODING' 'SCONST'
 
 copy_generic_options ::=
 	'DESTINATION' string_or_placeholder
@@ -2108,7 +2098,6 @@ copy_generic_options ::=
 	| 'HEADER' 'FALSE'
 	| 'QUOTE' 'SCONST'
 	| 'ESCAPE' 'SCONST'
-	| 'ENCODING' 'SCONST'
 
 db_object_name_component ::=
 	name
@@ -2732,7 +2721,7 @@ scrub_option_list ::=
 	( scrub_option ) ( ( ',' scrub_option ) )*
 
 simple_select_clause ::=
-	'SELECT' opt_all_clause opt_target_list from_clause opt_where_clause group_clause having_clause window_clause
+	'SELECT' opt_all_clause target_list from_clause opt_where_clause group_clause having_clause window_clause
 	| 'SELECT' distinct_clause target_list from_clause opt_where_clause group_clause having_clause window_clause
 	| 'SELECT' distinct_on_clause target_list from_clause opt_where_clause group_clause having_clause window_clause
 
@@ -3019,8 +3008,6 @@ alter_backup_schedule_cmd ::=
 	| 'SET' 'FULL' 'BACKUP' 'ALWAYS'
 	| 'SET' 'FULL' 'BACKUP' sconst_or_placeholder
 	| 'SET' 'SCHEDULE' 'OPTION' kv_option
-	| 'EXECUTE' 'IMMEDIATELY'
-	| 'EXECUTE' 'FULL' 'IMMEDIATELY'
 
 role_option ::=
 	'CREATEROLE'
@@ -3296,10 +3283,6 @@ scrub_option ::=
 
 opt_all_clause ::=
 	'ALL'
-	| 
-
-opt_target_list ::=
-	target_list
 	| 
 
 from_clause ::=
@@ -3782,7 +3765,6 @@ bare_label_keywords ::=
 	| 'IGNORE_FOREIGN_KEYS'
 	| 'ILIKE'
 	| 'IMMEDIATE'
-	| 'IMMEDIATELY'
 	| 'IMMUTABLE'
 	| 'IMPORT'
 	| 'IN'
@@ -4134,7 +4116,6 @@ bare_label_keywords ::=
 	| 'VALUES'
 	| 'VARBIT'
 	| 'VARCHAR'
-	| 'VARIABLES'
 	| 'VARIADIC'
 	| 'VERIFY_BACKUP_TABLE_DATA'
 	| 'VIEW'
@@ -4315,7 +4296,7 @@ alter_column_default ::=
 	| 'DROP' 'DEFAULT'
 
 alter_column_on_update ::=
-	'SET' 'ON' 'UPDATE' a_expr
+	'SET' 'ON' 'UPDATE' b_expr
 	| 'DROP' 'ON' 'UPDATE'
 
 alter_column_visible ::=
@@ -4476,9 +4457,6 @@ window_definition ::=
 
 routine_param_class ::=
 	'IN'
-	| 'OUT'
-	| 'INOUT'
-	| 'IN' 'OUT'
 
 param_name ::=
 	type_function_name
