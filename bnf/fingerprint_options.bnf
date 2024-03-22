@@ -1,2 +1,0 @@
-fingerprint_options ::=
-	'START' 'TIMESTAMP' '=' d_expr
