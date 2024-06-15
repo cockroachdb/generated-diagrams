@@ -279,7 +279,6 @@ show_stmt ::=
 	| show_create_external_connections_stmt
 	| show_databases_stmt
 	| show_enums_stmt
-	| show_external_connections_stmt
 	| show_types_stmt
 	| show_functions_stmt
 	| show_procedures_stmt
@@ -803,6 +802,9 @@ show_backup_stmt ::=
 	| 'SHOW' 'BACKUP' string_or_placeholder 'IN' string_or_placeholder_opt_list opt_with_show_backup_options
 	| 'SHOW' 'BACKUP' string_or_placeholder opt_with_show_backup_options
 	| 'SHOW' 'BACKUP' 'SCHEMAS' string_or_placeholder opt_with_show_backup_options
+	| 'SHOW' 'BACKUP' 'FILES' string_or_placeholder opt_with_show_backup_options
+	| 'SHOW' 'BACKUP' 'RANGES' string_or_placeholder opt_with_show_backup_options
+	| 'SHOW' 'BACKUP' 'VALIDATE' string_or_placeholder opt_with_show_backup_options
 	| 'SHOW' 'BACKUP' 'CONNECTION' string_or_placeholder opt_with_show_backup_connection_options_list
 
 show_columns_stmt ::=
@@ -833,10 +835,6 @@ show_enums_stmt ::=
 	'SHOW' 'ENUMS'
 	| 'SHOW' 'ENUMS' 'FROM' name '.' name
 	| 'SHOW' 'ENUMS' 'FROM' name
-
-show_external_connections_stmt ::=
-	'SHOW' 'EXTERNAL' 'CONNECTIONS'
-	| 'SHOW' 'EXTERNAL' 'CONNECTION' string_or_placeholder
 
 show_types_stmt ::=
 	'SHOW' 'TYPES'
@@ -1121,6 +1119,7 @@ unreserved_keyword ::=
 	| 'DAY'
 	| 'DEALLOCATE'
 	| 'DEBUG_IDS'
+	| 'DEBUG_PAUSE_ON'
 	| 'DEBUG_DUMP_METADATA_SST'
 	| 'DECLARE'
 	| 'DELETE'
@@ -1985,6 +1984,9 @@ var_value ::=
 
 show_backup_details ::=
 	'SCHEMAS'
+	| 'FILES'
+	| 'RANGES'
+	| 'VALIDATE'
 
 opt_with_show_backup_options ::=
 	'WITH' show_backup_options_list
@@ -2717,6 +2719,7 @@ restore_options ::=
 	| 'SKIP_MISSING_UDFS'
 	| 'DETACHED'
 	| 'SKIP_LOCALITIES_CHECK'
+	| 'DEBUG_PAUSE_ON' '=' string_or_placeholder
 	| 'NEW_DB_NAME' '=' string_or_placeholder
 	| 'INCREMENTAL_LOCATION' '=' string_or_placeholder_opt_list
 	| virtual_cluster_name '=' string_or_placeholder
@@ -3699,6 +3702,7 @@ bare_label_keywords ::=
 	| 'DEALLOCATE'
 	| 'DEBUG_DUMP_METADATA_SST'
 	| 'DEBUG_IDS'
+	| 'DEBUG_PAUSE_ON'
 	| 'DEC'
 	| 'DECIMAL'
 	| 'DECLARE'
