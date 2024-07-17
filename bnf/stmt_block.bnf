@@ -75,7 +75,6 @@ copy_stmt ::=
 comment_stmt ::=
 	'COMMENT' 'ON' 'DATABASE' database_name 'IS' comment_text
 	| 'COMMENT' 'ON' 'SCHEMA' qualifiable_schema_name 'IS' comment_text
-	| 'COMMENT' 'ON' 'TYPE' type_name 'IS' comment_text
 	| 'COMMENT' 'ON' 'TABLE' table_name 'IS' comment_text
 	| 'COMMENT' 'ON' 'COLUMN' column_path 'IS' comment_text
 	| 'COMMENT' 'ON' 'INDEX' table_index_name 'IS' comment_text
@@ -280,7 +279,6 @@ show_stmt ::=
 	| show_create_external_connections_stmt
 	| show_databases_stmt
 	| show_enums_stmt
-	| show_external_connections_stmt
 	| show_types_stmt
 	| show_functions_stmt
 	| show_procedures_stmt
@@ -364,9 +362,6 @@ comment_text ::=
 qualifiable_schema_name ::=
 	name
 	| name '.' name
-
-type_name ::=
-	db_object_name
 
 column_path ::=
 	name
@@ -505,6 +500,9 @@ cursor_movement_specifier ::=
 	| 'RELATIVE' signed_iconst64 opt_from_or_in cursor_name
 	| 'FIRST' opt_from_or_in cursor_name
 	| 'LAST' opt_from_or_in cursor_name
+
+type_name ::=
+	db_object_name
 
 opt_transaction ::=
 	'TRANSACTION'
@@ -835,10 +833,6 @@ show_enums_stmt ::=
 	| 'SHOW' 'ENUMS' 'FROM' name '.' name
 	| 'SHOW' 'ENUMS' 'FROM' name
 
-show_external_connections_stmt ::=
-	'SHOW' 'EXTERNAL' 'CONNECTIONS'
-	| 'SHOW' 'EXTERNAL' 'CONNECTION' string_or_placeholder
-
 show_types_stmt ::=
 	'SHOW' 'TYPES'
 
@@ -1122,6 +1116,7 @@ unreserved_keyword ::=
 	| 'DAY'
 	| 'DEALLOCATE'
 	| 'DEBUG_IDS'
+	| 'DEBUG_PAUSE_ON'
 	| 'DEBUG_DUMP_METADATA_SST'
 	| 'DECLARE'
 	| 'DELETE'
@@ -1242,7 +1237,6 @@ unreserved_keyword ::=
 	| 'LIST'
 	| 'LOCAL'
 	| 'LOCKED'
-	| 'LOGICAL'
 	| 'LOGIN'
 	| 'LOCALITY'
 	| 'LOOKUP'
@@ -1268,7 +1262,6 @@ unreserved_keyword ::=
 	| 'MULTIPOLYGONM'
 	| 'MULTIPOLYGONZ'
 	| 'MULTIPOLYGONZM'
-	| 'MODE'
 	| 'MONTH'
 	| 'MOVE'
 	| 'NAMES'
@@ -1568,7 +1561,6 @@ col_name_keyword ::=
 	| 'VALUES'
 	| 'VARBIT'
 	| 'VARCHAR'
-	| 'VECTOR'
 	| 'VIRTUAL'
 	| 'WORK'
 
@@ -1756,7 +1748,7 @@ backup_options_list ::=
 	( backup_options ) ( ( ',' backup_options ) )*
 
 a_expr ::=
-	( c_expr | '+' a_expr | '-' a_expr | '~' a_expr | 'SQRT' a_expr | 'CBRT' a_expr | qual_op a_expr | 'NOT' a_expr | 'NOT' a_expr | row 'OVERLAPS' row | 'DEFAULT' ) ( ( 'TYPECAST' cast_target | 'TYPEANNOTATE' typename | 'COLLATE' collation_name | 'AT' 'TIME' 'ZONE' a_expr | '+' a_expr | '-' a_expr | '*' a_expr | '/' a_expr | 'FLOORDIV' a_expr | '%' a_expr | '^' a_expr | '#' a_expr | '&' a_expr | '|' a_expr | '<' a_expr | '>' a_expr | '?' a_expr | 'JSON_SOME_EXISTS' a_expr | 'JSON_ALL_EXISTS' a_expr | 'CONTAINS' a_expr | 'CONTAINED_BY' a_expr | '=' a_expr | 'CONCAT' a_expr | 'LSHIFT' a_expr | 'RSHIFT' a_expr | 'FETCHVAL' a_expr | 'FETCHTEXT' a_expr | 'FETCHVAL_PATH' a_expr | 'FETCHTEXT_PATH' a_expr | 'REMOVE_PATH' a_expr | 'INET_CONTAINED_BY_OR_EQUALS' a_expr | 'AND_AND' a_expr | 'AT_AT' a_expr | 'DISTANCE' a_expr | 'COS_DISTANCE' a_expr | 'NEG_INNER_PRODUCT' a_expr | 'INET_CONTAINS_OR_EQUALS' a_expr | 'LESS_EQUALS' a_expr | 'GREATER_EQUALS' a_expr | 'NOT_EQUALS' a_expr | qual_op a_expr | 'AND' a_expr | 'OR' a_expr | 'LIKE' a_expr | 'LIKE' a_expr 'ESCAPE' a_expr | 'NOT' 'LIKE' a_expr | 'NOT' 'LIKE' a_expr 'ESCAPE' a_expr | 'ILIKE' a_expr | 'ILIKE' a_expr 'ESCAPE' a_expr | 'NOT' 'ILIKE' a_expr | 'NOT' 'ILIKE' a_expr 'ESCAPE' a_expr | 'SIMILAR' 'TO' a_expr | 'SIMILAR' 'TO' a_expr 'ESCAPE' a_expr | 'NOT' 'SIMILAR' 'TO' a_expr | 'NOT' 'SIMILAR' 'TO' a_expr 'ESCAPE' a_expr | '~' a_expr | 'NOT_REGMATCH' a_expr | 'REGIMATCH' a_expr | 'NOT_REGIMATCH' a_expr | 'IS' 'NAN' | 'IS' 'NOT' 'NAN' | 'IS' 'NULL' | 'ISNULL' | 'IS' 'NOT' 'NULL' | 'NOTNULL' | 'IS' 'TRUE' | 'IS' 'NOT' 'TRUE' | 'IS' 'FALSE' | 'IS' 'NOT' 'FALSE' | 'IS' 'UNKNOWN' | 'IS' 'NOT' 'UNKNOWN' | 'IS' 'DISTINCT' 'FROM' a_expr | 'IS' 'NOT' 'DISTINCT' 'FROM' a_expr | 'IS' 'OF' '(' type_list ')' | 'IS' 'NOT' 'OF' '(' type_list ')' | 'BETWEEN' opt_asymmetric b_expr 'AND' a_expr | 'NOT' 'BETWEEN' opt_asymmetric b_expr 'AND' a_expr | 'BETWEEN' 'SYMMETRIC' b_expr 'AND' a_expr | 'NOT' 'BETWEEN' 'SYMMETRIC' b_expr 'AND' a_expr | 'IN' in_expr | 'NOT' 'IN' in_expr | subquery_op sub_type a_expr ) )*
+	( c_expr | '+' a_expr | '-' a_expr | '~' a_expr | 'SQRT' a_expr | 'CBRT' a_expr | qual_op a_expr | 'NOT' a_expr | 'NOT' a_expr | row 'OVERLAPS' row | 'DEFAULT' ) ( ( 'TYPECAST' cast_target | 'TYPEANNOTATE' typename | 'COLLATE' collation_name | 'AT' 'TIME' 'ZONE' a_expr | '+' a_expr | '-' a_expr | '*' a_expr | '/' a_expr | 'FLOORDIV' a_expr | '%' a_expr | '^' a_expr | '#' a_expr | '&' a_expr | '|' a_expr | '<' a_expr | '>' a_expr | '?' a_expr | 'JSON_SOME_EXISTS' a_expr | 'JSON_ALL_EXISTS' a_expr | 'CONTAINS' a_expr | 'CONTAINED_BY' a_expr | '=' a_expr | 'CONCAT' a_expr | 'LSHIFT' a_expr | 'RSHIFT' a_expr | 'FETCHVAL' a_expr | 'FETCHTEXT' a_expr | 'FETCHVAL_PATH' a_expr | 'FETCHTEXT_PATH' a_expr | 'REMOVE_PATH' a_expr | 'INET_CONTAINED_BY_OR_EQUALS' a_expr | 'AND_AND' a_expr | 'AT_AT' a_expr | 'INET_CONTAINS_OR_EQUALS' a_expr | 'LESS_EQUALS' a_expr | 'GREATER_EQUALS' a_expr | 'NOT_EQUALS' a_expr | qual_op a_expr | 'AND' a_expr | 'OR' a_expr | 'LIKE' a_expr | 'LIKE' a_expr 'ESCAPE' a_expr | 'NOT' 'LIKE' a_expr | 'NOT' 'LIKE' a_expr 'ESCAPE' a_expr | 'ILIKE' a_expr | 'ILIKE' a_expr 'ESCAPE' a_expr | 'NOT' 'ILIKE' a_expr | 'NOT' 'ILIKE' a_expr 'ESCAPE' a_expr | 'SIMILAR' 'TO' a_expr | 'SIMILAR' 'TO' a_expr 'ESCAPE' a_expr | 'NOT' 'SIMILAR' 'TO' a_expr | 'NOT' 'SIMILAR' 'TO' a_expr 'ESCAPE' a_expr | '~' a_expr | 'NOT_REGMATCH' a_expr | 'REGIMATCH' a_expr | 'NOT_REGIMATCH' a_expr | 'IS' 'NAN' | 'IS' 'NOT' 'NAN' | 'IS' 'NULL' | 'ISNULL' | 'IS' 'NOT' 'NULL' | 'NOTNULL' | 'IS' 'TRUE' | 'IS' 'NOT' 'TRUE' | 'IS' 'FALSE' | 'IS' 'NOT' 'FALSE' | 'IS' 'UNKNOWN' | 'IS' 'NOT' 'UNKNOWN' | 'IS' 'DISTINCT' 'FROM' a_expr | 'IS' 'NOT' 'DISTINCT' 'FROM' a_expr | 'IS' 'OF' '(' type_list ')' | 'IS' 'NOT' 'OF' '(' type_list ')' | 'BETWEEN' opt_asymmetric b_expr 'AND' a_expr | 'NOT' 'BETWEEN' opt_asymmetric b_expr 'AND' a_expr | 'BETWEEN' 'SYMMETRIC' b_expr 'AND' a_expr | 'NOT' 'BETWEEN' 'SYMMETRIC' b_expr 'AND' a_expr | 'IN' in_expr | 'NOT' 'IN' in_expr | subquery_op sub_type a_expr ) )*
 
 for_schedules_clause ::=
 	'FOR' 'SCHEDULES' select_stmt
@@ -2721,6 +2713,7 @@ restore_options ::=
 	| 'SKIP_MISSING_UDFS'
 	| 'DETACHED'
 	| 'SKIP_LOCALITIES_CHECK'
+	| 'DEBUG_PAUSE_ON' '=' string_or_placeholder
 	| 'NEW_DB_NAME' '=' string_or_placeholder
 	| 'INCREMENTAL_LOCATION' '=' string_or_placeholder_opt_list
 	| virtual_cluster_name '=' string_or_placeholder
@@ -3140,9 +3133,6 @@ all_op ::=
 	| 'NOT_REGIMATCH'
 	| 'AND_AND'
 	| 'AT_AT'
-	| 'DISTANCE'
-	| 'COS_DISTANCE'
-	| 'NEG_INNER_PRODUCT'
 	| '~'
 	| 'SQRT'
 	| 'CBRT'
@@ -3401,7 +3391,6 @@ const_typename ::=
 	| character_with_length
 	| const_datetime
 	| const_geo
-	| const_vector
 
 interval_type ::=
 	'INTERVAL'
@@ -3707,6 +3696,7 @@ bare_label_keywords ::=
 	| 'DEALLOCATE'
 	| 'DEBUG_DUMP_METADATA_SST'
 	| 'DEBUG_IDS'
+	| 'DEBUG_PAUSE_ON'
 	| 'DEC'
 	| 'DECIMAL'
 	| 'DECLARE'
@@ -3872,7 +3862,6 @@ bare_label_keywords ::=
 	| 'LOCALTIME'
 	| 'LOCALTIMESTAMP'
 	| 'LOCKED'
-	| 'LOGICAL'
 	| 'LOGIN'
 	| 'LOOKUP'
 	| 'LOW'
@@ -3882,7 +3871,6 @@ bare_label_keywords ::=
 	| 'MERGE'
 	| 'METHOD'
 	| 'MINVALUE'
-	| 'MODE'
 	| 'MODIFYCLUSTERSETTING'
 	| 'MODIFYSQLCLUSTERSETTING'
 	| 'MOVE'
@@ -4165,7 +4153,6 @@ bare_label_keywords ::=
 	| 'VARCHAR'
 	| 'VARIABLES'
 	| 'VARIADIC'
-	| 'VECTOR'
 	| 'VERIFY_BACKUP_TABLE_DATA'
 	| 'VIEW'
 	| 'VIEWACTIVITY'
@@ -4318,10 +4305,6 @@ const_geo ::=
 	| 'GEOGRAPHY' '(' geo_shape_type ')'
 	| 'GEOMETRY' '(' geo_shape_type ',' signed_iconst ')'
 	| 'GEOGRAPHY' '(' geo_shape_type ',' signed_iconst ')'
-
-const_vector ::=
-	'VECTOR'
-	| 'VECTOR' '(' iconst32 ')'
 
 interval_qualifier ::=
 	'YEAR'
