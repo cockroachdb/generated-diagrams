@@ -188,6 +188,7 @@ backup_stmt ::=
 	'BACKUP' opt_backup_targets 'INTO' sconst_or_placeholder 'IN' string_or_placeholder_opt_list opt_as_of_clause opt_with_backup_options
 	| 'BACKUP' opt_backup_targets 'INTO' string_or_placeholder_opt_list opt_as_of_clause opt_with_backup_options
 	| 'BACKUP' opt_backup_targets 'INTO' 'LATEST' 'IN' string_or_placeholder_opt_list opt_as_of_clause opt_with_backup_options
+	| 'BACKUP' opt_backup_targets 'TO' string_or_placeholder_opt_list opt_as_of_clause opt_incremental opt_with_backup_options
 
 cancel_stmt ::=
 	cancel_jobs_stmt
@@ -241,9 +242,12 @@ reset_stmt ::=
 	| reset_csetting_stmt
 
 restore_stmt ::=
-	'RESTORE' 'FROM' string_or_placeholder 'IN' string_or_placeholder_opt_list opt_as_of_clause opt_with_restore_options
-	| 'RESTORE' backup_targets 'FROM' string_or_placeholder 'IN' string_or_placeholder_opt_list opt_as_of_clause opt_with_restore_options
-	| 'RESTORE' 'SYSTEM' 'USERS' 'FROM' string_or_placeholder 'IN' string_or_placeholder_opt_list opt_as_of_clause opt_with_restore_options
+	'RESTORE' 'FROM' list_of_string_or_placeholder_opt_list opt_as_of_clause opt_with_restore_options
+	| 'RESTORE' 'FROM' string_or_placeholder 'IN' list_of_string_or_placeholder_opt_list opt_as_of_clause opt_with_restore_options
+	| 'RESTORE' backup_targets 'FROM' list_of_string_or_placeholder_opt_list opt_as_of_clause opt_with_restore_options
+	| 'RESTORE' backup_targets 'FROM' string_or_placeholder 'IN' list_of_string_or_placeholder_opt_list opt_as_of_clause opt_with_restore_options
+	| 'RESTORE' 'SYSTEM' 'USERS' 'FROM' list_of_string_or_placeholder_opt_list opt_as_of_clause opt_with_restore_options
+	| 'RESTORE' 'SYSTEM' 'USERS' 'FROM' string_or_placeholder 'IN' list_of_string_or_placeholder_opt_list opt_as_of_clause opt_with_restore_options
 
 resume_stmt ::=
 	resume_jobs_stmt
@@ -271,7 +275,6 @@ show_stmt ::=
 	show_backup_stmt
 	| show_columns_stmt
 	| show_constraints_stmt
-	| show_triggers_stmt
 	| show_create_stmt
 	| show_create_schedules_stmt
 	| show_create_external_connections_stmt
@@ -556,6 +559,10 @@ opt_with_backup_options ::=
 	| 'WITH' 'OPTIONS' '(' backup_options_list ')'
 	| 
 
+opt_incremental ::=
+	'INCREMENTAL' 'FROM' string_or_placeholder_list
+	| 
+
 cancel_jobs_stmt ::=
 	'CANCEL' 'JOB' a_expr
 	| 'CANCEL' 'JOBS' select_stmt
@@ -730,6 +737,9 @@ reset_session_stmt ::=
 reset_csetting_stmt ::=
 	'RESET' 'CLUSTER' 'SETTING' var_name
 
+list_of_string_or_placeholder_opt_list ::=
+	( string_or_placeholder_opt_list ) ( ( ',' string_or_placeholder_opt_list ) )*
+
 opt_with_restore_options ::=
 	'WITH' restore_options_list
 	| 'WITH' 'OPTIONS' '(' restore_options_list ')'
@@ -794,6 +804,9 @@ show_backup_stmt ::=
 	'SHOW' 'BACKUPS' 'IN' string_or_placeholder_opt_list
 	| 'SHOW' 'BACKUP' show_backup_details 'FROM' string_or_placeholder 'IN' string_or_placeholder_opt_list opt_with_show_backup_options
 	| 'SHOW' 'BACKUP' string_or_placeholder 'IN' string_or_placeholder_opt_list opt_with_show_backup_options
+	| 'SHOW' 'BACKUP' string_or_placeholder opt_with_show_backup_options
+	| 'SHOW' 'BACKUP' 'SCHEMAS' string_or_placeholder opt_with_show_backup_options
+	| 'SHOW' 'BACKUP' 'CONNECTION' string_or_placeholder opt_with_show_backup_connection_options_list
 
 show_columns_stmt ::=
 	'SHOW' 'COLUMNS' 'FROM' table_name with_comment
@@ -801,9 +814,6 @@ show_columns_stmt ::=
 show_constraints_stmt ::=
 	'SHOW' 'CONSTRAINT' 'FROM' table_name with_comment
 	| 'SHOW' 'CONSTRAINTS' 'FROM' table_name with_comment
-
-show_triggers_stmt ::=
-	'SHOW' 'TRIGGERS' 'FROM' table_name
 
 show_create_stmt ::=
 	'SHOW' 'CREATE' table_name opt_show_create_format_options
@@ -1470,7 +1480,6 @@ unreserved_keyword ::=
 	| 'TRANSFER'
 	| 'TRANSFORM'
 	| 'TRIGGER'
-	| 'TRIGGERS'
 	| 'TRUNCATE'
 	| 'TRUSTED'
 	| 'TYPE'
@@ -1999,6 +2008,11 @@ show_backup_details ::=
 opt_with_show_backup_options ::=
 	'WITH' show_backup_options_list
 	| 'WITH' 'OPTIONS' '(' show_backup_options_list ')'
+	| 
+
+opt_with_show_backup_connection_options_list ::=
+	'WITH' show_backup_connection_options_list
+	| 'WITH' 'OPTIONS' '(' show_backup_connection_options_list ')'
 	| 
 
 with_comment ::=
@@ -2797,6 +2811,9 @@ extra_var_value ::=
 show_backup_options_list ::=
 	( show_backup_options ) ( ( ',' show_backup_options ) )*
 
+show_backup_connection_options_list ::=
+	( show_backup_connection_options ) ( ( ',' show_backup_connection_options ) )*
+
 targets_roles ::=
 	'ROLE' role_spec_list
 	| 'SCHEMA' schema_name_list
@@ -3403,6 +3420,11 @@ show_backup_options ::=
 	| 'PRIVILEGES'
 	| 'ENCRYPTION_INFO_DIR' '=' string_or_placeholder
 	| 'DEBUG_DUMP_METADATA_SST'
+
+show_backup_connection_options ::=
+	'TRANSFER' '=' string_or_placeholder
+	| 'TIME' '=' string_or_placeholder
+	| 'CONCURRENTLY' '=' a_expr
 
 schema_wildcard ::=
 	wildcard_pattern
@@ -4191,7 +4213,6 @@ bare_label_keywords ::=
 	| 'TRANSFORM'
 	| 'TREAT'
 	| 'TRIGGER'
-	| 'TRIGGERS'
 	| 'TRIM'
 	| 'TRUE'
 	| 'TRUNCATE'
