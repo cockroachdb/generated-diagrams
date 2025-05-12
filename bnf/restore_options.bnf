@@ -9,7 +9,10 @@ restore_options ::=
 	| 'SKIP_MISSING_UDFS'
 	| 'DETACHED'
 	| 'SKIP_LOCALITIES_CHECK'
+	| 'DEBUG_PAUSE_ON' '=' string_or_placeholder
 	| 'NEW_DB_NAME' '=' string_or_placeholder
+	| 'INCLUDE_ALL_VIRTUAL_CLUSTERS'
+	| 'INCLUDE_ALL_VIRTUAL_CLUSTERS' '=' a_expr
 	| 'INCREMENTAL_LOCATION' '=' string_or_placeholder_opt_list
 	| 'VIRTUAL_CLUSTER_NAME' '=' string_or_placeholder
 	| 'VIRTUAL_CLUSTER' '=' string_or_placeholder
@@ -18,5 +21,4 @@ restore_options ::=
 	| 'UNSAFE_RESTORE_INCOMPATIBLE_VERSION'
 	| 'EXECUTION' 'LOCALITY' '=' string_or_placeholder
 	| 'EXPERIMENTAL' 'DEFERRED' 'COPY'
-	| 'EXPERIMENTAL' 'COPY'
 	| 'REMOVE_REGIONS'
