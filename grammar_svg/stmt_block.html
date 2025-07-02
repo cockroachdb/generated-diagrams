@@ -1715,7 +1715,7 @@
             <li><a href="#alter_zone_partition_stmt" title="alter_zone_partition_stmt">alter_zone_partition_stmt</a></li>
             <li><a href="#alter_zone_table_stmt" title="alter_zone_table_stmt">alter_zone_table_stmt</a></li>
             <li><a href="#analyze_target" title="analyze_target">analyze_target</a></li>
-            <li><a href="#changefeed_target" title="changefeed_target">changefeed_target</a></li>
+            <li><a href="#changefeed_table_target" title="changefeed_table_target">changefeed_table_target</a></li>
             <li><a href="#col_qualification_elem" title="col_qualification_elem">col_qualification_elem</a></li>
             <li><a href="#comment_stmt" title="comment_stmt">comment_stmt</a></li>
             <li><a href="#constraint_elem" title="constraint_elem">constraint_elem</a></li>
@@ -1862,6 +1862,7 @@
             <li><a href="#alter_rename_database_stmt" title="alter_rename_database_stmt">alter_rename_database_stmt</a></li>
             <li><a href="#alter_zone_database_stmt" title="alter_zone_database_stmt">alter_zone_database_stmt</a></li>
             <li><a href="#comment_stmt" title="comment_stmt">comment_stmt</a></li>
+            <li><a href="#create_changefeed_stmt" title="create_changefeed_stmt">create_changefeed_stmt</a></li>
             <li><a href="#create_database_stmt" title="create_database_stmt">create_database_stmt</a></li>
             <li><a href="#drop_database_stmt" title="drop_database_stmt">drop_database_stmt</a></li>
             <li><a href="#logical_replication_resources" title="logical_replication_resources">logical_replication_resources</a></li>
@@ -3182,52 +3183,72 @@
          </p><ul>
             <li><a href="#create_stmt" title="create_stmt">create_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_changefeed_stmt" href="#create_changefeed_stmt">create_changefeed_stmt:</a></p><svg width="1087" height="147">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_changefeed_stmt" href="#create_changefeed_stmt">create_changefeed_stmt:</a></p><svg width="1355" height="125">
          
-         <polygon points="11 17 3 13 3 21"></polygon>
-         <polygon points="19 17 11 13 11 21"></polygon>
-         <rect x="33" y="3" width="72" height="32" rx="10"></rect>
-         <rect x="31" y="1" width="72" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="41" y="21">CREATE</text>
-         <rect x="125" y="3" width="110" height="32" rx="10"></rect>
-         <rect x="123" y="1" width="110" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="133" y="21">CHANGEFEED</text>
-         <rect x="45" y="69" width="48" height="32" rx="10"></rect>
-         <rect x="43" y="67" width="48" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="53" y="87">FOR</text><a xlink:href="#changefeed_targets" xlink:title="changefeed_targets">
-            <rect x="113" y="69" width="148" height="32"></rect>
-            <rect x="111" y="67" width="148" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="121" y="87">changefeed_targets</text></a><a xlink:href="#opt_changefeed_sink" xlink:title="opt_changefeed_sink">
-            <rect x="281" y="69" width="156" height="32"></rect>
-            <rect x="279" y="67" width="156" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="289" y="87">opt_changefeed_sink</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
-            <rect x="457" y="69" width="130" height="32"></rect>
-            <rect x="455" y="67" width="130" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="465" y="87">opt_with_options</text></a><a xlink:href="#opt_changefeed_sink" xlink:title="opt_changefeed_sink">
-            <rect x="45" y="113" width="156" height="32"></rect>
-            <rect x="43" y="111" width="156" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="53" y="131">opt_changefeed_sink</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
-            <rect x="221" y="113" width="130" height="32"></rect>
-            <rect x="219" y="111" width="130" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="229" y="131">opt_with_options</text></a><rect x="371" y="113" width="38" height="32" rx="10"></rect>
-         <rect x="369" y="111" width="38" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="379" y="131">AS</text>
-         <rect x="429" y="113" width="70" height="32" rx="10"></rect>
-         <rect x="427" y="111" width="70" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="437" y="131">SELECT</text><a xlink:href="#target_list" xlink:title="target_list">
-            <rect x="519" y="113" width="86" height="32"></rect>
-            <rect x="517" y="111" width="86" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="527" y="131">target_list</text></a><rect x="625" y="113" width="60" height="32" rx="10"></rect>
-         <rect x="623" y="111" width="60" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="633" y="131">FROM</text><a xlink:href="#changefeed_target_expr" xlink:title="changefeed_target_expr">
-            <rect x="705" y="113" width="178" height="32"></rect>
-            <rect x="703" y="111" width="178" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="713" y="131">changefeed_target_expr</text></a><a xlink:href="#opt_where_clause" xlink:title="opt_where_clause">
-            <rect x="903" y="113" width="136" height="32"></rect>
-            <rect x="901" y="111" width="136" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="911" y="131">opt_where_clause</text></a><path class="line" d="m19 17 h2 m0 0 h10 m72 0 h10 m0 0 h10 m110 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-254 66 l2 0 m2 0 l2 0 m2 0 l2 0 m22 0 h10 m48 0 h10 m0 0 h10 m148 0 h10 m0 0 h10 m156 0 h10 m0 0 h10 m130 0 h10 m0 0 h452 m-1034 0 h20 m1014 0 h20 m-1054 0 q10 0 10 10 m1034 0 q0 -10 10 -10 m-1044 10 v24 m1034 0 v-24 m-1034 24 q0 10 10 10 m1014 0 q10 0 10 -10 m-1024 10 h10 m156 0 h10 m0 0 h10 m130 0 h10 m0 0 h10 m38 0 h10 m0 0 h10 m70 0 h10 m0 0 h10 m86 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m178 0 h10 m0 0 h10 m136 0 h10 m23 -44 h-3"></path>
-         <polygon points="1077 83 1085 79 1085 87"></polygon>
-         <polygon points="1077 83 1069 79 1069 87"></polygon></svg><p>referenced by:
+         <polygon points="9 17 1 13 1 21"></polygon>
+         <polygon points="17 17 9 13 9 21"></polygon>
+         <rect x="51" y="3" width="72" height="32" rx="10"></rect>
+         <rect x="49" y="1" width="72" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="21">CREATE</text>
+         <rect x="143" y="3" width="110" height="32" rx="10"></rect>
+         <rect x="141" y="1" width="110" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="151" y="21">CHANGEFEED</text>
+         <rect x="293" y="3" width="48" height="32" rx="10"></rect>
+         <rect x="291" y="1" width="48" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="301" y="21">FOR</text><a xlink:href="#changefeed_table_targets" xlink:title="changefeed_table_targets">
+            <rect x="361" y="3" width="188" height="32"></rect>
+            <rect x="359" y="1" width="188" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="369" y="21">changefeed_table_targets</text></a><a xlink:href="#opt_changefeed_sink" xlink:title="opt_changefeed_sink">
+            <rect x="569" y="3" width="156" height="32"></rect>
+            <rect x="567" y="1" width="156" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="577" y="21">opt_changefeed_sink</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
+            <rect x="745" y="3" width="130" height="32"></rect>
+            <rect x="743" y="1" width="130" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="753" y="21">opt_with_options</text></a><a xlink:href="#opt_changefeed_sink" xlink:title="opt_changefeed_sink">
+            <rect x="293" y="47" width="156" height="32"></rect>
+            <rect x="291" y="45" width="156" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="301" y="65">opt_changefeed_sink</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
+            <rect x="469" y="47" width="130" height="32"></rect>
+            <rect x="467" y="45" width="130" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="477" y="65">opt_with_options</text></a><rect x="619" y="47" width="38" height="32" rx="10"></rect>
+         <rect x="617" y="45" width="38" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="627" y="65">AS</text>
+         <rect x="677" y="47" width="70" height="32" rx="10"></rect>
+         <rect x="675" y="45" width="70" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="685" y="65">SELECT</text><a xlink:href="#target_list" xlink:title="target_list">
+            <rect x="767" y="47" width="86" height="32"></rect>
+            <rect x="765" y="45" width="86" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="775" y="65">target_list</text></a><rect x="873" y="47" width="60" height="32" rx="10"></rect>
+         <rect x="871" y="45" width="60" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="881" y="65">FROM</text><a xlink:href="#changefeed_target_expr" xlink:title="changefeed_target_expr">
+            <rect x="953" y="47" width="178" height="32"></rect>
+            <rect x="951" y="45" width="178" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="961" y="65">changefeed_target_expr</text></a><a xlink:href="#opt_where_clause" xlink:title="opt_where_clause">
+            <rect x="1151" y="47" width="136" height="32"></rect>
+            <rect x="1149" y="45" width="136" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="1159" y="65">opt_where_clause</text></a><rect x="51" y="91" width="290" height="32" rx="10"></rect>
+         <rect x="49" y="89" width="290" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="109">CREATE_CHANGEFEED_FOR_DATABASE</text>
+         <rect x="361" y="91" width="110" height="32" rx="10"></rect>
+         <rect x="359" y="89" width="110" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="369" y="109">CHANGEFEED</text>
+         <rect x="491" y="91" width="48" height="32" rx="10"></rect>
+         <rect x="489" y="89" width="48" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="499" y="109">FOR</text>
+         <rect x="559" y="91" width="92" height="32" rx="10"></rect>
+         <rect x="557" y="89" width="92" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="567" y="109">DATABASE</text><a xlink:href="#database_name" xlink:title="database_name">
+            <rect x="671" y="91" width="124" height="32"></rect>
+            <rect x="669" y="89" width="124" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="679" y="109">database_name</text></a><a xlink:href="#opt_changefeed_sink" xlink:title="opt_changefeed_sink">
+            <rect x="815" y="91" width="156" height="32"></rect>
+            <rect x="813" y="89" width="156" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="823" y="109">opt_changefeed_sink</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
+            <rect x="991" y="91" width="130" height="32"></rect>
+            <rect x="989" y="89" width="130" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="999" y="109">opt_with_options</text></a><path class="line" d="m17 17 h2 m20 0 h10 m72 0 h10 m0 0 h10 m110 0 h10 m20 0 h10 m48 0 h10 m0 0 h10 m188 0 h10 m0 0 h10 m156 0 h10 m0 0 h10 m130 0 h10 m0 0 h412 m-1034 0 h20 m1014 0 h20 m-1054 0 q10 0 10 10 m1034 0 q0 -10 10 -10 m-1044 10 v24 m1034 0 v-24 m-1034 24 q0 10 10 10 m1014 0 q10 0 10 -10 m-1024 10 h10 m156 0 h10 m0 0 h10 m130 0 h10 m0 0 h10 m38 0 h10 m0 0 h10 m70 0 h10 m0 0 h10 m86 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m178 0 h10 m0 0 h10 m136 0 h10 m-1276 -44 h20 m1276 0 h20 m-1316 0 q10 0 10 10 m1296 0 q0 -10 10 -10 m-1306 10 v68 m1296 0 v-68 m-1296 68 q0 10 10 10 m1276 0 q10 0 10 -10 m-1286 10 h10 m290 0 h10 m0 0 h10 m110 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m92 0 h10 m0 0 h10 m124 0 h10 m0 0 h10 m156 0 h10 m0 0 h10 m130 0 h10 m0 0 h186 m23 -88 h-3"></path>
+         <polygon points="1345 17 1353 13 1353 21"></polygon>
+         <polygon points="1345 17 1337 13 1337 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#create_stmt" title="create_stmt">create_stmt</a></li>
          </ul>
@@ -9982,18 +10003,18 @@
          </p><ul>
             <li><a href="#create_stats_stmt" title="create_stats_stmt">create_stats_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="changefeed_targets" href="#changefeed_targets">changefeed_targets:</a></p><svg width="241" height="81">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="changefeed_table_targets" href="#changefeed_table_targets">changefeed_table_targets:</a></p><svg width="281" height="81">
          
          <polygon points="9 61 1 57 1 65"></polygon>
-         <polygon points="17 61 9 57 9 65"></polygon><a xlink:href="#changefeed_target" xlink:title="changefeed_target">
-            <rect x="51" y="47" width="142" height="32"></rect>
-            <rect x="49" y="45" width="142" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="65">changefeed_target</text></a><rect x="51" y="3" width="24" height="32" rx="10"></rect>
+         <polygon points="17 61 9 57 9 65"></polygon><a xlink:href="#changefeed_table_target" xlink:title="changefeed_table_target">
+            <rect x="51" y="47" width="182" height="32"></rect>
+            <rect x="49" y="45" width="182" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="65">changefeed_table_target</text></a><rect x="51" y="3" width="24" height="32" rx="10"></rect>
          <rect x="49" y="1" width="24" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="59" y="21">,</text>
-         <path class="line" d="m17 61 h2 m20 0 h10 m142 0 h10 m-182 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m162 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-162 0 h10 m24 0 h10 m0 0 h118 m23 44 h-3"></path>
-         <polygon points="231 61 239 57 239 65"></polygon>
-         <polygon points="231 61 223 57 223 65"></polygon></svg><p>referenced by:
+         <path class="line" d="m17 61 h2 m20 0 h10 m182 0 h10 m-222 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m202 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-202 0 h10 m24 0 h10 m0 0 h158 m23 44 h-3"></path>
+         <polygon points="271 61 279 57 279 65"></polygon>
+         <polygon points="271 61 263 57 263 65"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#alter_changefeed_cmd" title="alter_changefeed_cmd">alter_changefeed_cmd</a></li>
             <li><a href="#create_changefeed_stmt" title="create_changefeed_stmt">create_changefeed_stmt</a></li>
@@ -10142,16 +10163,16 @@
          <text class="terminal" x="415" y="21">FOR</text>
          <rect x="475" y="3" width="110" height="32" rx="10"></rect>
          <rect x="473" y="1" width="110" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="483" y="21">CHANGEFEED</text><a xlink:href="#changefeed_targets" xlink:title="changefeed_targets">
-            <rect x="45" y="69" width="148" height="32"></rect>
-            <rect x="43" y="67" width="148" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="53" y="87">changefeed_targets</text></a><a xlink:href="#changefeed_sink" xlink:title="changefeed_sink">
-            <rect x="213" y="69" width="128" height="32"></rect>
-            <rect x="211" y="67" width="128" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="221" y="87">changefeed_sink</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
-            <rect x="361" y="69" width="130" height="32"></rect>
-            <rect x="359" y="67" width="130" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="369" y="87">opt_with_options</text></a><a xlink:href="#changefeed_sink" xlink:title="changefeed_sink">
+         <text class="terminal" x="483" y="21">CHANGEFEED</text><a xlink:href="#changefeed_table_targets" xlink:title="changefeed_table_targets">
+            <rect x="45" y="69" width="188" height="32"></rect>
+            <rect x="43" y="67" width="188" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="53" y="87">changefeed_table_targets</text></a><a xlink:href="#changefeed_sink" xlink:title="changefeed_sink">
+            <rect x="253" y="69" width="128" height="32"></rect>
+            <rect x="251" y="67" width="128" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="261" y="87">changefeed_sink</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
+            <rect x="401" y="69" width="130" height="32"></rect>
+            <rect x="399" y="67" width="130" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="409" y="87">opt_with_options</text></a><a xlink:href="#changefeed_sink" xlink:title="changefeed_sink">
             <rect x="45" y="113" width="128" height="32"></rect>
             <rect x="43" y="111" width="128" height="32" class="nonterminal"></rect>
             <text class="nonterminal" x="53" y="131">changefeed_sink</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
@@ -10179,7 +10200,7 @@
             <text class="nonterminal" x="735" y="197">cron_expr</text></a><a xlink:href="#opt_with_schedule_options" xlink:title="opt_with_schedule_options">
             <rect x="831" y="179" width="194" height="32"></rect>
             <rect x="829" y="177" width="194" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="839" y="197">opt_with_schedule_options</text></a><path class="line" d="m17 17 h2 m0 0 h10 m72 0 h10 m0 0 h10 m92 0 h10 m0 0 h10 m152 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m110 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-604 66 l2 0 m2 0 l2 0 m2 0 l2 0 m22 0 h10 m148 0 h10 m0 0 h10 m128 0 h10 m0 0 h10 m130 0 h10 m0 0 h520 m-1006 0 h20 m986 0 h20 m-1026 0 q10 0 10 10 m1006 0 q0 -10 10 -10 m-1016 10 v24 m1006 0 v-24 m-1006 24 q0 10 10 10 m986 0 q10 0 10 -10 m-996 10 h10 m128 0 h10 m0 0 h10 m130 0 h10 m0 0 h10 m38 0 h10 m0 0 h10 m70 0 h10 m0 0 h10 m86 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m178 0 h10 m0 0 h10 m136 0 h10 m22 -44 l2 0 m2 0 l2 0 m2 0 l2 0 m-348 110 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m84 0 h10 m0 0 h10 m194 0 h10 m3 0 h-3"></path>
+            <text class="nonterminal" x="839" y="197">opt_with_schedule_options</text></a><path class="line" d="m17 17 h2 m0 0 h10 m72 0 h10 m0 0 h10 m92 0 h10 m0 0 h10 m152 0 h10 m0 0 h10 m48 0 h10 m0 0 h10 m110 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-604 66 l2 0 m2 0 l2 0 m2 0 l2 0 m22 0 h10 m188 0 h10 m0 0 h10 m128 0 h10 m0 0 h10 m130 0 h10 m0 0 h480 m-1006 0 h20 m986 0 h20 m-1026 0 q10 0 10 10 m1006 0 q0 -10 10 -10 m-1016 10 v24 m1006 0 v-24 m-1006 24 q0 10 10 10 m986 0 q10 0 10 -10 m-996 10 h10 m128 0 h10 m0 0 h10 m130 0 h10 m0 0 h10 m38 0 h10 m0 0 h10 m70 0 h10 m0 0 h10 m86 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m178 0 h10 m0 0 h10 m136 0 h10 m22 -44 l2 0 m2 0 l2 0 m2 0 l2 0 m-348 110 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m84 0 h10 m0 0 h10 m194 0 h10 m3 0 h-3"></path>
          <polygon points="1043 193 1051 189 1051 197"></polygon>
          <polygon points="1043 193 1035 189 1035 197"></polygon></svg><p>referenced by:
          </p><ul>
@@ -14912,7 +14933,7 @@
          </p><ul>
             <li><a href="#opt_create_stats_options" title="opt_create_stats_options">opt_create_stats_options</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="changefeed_target" href="#changefeed_target">changefeed_target:</a></p><svg width="487" height="37">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="changefeed_table_target" href="#changefeed_table_target">changefeed_table_target:</a></p><svg width="487" height="37">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon><a xlink:href="#opt_table_prefix" xlink:title="opt_table_prefix">
@@ -14928,7 +14949,7 @@
          <polygon points="477 17 485 13 485 21"></polygon>
          <polygon points="477 17 469 13 469 21"></polygon></svg><p>referenced by:
          </p><ul>
-            <li><a href="#changefeed_targets" title="changefeed_targets">changefeed_targets</a></li>
+            <li><a href="#changefeed_table_targets" title="changefeed_table_targets">changefeed_table_targets</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="target_elem" href="#target_elem">target_elem:</a></p><svg width="383" height="157">
          
@@ -16726,24 +16747,24 @@
             <li><a href="#abbreviated_grant_stmt" title="abbreviated_grant_stmt">abbreviated_grant_stmt</a></li>
             <li><a href="#abbreviated_revoke_stmt" title="abbreviated_revoke_stmt">abbreviated_revoke_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_changefeed_cmd" href="#alter_changefeed_cmd">alter_changefeed_cmd:</a></p><svg width="465" height="169">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="alter_changefeed_cmd" href="#alter_changefeed_cmd">alter_changefeed_cmd:</a></p><svg width="505" height="169">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon>
          <rect x="51" y="3" width="48" height="32" rx="10"></rect>
          <rect x="49" y="1" width="48" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="59" y="21">ADD</text><a xlink:href="#changefeed_targets" xlink:title="changefeed_targets">
-            <rect x="119" y="3" width="148" height="32"></rect>
-            <rect x="117" y="1" width="148" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="127" y="21">changefeed_targets</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
-            <rect x="287" y="3" width="130" height="32"></rect>
-            <rect x="285" y="1" width="130" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="295" y="21">opt_with_options</text></a><rect x="51" y="47" width="58" height="32" rx="10"></rect>
+         <text class="terminal" x="59" y="21">ADD</text><a xlink:href="#changefeed_table_targets" xlink:title="changefeed_table_targets">
+            <rect x="119" y="3" width="188" height="32"></rect>
+            <rect x="117" y="1" width="188" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="127" y="21">changefeed_table_targets</text></a><a xlink:href="#opt_with_options" xlink:title="opt_with_options">
+            <rect x="327" y="3" width="130" height="32"></rect>
+            <rect x="325" y="1" width="130" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="335" y="21">opt_with_options</text></a><rect x="51" y="47" width="58" height="32" rx="10"></rect>
          <rect x="49" y="45" width="58" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="59" y="65">DROP</text><a xlink:href="#changefeed_targets" xlink:title="changefeed_targets">
-            <rect x="129" y="47" width="148" height="32"></rect>
-            <rect x="127" y="45" width="148" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="137" y="65">changefeed_targets</text></a><rect x="51" y="91" width="44" height="32" rx="10"></rect>
+         <text class="terminal" x="59" y="65">DROP</text><a xlink:href="#changefeed_table_targets" xlink:title="changefeed_table_targets">
+            <rect x="129" y="47" width="188" height="32"></rect>
+            <rect x="127" y="45" width="188" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="137" y="65">changefeed_table_targets</text></a><rect x="51" y="91" width="44" height="32" rx="10"></rect>
          <rect x="49" y="89" width="44" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="59" y="109">SET</text><a xlink:href="#kv_option_list" xlink:title="kv_option_list">
             <rect x="115" y="91" width="108" height="32"></rect>
@@ -16753,9 +16774,9 @@
          <text class="terminal" x="59" y="153">UNSET</text><a xlink:href="#name_list" xlink:title="name_list">
             <rect x="135" y="135" width="82" height="32"></rect>
             <rect x="133" y="133" width="82" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="143" y="153">name_list</text></a><path class="line" d="m17 17 h2 m20 0 h10 m48 0 h10 m0 0 h10 m148 0 h10 m0 0 h10 m130 0 h10 m-406 0 h20 m386 0 h20 m-426 0 q10 0 10 10 m406 0 q0 -10 10 -10 m-416 10 v24 m406 0 v-24 m-406 24 q0 10 10 10 m386 0 q10 0 10 -10 m-396 10 h10 m58 0 h10 m0 0 h10 m148 0 h10 m0 0 h140 m-396 -10 v20 m406 0 v-20 m-406 20 v24 m406 0 v-24 m-406 24 q0 10 10 10 m386 0 q10 0 10 -10 m-396 10 h10 m44 0 h10 m0 0 h10 m108 0 h10 m0 0 h194 m-396 -10 v20 m406 0 v-20 m-406 20 v24 m406 0 v-24 m-406 24 q0 10 10 10 m386 0 q10 0 10 -10 m-396 10 h10 m64 0 h10 m0 0 h10 m82 0 h10 m0 0 h200 m23 -132 h-3"></path>
-         <polygon points="455 17 463 13 463 21"></polygon>
-         <polygon points="455 17 447 13 447 21"></polygon></svg><p>referenced by:
+            <text class="nonterminal" x="143" y="153">name_list</text></a><path class="line" d="m17 17 h2 m20 0 h10 m48 0 h10 m0 0 h10 m188 0 h10 m0 0 h10 m130 0 h10 m-446 0 h20 m426 0 h20 m-466 0 q10 0 10 10 m446 0 q0 -10 10 -10 m-456 10 v24 m446 0 v-24 m-446 24 q0 10 10 10 m426 0 q10 0 10 -10 m-436 10 h10 m58 0 h10 m0 0 h10 m188 0 h10 m0 0 h140 m-436 -10 v20 m446 0 v-20 m-446 20 v24 m446 0 v-24 m-446 24 q0 10 10 10 m426 0 q10 0 10 -10 m-436 10 h10 m44 0 h10 m0 0 h10 m108 0 h10 m0 0 h234 m-436 -10 v20 m446 0 v-20 m-446 20 v24 m446 0 v-24 m-446 24 q0 10 10 10 m426 0 q10 0 10 -10 m-436 10 h10 m64 0 h10 m0 0 h10 m82 0 h10 m0 0 h240 m23 -132 h-3"></path>
+         <polygon points="495 17 503 13 503 21"></polygon>
+         <polygon points="495 17 487 13 487 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#alter_changefeed_cmds" title="alter_changefeed_cmds">alter_changefeed_cmds</a></li>
          </ul>
@@ -17870,7 +17891,7 @@
          <polygon points="151 5 159 1 159 9"></polygon>
          <polygon points="151 5 143 1 143 9"></polygon></svg><p>referenced by:
          </p><ul>
-            <li><a href="#changefeed_target" title="changefeed_target">changefeed_target</a></li>
+            <li><a href="#changefeed_table_target" title="changefeed_table_target">changefeed_table_target</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_changefeed_family" href="#opt_changefeed_family">opt_changefeed_family:</a></p><svg width="291" height="57">
          
@@ -17885,7 +17906,7 @@
          <polygon points="281 5 289 1 289 9"></polygon>
          <polygon points="281 5 273 1 273 9"></polygon></svg><p>referenced by:
          </p><ul>
-            <li><a href="#changefeed_target" title="changefeed_target">changefeed_target</a></li>
+            <li><a href="#changefeed_table_target" title="changefeed_table_target">changefeed_table_target</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="target_name" href="#target_name">target_name:</a></p><svg width="199" height="37">
          
