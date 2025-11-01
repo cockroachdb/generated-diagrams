@@ -9,7 +9,6 @@ preparable_stmt ::=
 	| explain_stmt
 	| import_stmt
 	| insert_stmt
-	| inspect_stmt
 	| pause_stmt
 	| reset_stmt
 	| restore_stmt
