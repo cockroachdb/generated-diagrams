@@ -648,7 +648,6 @@ create_stats_stmt ::=
 
 create_changefeed_stmt ::=
 	'CREATE' 'CHANGEFEED' for_with_lookahead_variants changefeed_table_targets opt_changefeed_sink opt_with_options
-	| 'CREATE_CHANGEFEED_FOR_DATABASE' 'CHANGEFEED' 'FOR' 'DATABASE' database_name optional_db_level_changefeed_filter_option opt_changefeed_sink opt_with_options
 	| 'CREATE' 'CHANGEFEED' opt_changefeed_sink opt_with_options 'AS' 'SELECT' target_list 'FROM' changefeed_target_expr opt_where_clause
 
 create_extension_stmt ::=
@@ -934,17 +933,14 @@ show_jobs_stmt ::=
 	| 'SHOW' 'JOBS'
 	| 'SHOW' 'JOBS' 'WITH' show_job_options_list
 	| 'SHOW' 'CHANGEFEED' 'JOBS'
-	| 'SHOW' 'CHANGEFEED' 'JOBS' 'WITH' 'WATCHED_TABLES'
 	| 'SHOW' 'JOBS' select_stmt
 	| 'SHOW' 'JOBS' select_stmt 'WITH' show_job_options_list
 	| 'SHOW' 'JOBS' 'WHEN' 'COMPLETE' select_stmt
 	| 'SHOW' 'JOBS' for_schedules_clause
 	| 'SHOW' 'CHANGEFEED' 'JOBS' select_stmt
-	| 'SHOW' 'CHANGEFEED' 'JOBS' select_stmt 'WITH' 'WATCHED_TABLES'
 	| 'SHOW' 'JOB' a_expr
 	| 'SHOW' 'JOB' a_expr 'WITH' show_job_options_list
 	| 'SHOW' 'CHANGEFEED' 'JOB' a_expr
-	| 'SHOW' 'CHANGEFEED' 'JOB' a_expr 'WITH' 'WATCHED_TABLES'
 	| 'SHOW' 'JOB' 'WHEN' 'COMPLETE' a_expr
 
 show_locality_stmt ::=
@@ -1232,7 +1228,6 @@ unreserved_keyword ::=
 	| 'FAILURE'
 	| 'FILES'
 	| 'FILTER'
-	| 'FINGERPRINTS'
 	| 'FIRST'
 	| 'FOLLOWING'
 	| 'FORMAT'
@@ -1597,7 +1592,6 @@ unreserved_keyword ::=
 	| 'VISIBILITY'
 	| 'VOLATILE'
 	| 'VOTERS'
-	| 'WATCHED_TABLES'
 	| 'WITHIN'
 	| 'WITHOUT'
 	| 'WRITE'
@@ -1965,10 +1959,6 @@ changefeed_table_targets ::=
 
 opt_changefeed_sink ::=
 	'INTO' string_or_placeholder
-
-optional_db_level_changefeed_filter_option ::=
-	db_level_changefeed_filter_option
-	| 
 
 target_list ::=
 	( target_elem ) ( ( ',' target_elem ) )*
@@ -2887,10 +2877,6 @@ create_stats_option_list ::=
 changefeed_table_target ::=
 	opt_table_prefix table_name opt_changefeed_family
 
-db_level_changefeed_filter_option ::=
-	'EXCLUDE' 'TABLES' table_name_list
-	| 'INCLUDE' 'TABLES' table_name_list
-
 target_elem ::=
 	a_expr 'AS' target_name
 	| a_expr bare_col_label
@@ -3303,8 +3289,6 @@ alter_changefeed_cmd ::=
 	| 'DROP' changefeed_table_targets
 	| 'SET' kv_option_list
 	| 'UNSET' name_list
-	| 'SET' db_level_changefeed_filter_option
-	| 'UNSET' include_or_exclude 'TABLES'
 
 alter_backup_cmd ::=
 	'ADD' backup_kms
@@ -3649,9 +3633,6 @@ db_object_name_list ::=
 inspect_option ::=
 	'INDEX' 'ALL'
 	| 'INDEX' '(' table_index_name_list ')'
-	| 'DETACHED'
-	| 'DETACHED' '=' 'TRUE'
-	| 'DETACHED' '=' 'FALSE'
 
 virtual_cluster_name ::=
 	'VIRTUAL_CLUSTER_NAME'
@@ -3844,10 +3825,6 @@ sequence_option_elem ::=
 	| 'RESTART' signed_iconst64
 	| 'RESTART' 'WITH' signed_iconst64
 	| 'VIRTUAL'
-
-include_or_exclude ::=
-	'INCLUDE'
-	| 'EXCLUDE'
 
 backup_kms ::=
 	'NEW_KMS' '=' string_or_placeholder_opt_list 'WITH' 'OLD_KMS' '=' string_or_placeholder_opt_list
@@ -4175,7 +4152,6 @@ bare_label_keywords ::=
 	| 'FALSE'
 	| 'FAMILY'
 	| 'FILES'
-	| 'FINGERPRINTS'
 	| 'FIRST'
 	| 'FLOAT'
 	| 'FOLLOWING'
@@ -4614,7 +4590,6 @@ bare_label_keywords ::=
 	| 'VISIBILITY'
 	| 'VOLATILE'
 	| 'VOTERS'
-	| 'WATCHED_TABLES'
 	| 'WHEN'
 	| 'WORK'
 	| 'WRITE'
