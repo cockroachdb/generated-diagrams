@@ -1,16 +1,8 @@
 alter_index_stmt ::=
-	'ALTER' 'INDEX' table_name '@' index_name 'PARTITION' 'BY' 'LIST' '(' name_list ')' '(' list_partitions ')' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' table_name '@' index_name 'PARTITION' 'BY' 'RANGE' '(' name_list ')' '(' range_partitions ')' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' table_name '@' index_name 'PARTITION' 'BY' 'NOTHING' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' index_name 'PARTITION' 'BY' 'LIST' '(' name_list ')' '(' list_partitions ')' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' index_name 'PARTITION' 'BY' 'RANGE' '(' name_list ')' '(' range_partitions ')' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' index_name 'PARTITION' 'BY' 'NOTHING' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' 'IF' 'EXISTS' table_name '@' index_name 'PARTITION' 'BY' 'LIST' '(' name_list ')' '(' list_partitions ')' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' 'IF' 'EXISTS' table_name '@' index_name 'PARTITION' 'BY' 'RANGE' '(' name_list ')' '(' range_partitions ')' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' 'IF' 'EXISTS' table_name '@' index_name 'PARTITION' 'BY' 'NOTHING' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' 'IF' 'EXISTS' index_name 'PARTITION' 'BY' 'LIST' '(' name_list ')' '(' list_partitions ')' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' 'IF' 'EXISTS' index_name 'PARTITION' 'BY' 'RANGE' '(' name_list ')' '(' range_partitions ')' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
-	| 'ALTER' 'INDEX' 'IF' 'EXISTS' index_name 'PARTITION' 'BY' 'NOTHING' ( ( ',' ( ( ( 'PARTITION' 'BY' ( 'LIST' '(' name_list ')' '(' list_partitions ')' | 'RANGE' '(' name_list ')' '(' range_partitions ')' | 'NOTHING' ) ) ) ) ) )*
+	'ALTER' 'INDEX' table_name '@' index_name partition_by ( ( ',' ( ( partition_by ) ) ) )*
+	| 'ALTER' 'INDEX' index_name partition_by ( ( ',' ( ( partition_by ) ) ) )*
+	| 'ALTER' 'INDEX' 'IF' 'EXISTS' table_name '@' index_name partition_by ( ( ',' ( ( partition_by ) ) ) )*
+	| 'ALTER' 'INDEX' 'IF' 'EXISTS' index_name partition_by ( ( ',' ( ( partition_by ) ) ) )*
 	| 'ALTER' 'INDEX' table_name '@' index_name 'SPLIT' 'AT' select_stmt
 	| 'ALTER' 'INDEX' index_name 'SPLIT' 'AT' select_stmt
 	| 'ALTER' 'INDEX' table_name '@' index_name 'SPLIT' 'AT' select_stmt 'WITH' 'EXPIRATION' a_expr
@@ -24,11 +16,9 @@ alter_index_stmt ::=
 	| 'ALTER' 'INDEX' index_name 'RENAME' 'TO' index_new_name
 	| 'ALTER' 'INDEX' 'IF' 'EXISTS' table_name '@' index_name 'RENAME' 'TO' index_new_name
 	| 'ALTER' 'INDEX' 'IF' 'EXISTS' index_name 'RENAME' 'TO' index_new_name
-	| 'ALTER' 'INDEX' table_name '@' index_name 'CONFIGURE' 'ZONE' 'USING' variable '=' 'COPY' 'FROM' 'PARENT' ( ( ',' variable '=' value | ',' variable '=' 'COPY' 'FROM' 'PARENT' ) )*
-	| 'ALTER' 'INDEX' table_name '@' index_name 'CONFIGURE' 'ZONE' 'USING' variable '=' value ( ( ',' variable '=' value | ',' variable '=' 'COPY' 'FROM' 'PARENT' ) )*
+	| 'ALTER' 'INDEX' table_name '@' index_name 'CONFIGURE' 'ZONE' 'USING' var_set_list
 	| 'ALTER' 'INDEX' table_name '@' index_name 'CONFIGURE' 'ZONE' 'DISCARD'
-	| 'ALTER' 'INDEX' index_name 'CONFIGURE' 'ZONE' 'USING' variable '=' 'COPY' 'FROM' 'PARENT' ( ( ',' variable '=' value | ',' variable '=' 'COPY' 'FROM' 'PARENT' ) )*
-	| 'ALTER' 'INDEX' index_name 'CONFIGURE' 'ZONE' 'USING' variable '=' value ( ( ',' variable '=' value | ',' variable '=' 'COPY' 'FROM' 'PARENT' ) )*
+	| 'ALTER' 'INDEX' index_name 'CONFIGURE' 'ZONE' 'USING' var_set_list
 	| 'ALTER' 'INDEX' index_name 'CONFIGURE' 'ZONE' 'DISCARD'
 	| 'ALTER' 'INDEX' table_name '@' index_name 'NOT' 'VISIBLE'
 	| 'ALTER' 'INDEX' table_name '@' index_name 'INVISIBLE'
