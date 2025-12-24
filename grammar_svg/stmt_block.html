@@ -4503,6 +4503,7 @@
             <li><a href="#opt_alter_column_using" title="opt_alter_column_using">opt_alter_column_using</a></li>
             <li><a href="#opt_hash_sharded_bucket_count" title="opt_hash_sharded_bucket_count">opt_hash_sharded_bucket_count</a></li>
             <li><a href="#opt_policy_exprs" title="opt_policy_exprs">opt_policy_exprs</a></li>
+            <li><a href="#opt_show_after_before_clause" title="opt_show_after_before_clause">opt_show_after_before_clause</a></li>
             <li><a href="#opt_slice_bound" title="opt_slice_bound">opt_slice_bound</a></li>
             <li><a href="#overlay_list" title="overlay_list">overlay_list</a></li>
             <li><a href="#overlay_placing" title="overlay_placing">overlay_placing</a></li>
@@ -5239,7 +5240,10 @@
          <text class="terminal" x="157" y="87">IN</text><a xlink:href="#string_or_placeholder_opt_list" xlink:title="string_or_placeholder_opt_list">
             <rect x="205" y="69" width="214" height="32"></rect>
             <rect x="203" y="67" width="214" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="213" y="87">string_or_placeholder_opt_list</text></a><rect x="45" y="113" width="74" height="32" rx="10"></rect>
+            <text class="nonterminal" x="213" y="87">string_or_placeholder_opt_list</text></a><a xlink:href="#opt_show_after_before_clause" xlink:title="opt_show_after_before_clause">
+            <rect x="439" y="69" width="218" height="32"></rect>
+            <rect x="437" y="67" width="218" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="447" y="87">opt_show_after_before_clause</text></a><rect x="45" y="113" width="74" height="32" rx="10"></rect>
          <rect x="43" y="111" width="74" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="53" y="131">BACKUP</text>
          <rect x="159" y="145" width="86" height="32" rx="10"></rect>
@@ -5258,7 +5262,7 @@
             <text class="nonterminal" x="607" y="131">string_or_placeholder_opt_list</text></a><a xlink:href="#opt_with_show_backup_options" xlink:title="opt_with_show_backup_options">
             <rect x="833" y="113" width="224" height="32"></rect>
             <rect x="831" y="111" width="224" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="841" y="131">opt_with_show_backup_options</text></a><path class="line" d="m19 17 h2 m0 0 h10 m64 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-116 66 l2 0 m2 0 l2 0 m2 0 l2 0 m22 0 h10 m84 0 h10 m0 0 h10 m36 0 h10 m0 0 h10 m214 0 h10 m0 0 h638 m-1052 0 h20 m1032 0 h20 m-1072 0 q10 0 10 10 m1052 0 q0 -10 10 -10 m-1062 10 v24 m1052 0 v-24 m-1052 24 q0 10 10 10 m1032 0 q10 0 10 -10 m-1042 10 h10 m74 0 h10 m20 0 h10 m0 0 h176 m-206 0 h20 m186 0 h20 m-226 0 q10 0 10 10 m206 0 q0 -10 10 -10 m-216 10 v12 m206 0 v-12 m-206 12 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m86 0 h10 m0 0 h10 m60 0 h10 m20 -32 h10 m158 0 h10 m0 0 h10 m36 0 h10 m0 0 h10 m214 0 h10 m0 0 h10 m224 0 h10 m23 -44 h-3"></path>
+            <text class="nonterminal" x="841" y="131">opt_with_show_backup_options</text></a><path class="line" d="m19 17 h2 m0 0 h10 m64 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-116 66 l2 0 m2 0 l2 0 m2 0 l2 0 m22 0 h10 m84 0 h10 m0 0 h10 m36 0 h10 m0 0 h10 m214 0 h10 m0 0 h10 m218 0 h10 m0 0 h400 m-1052 0 h20 m1032 0 h20 m-1072 0 q10 0 10 10 m1052 0 q0 -10 10 -10 m-1062 10 v24 m1052 0 v-24 m-1052 24 q0 10 10 10 m1032 0 q10 0 10 -10 m-1042 10 h10 m74 0 h10 m20 0 h10 m0 0 h176 m-206 0 h20 m186 0 h20 m-226 0 q10 0 10 10 m206 0 q0 -10 10 -10 m-216 10 v12 m206 0 v-12 m-206 12 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m86 0 h10 m0 0 h10 m60 0 h10 m20 -32 h10 m158 0 h10 m0 0 h10 m36 0 h10 m0 0 h10 m214 0 h10 m0 0 h10 m224 0 h10 m23 -44 h-3"></path>
          <polygon points="1095 83 1103 79 1103 87"></polygon>
          <polygon points="1095 83 1087 79 1087 87"></polygon></svg><p>referenced by:
          </p><ul>
@@ -11636,6 +11640,34 @@
             <li><a href="#use_stmt" title="use_stmt">use_stmt</a></li>
             <li><a href="#var_list" title="var_list">var_list</a></li>
             <li><a href="#var_set_list" title="var_set_list">var_set_list</a></li>
+         </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_show_after_before_clause" href="#opt_show_after_before_clause">opt_show_after_before_clause:</a></p><svg width="503" height="165">
+         
+         <polygon points="9 5 1 1 1 9"></polygon>
+         <polygon points="17 5 9 1 9 9"></polygon>
+         <rect x="71" y="23" width="62" height="32" rx="10"></rect>
+         <rect x="69" y="21" width="62" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="41">AFTER</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="173" y="55" width="64" height="32"></rect>
+            <rect x="171" y="53" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="181" y="73">a_expr</text></a><rect x="257" y="55" width="74" height="32" rx="10"></rect>
+         <rect x="255" y="53" width="74" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="265" y="73">BEFORE</text>
+         <rect x="71" y="99" width="74" height="32" rx="10"></rect>
+         <rect x="69" y="97" width="74" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="117">BEFORE</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="185" y="131" width="64" height="32"></rect>
+            <rect x="183" y="129" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="193" y="149">a_expr</text></a><rect x="269" y="131" width="62" height="32" rx="10"></rect>
+         <rect x="267" y="129" width="62" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="277" y="149">AFTER</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="391" y="23" width="64" height="32"></rect>
+            <rect x="389" y="21" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="399" y="41">a_expr</text></a><path class="line" d="m17 5 h2 m20 0 h10 m0 0 h414 m-444 0 h20 m424 0 h20 m-464 0 q10 0 10 10 m444 0 q0 -10 10 -10 m-454 10 v12 m444 0 v-12 m-444 12 q0 10 10 10 m424 0 q10 0 10 -10 m-414 10 h10 m62 0 h10 m20 0 h10 m0 0 h168 m-198 0 h20 m178 0 h20 m-218 0 q10 0 10 10 m198 0 q0 -10 10 -10 m-208 10 v12 m198 0 v-12 m-198 12 q0 10 10 10 m178 0 q10 0 10 -10 m-188 10 h10 m64 0 h10 m0 0 h10 m74 0 h10 m-300 -32 h20 m300 0 h20 m-340 0 q10 0 10 10 m320 0 q0 -10 10 -10 m-330 10 v56 m320 0 v-56 m-320 56 q0 10 10 10 m300 0 q10 0 10 -10 m-310 10 h10 m74 0 h10 m20 0 h10 m0 0 h156 m-186 0 h20 m166 0 h20 m-206 0 q10 0 10 10 m186 0 q0 -10 10 -10 m-196 10 v12 m186 0 v-12 m-186 12 q0 10 10 10 m166 0 q10 0 10 -10 m-176 10 h10 m64 0 h10 m0 0 h10 m62 0 h10 m40 -108 h10 m64 0 h10 m23 -32 h-3"></path>
+         <polygon points="493 5 501 1 501 9"></polygon>
+         <polygon points="493 5 485 1 485 9"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#show_backup_stmt" title="show_backup_stmt">show_backup_stmt</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_with_show_backup_options" href="#opt_with_show_backup_options">opt_with_show_backup_options:</a></p><svg width="601" height="101">
          
