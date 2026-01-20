@@ -865,7 +865,7 @@ use_stmt ::=
 	'USE' var_value
 
 show_backup_stmt ::=
-	'SHOW' 'BACKUPS' 'IN' string_or_placeholder_opt_list opt_show_backup_time_filter_clause
+	'SHOW' 'BACKUPS' 'IN' string_or_placeholder_opt_list opt_with_show_backups_options
 	| 'SHOW' 'BACKUP' show_backup_details 'FROM' string_or_placeholder 'IN' string_or_placeholder_opt_list opt_with_show_backup_options
 	| 'SHOW' 'BACKUP' string_or_placeholder 'IN' string_or_placeholder_opt_list opt_with_show_backup_options
 
@@ -1289,6 +1289,8 @@ unreserved_keyword ::=
 	| 'INCLUDE_ALL_SECONDARY_TENANTS'
 	| 'INCLUDE_ALL_VIRTUAL_CLUSTERS'
 	| 'INCREMENT'
+	| 'INCREMENTAL'
+	| 'INCREMENTAL_LOCATION'
 	| 'INDEX'
 	| 'INDEXES'
 	| 'INHERITS'
@@ -1360,7 +1362,6 @@ unreserved_keyword ::=
 	| 'NAN'
 	| 'NEVER'
 	| 'NEW'
-	| 'NEWER'
 	| 'NEW_DB_NAME'
 	| 'NEW_KMS'
 	| 'NEXT'
@@ -1394,7 +1395,6 @@ unreserved_keyword ::=
 	| 'OFF'
 	| 'OIDS'
 	| 'OLD'
-	| 'OLDER'
 	| 'OLD_KMS'
 	| 'OPERATOR'
 	| 'OPT'
@@ -1566,7 +1566,6 @@ unreserved_keyword ::=
 	| 'TENANTS'
 	| 'TESTING_RELOCATE'
 	| 'TEXT'
-	| 'THAN'
 	| 'TIES'
 	| 'TRACE'
 	| 'TRACING'
@@ -2211,11 +2210,9 @@ var_value ::=
 	a_expr
 	| extra_var_value
 
-opt_show_backup_time_filter_clause ::=
-	'NEWER' 'THAN' a_expr
-	| 'OLDER' 'THAN' a_expr
-	| 'NEWER' 'THAN' a_expr 'OLDER' 'THAN' a_expr
-	| 'OLDER' 'THAN' a_expr 'NEWER' 'THAN' a_expr
+opt_with_show_backups_options ::=
+	'WITH' show_backups_options_list
+	| 'WITH' 'OPTIONS' '(' show_backups_options_list ')'
 	| 
 
 show_backup_details ::=
@@ -2682,6 +2679,7 @@ backup_options ::=
 	| 'DETACHED' '=' 'TRUE'
 	| 'DETACHED' '=' 'FALSE'
 	| 'KMS' '=' string_or_placeholder_opt_list
+	| 'INCREMENTAL_LOCATION' '=' string_or_placeholder_opt_list
 	| 'EXECUTION' 'LOCALITY' '=' string_or_placeholder
 	| include_all_clusters '=' a_expr
 	| 'UPDATES_CLUSTER_MONITORING_METRICS'
@@ -3114,6 +3112,7 @@ restore_options ::=
 	| 'DETACHED'
 	| 'SKIP_LOCALITIES_CHECK'
 	| 'NEW_DB_NAME' '=' string_or_placeholder
+	| 'INCREMENTAL_LOCATION' '=' string_or_placeholder_opt_list
 	| virtual_cluster_name '=' string_or_placeholder
 	| virtual_cluster_opt '=' string_or_placeholder
 	| 'SCHEMA_ONLY'
@@ -3157,6 +3156,9 @@ extra_var_value ::=
 	'ON'
 	| 'NONE'
 	| cockroachdb_extra_reserved_keyword
+
+show_backups_options_list ::=
+	( show_backups_options ) ( ( ',' show_backups_options ) )*
 
 show_backup_options_list ::=
 	( show_backup_options ) ( ( ',' show_backup_options ) )*
@@ -3772,11 +3774,15 @@ for_locking_item ::=
 var_list ::=
 	( var_value ) ( ( ',' var_value ) )*
 
+show_backups_options ::=
+	'INDEX'
+
 show_backup_options ::=
 	'AS_JSON'
 	| 'CHECK_FILES'
 	| 'SKIP' 'SIZE'
 	| 'DEBUG_IDS'
+	| 'INCREMENTAL_LOCATION' '=' string_or_placeholder_opt_list
 	| 'KMS' '=' string_or_placeholder_opt_list
 	| 'ENCRYPTION_PASSPHRASE' '=' string_or_placeholder
 	| 'PRIVILEGES'
@@ -4250,6 +4256,8 @@ bare_label_keywords ::=
 	| 'INCLUDE_ALL_VIRTUAL_CLUSTERS'
 	| 'INCLUDING'
 	| 'INCREMENT'
+	| 'INCREMENTAL'
+	| 'INCREMENTAL_LOCATION'
 	| 'INDEX'
 	| 'INDEXES'
 	| 'INDEX'
@@ -4340,7 +4348,6 @@ bare_label_keywords ::=
 	| 'NATURAL'
 	| 'NEVER'
 	| 'NEW'
-	| 'NEWER'
 	| 'NEW_DB_NAME'
 	| 'NEW_KMS'
 	| 'NEXT'
@@ -4378,7 +4385,6 @@ bare_label_keywords ::=
 	| 'OFF'
 	| 'OIDS'
 	| 'OLD'
-	| 'OLDER'
 	| 'OLD_KMS'
 	| 'ONLY'
 	| 'OPERATOR'
@@ -4572,7 +4578,6 @@ bare_label_keywords ::=
 	| 'TENANT_NAME'
 	| 'TESTING_RELOCATE'
 	| 'TEXT'
-	| 'THAN'
 	| 'THEN'
 	| 'THROTTLING'
 	| 'TIES'
