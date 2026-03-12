@@ -3132,6 +3132,7 @@ restore_options ::=
 	| 'EXPERIMENTAL' 'DEFERRED' 'COPY'
 	| 'EXPERIMENTAL' 'COPY'
 	| 'REMOVE_REGIONS'
+	| 'GRANTS'
 
 scrub_option_list ::=
 	( scrub_option ) ( ( ',' scrub_option ) )*
@@ -3882,6 +3883,8 @@ var_set_list ::=
 
 alter_index_cmd ::=
 	partition_by_index
+	| 'SET' '(' storage_parameter_list ')'
+	| 'RESET' '(' storage_parameter_key_list ')'
 
 sequence_option_elem ::=
 	'AS' typename
