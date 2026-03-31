@@ -1987,6 +1987,7 @@
          </p><ul>
             <li><a href="#alter_type_stmt" title="alter_type_stmt">alter_type_stmt</a></li>
             <li><a href="#comment_stmt" title="comment_stmt">comment_stmt</a></li>
+            <li><a href="#create_domain_stmt" title="create_domain_stmt">create_domain_stmt</a></li>
             <li><a href="#create_type_stmt" title="create_type_stmt">create_type_stmt</a></li>
             <li><a href="#type_name_list" title="type_name_list">type_name_list</a></li>
             <li><a href="#unlisten_stmt" title="unlisten_stmt">unlisten_stmt</a></li>
@@ -2130,6 +2131,7 @@
             <li><a href="#database_name" title="database_name">database_name</a></li>
             <li><a href="#db_object_name_component" title="db_object_name_component">db_object_name_component</a></li>
             <li><a href="#deallocate_stmt" title="deallocate_stmt">deallocate_stmt</a></li>
+            <li><a href="#domain_constraint_list_opt" title="domain_constraint_list_opt">domain_constraint_list_opt</a></li>
             <li><a href="#drop_policy_stmt" title="drop_policy_stmt">drop_policy_stmt</a></li>
             <li><a href="#drop_trigger_stmt" title="drop_trigger_stmt">drop_trigger_stmt</a></li>
             <li><a href="#family_name" title="family_name">family_name</a></li>
@@ -3259,7 +3261,7 @@
          </p><ul>
             <li><a href="#create_stmt" title="create_stmt">create_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_ddl_stmt" href="#create_ddl_stmt">create_ddl_stmt:</a></p><svg width="265" height="521">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_ddl_stmt" href="#create_ddl_stmt">create_ddl_stmt:</a></p><svg width="265" height="565">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon><a xlink:href="#create_database_stmt" xlink:title="create_database_stmt">
@@ -3280,25 +3282,28 @@
             <text class="nonterminal" x="59" y="197">create_table_as_stmt</text></a><a xlink:href="#create_type_stmt" xlink:title="create_type_stmt">
             <rect x="51" y="223" width="132" height="32"></rect>
             <rect x="49" y="221" width="132" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="241">create_type_stmt</text></a><a xlink:href="#create_view_stmt" xlink:title="create_view_stmt">
-            <rect x="51" y="267" width="132" height="32"></rect>
-            <rect x="49" y="265" width="132" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="285">create_view_stmt</text></a><a xlink:href="#create_sequence_stmt" xlink:title="create_sequence_stmt">
-            <rect x="51" y="311" width="166" height="32"></rect>
-            <rect x="49" y="309" width="166" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="329">create_sequence_stmt</text></a><a xlink:href="#create_func_stmt" xlink:title="create_func_stmt">
-            <rect x="51" y="355" width="130" height="32"></rect>
-            <rect x="49" y="353" width="130" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="373">create_func_stmt</text></a><a xlink:href="#create_proc_stmt" xlink:title="create_proc_stmt">
-            <rect x="51" y="399" width="132" height="32"></rect>
-            <rect x="49" y="397" width="132" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="417">create_proc_stmt</text></a><a xlink:href="#create_trigger_stmt" xlink:title="create_trigger_stmt">
-            <rect x="51" y="443" width="146" height="32"></rect>
-            <rect x="49" y="441" width="146" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="461">create_trigger_stmt</text></a><a xlink:href="#create_policy_stmt" xlink:title="create_policy_stmt">
-            <rect x="51" y="487" width="140" height="32"></rect>
-            <rect x="49" y="485" width="140" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="505">create_policy_stmt</text></a><path class="line" d="m17 17 h2 m20 0 h10 m164 0 h10 m0 0 h2 m-206 0 h20 m186 0 h20 m-226 0 q10 0 10 10 m206 0 q0 -10 10 -10 m-216 10 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m138 0 h10 m0 0 h28 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m154 0 h10 m0 0 h12 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m136 0 h10 m0 0 h30 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m160 0 h10 m0 0 h6 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m132 0 h10 m0 0 h34 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m132 0 h10 m0 0 h34 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m166 0 h10 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m130 0 h10 m0 0 h36 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m132 0 h10 m0 0 h34 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m146 0 h10 m0 0 h20 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m140 0 h10 m0 0 h26 m23 -484 h-3"></path>
+            <text class="nonterminal" x="59" y="241">create_type_stmt</text></a><a xlink:href="#create_domain_stmt" xlink:title="create_domain_stmt">
+            <rect x="51" y="267" width="152" height="32"></rect>
+            <rect x="49" y="265" width="152" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="285">create_domain_stmt</text></a><a xlink:href="#create_view_stmt" xlink:title="create_view_stmt">
+            <rect x="51" y="311" width="132" height="32"></rect>
+            <rect x="49" y="309" width="132" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="329">create_view_stmt</text></a><a xlink:href="#create_sequence_stmt" xlink:title="create_sequence_stmt">
+            <rect x="51" y="355" width="166" height="32"></rect>
+            <rect x="49" y="353" width="166" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="373">create_sequence_stmt</text></a><a xlink:href="#create_func_stmt" xlink:title="create_func_stmt">
+            <rect x="51" y="399" width="130" height="32"></rect>
+            <rect x="49" y="397" width="130" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="417">create_func_stmt</text></a><a xlink:href="#create_proc_stmt" xlink:title="create_proc_stmt">
+            <rect x="51" y="443" width="132" height="32"></rect>
+            <rect x="49" y="441" width="132" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="461">create_proc_stmt</text></a><a xlink:href="#create_trigger_stmt" xlink:title="create_trigger_stmt">
+            <rect x="51" y="487" width="146" height="32"></rect>
+            <rect x="49" y="485" width="146" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="505">create_trigger_stmt</text></a><a xlink:href="#create_policy_stmt" xlink:title="create_policy_stmt">
+            <rect x="51" y="531" width="140" height="32"></rect>
+            <rect x="49" y="529" width="140" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="549">create_policy_stmt</text></a><path class="line" d="m17 17 h2 m20 0 h10 m164 0 h10 m0 0 h2 m-206 0 h20 m186 0 h20 m-226 0 q10 0 10 10 m206 0 q0 -10 10 -10 m-216 10 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m138 0 h10 m0 0 h28 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m154 0 h10 m0 0 h12 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m136 0 h10 m0 0 h30 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m160 0 h10 m0 0 h6 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m132 0 h10 m0 0 h34 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m152 0 h10 m0 0 h14 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m132 0 h10 m0 0 h34 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m166 0 h10 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m130 0 h10 m0 0 h36 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m132 0 h10 m0 0 h34 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m146 0 h10 m0 0 h20 m-196 -10 v20 m206 0 v-20 m-206 20 v24 m206 0 v-24 m-206 24 q0 10 10 10 m186 0 q10 0 10 -10 m-196 10 h10 m140 0 h10 m0 0 h26 m23 -528 h-3"></path>
          <polygon points="255 17 263 13 263 21"></polygon>
          <polygon points="255 17 247 13 247 21"></polygon></svg><p>referenced by:
          </p><ul>
@@ -4528,6 +4533,7 @@
             <li><a href="#col_qualification_elem" title="col_qualification_elem">col_qualification_elem</a></li>
             <li><a href="#constraint_elem" title="constraint_elem">constraint_elem</a></li>
             <li><a href="#d_expr" title="d_expr">d_expr</a></li>
+            <li><a href="#domain_constraint_list_opt" title="domain_constraint_list_opt">domain_constraint_list_opt</a></li>
             <li><a href="#drop_schedule_stmt" title="drop_schedule_stmt">drop_schedule_stmt</a></li>
             <li><a href="#execute_schedules_stmt" title="execute_schedules_stmt">execute_schedules_stmt</a></li>
             <li><a href="#expr_list" title="expr_list">expr_list</a></li>
@@ -9984,6 +9990,32 @@
          </p><ul>
             <li><a href="#create_ddl_stmt" title="create_ddl_stmt">create_ddl_stmt</a></li>
          </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_domain_stmt" href="#create_domain_stmt">create_domain_stmt:</a></p><svg width="717" height="37">
+         
+         <polygon points="9 17 1 13 1 21"></polygon>
+         <polygon points="17 17 9 13 9 21"></polygon>
+         <rect x="31" y="3" width="72" height="32" rx="10"></rect>
+         <rect x="29" y="1" width="72" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="39" y="21">CREATE</text>
+         <rect x="123" y="3" width="78" height="32" rx="10"></rect>
+         <rect x="121" y="1" width="78" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="131" y="21">DOMAIN</text><a xlink:href="#type_name" xlink:title="type_name">
+            <rect x="221" y="3" width="92" height="32"></rect>
+            <rect x="219" y="1" width="92" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="229" y="21">type_name</text></a><rect x="333" y="3" width="38" height="32" rx="10"></rect>
+         <rect x="331" y="1" width="38" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="341" y="21">AS</text><a xlink:href="#typename" xlink:title="typename">
+            <rect x="391" y="3" width="84" height="32"></rect>
+            <rect x="389" y="1" width="84" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="399" y="21">typename</text></a><a xlink:href="#domain_constraint_list_opt" xlink:title="domain_constraint_list_opt">
+            <rect x="495" y="3" width="194" height="32"></rect>
+            <rect x="493" y="1" width="194" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="503" y="21">domain_constraint_list_opt</text></a><path class="line" d="m17 17 h2 m0 0 h10 m72 0 h10 m0 0 h10 m78 0 h10 m0 0 h10 m92 0 h10 m0 0 h10 m38 0 h10 m0 0 h10 m84 0 h10 m0 0 h10 m194 0 h10 m3 0 h-3"></path>
+         <polygon points="707 17 715 13 715 21"></polygon>
+         <polygon points="707 17 699 13 699 21"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#create_ddl_stmt" title="create_ddl_stmt">create_ddl_stmt</a></li>
+         </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="create_view_stmt" href="#create_view_stmt">create_view_stmt:</a></p><svg width="1101" height="255">
          
          <polygon points="11 17 3 13 3 21"></polygon>
@@ -10891,30 +10923,33 @@
          </p><ul>
             <li><a href="#drop_ddl_stmt" title="drop_ddl_stmt">drop_ddl_stmt</a></li>
          </ul>
-      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="drop_type_stmt" href="#drop_type_stmt">drop_type_stmt:</a></p><svg width="675" height="69">
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="drop_type_stmt" href="#drop_type_stmt">drop_type_stmt:</a></p><svg width="739" height="81">
          
          <polygon points="9 17 1 13 1 21"></polygon>
          <polygon points="17 17 9 13 9 21"></polygon>
          <rect x="31" y="3" width="58" height="32" rx="10"></rect>
          <rect x="29" y="1" width="58" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="39" y="21">DROP</text>
-         <rect x="109" y="3" width="54" height="32" rx="10"></rect>
-         <rect x="107" y="1" width="54" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="117" y="21">TYPE</text>
-         <rect x="203" y="35" width="34" height="32" rx="10"></rect>
-         <rect x="201" y="33" width="34" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="211" y="53">IF</text>
-         <rect x="257" y="35" width="70" height="32" rx="10"></rect>
-         <rect x="255" y="33" width="70" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="265" y="53">EXISTS</text><a xlink:href="#type_name_list" xlink:title="type_name_list">
-            <rect x="367" y="3" width="118" height="32"></rect>
-            <rect x="365" y="1" width="118" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="375" y="21">type_name_list</text></a><a xlink:href="#opt_drop_behavior" xlink:title="opt_drop_behavior">
-            <rect x="505" y="3" width="142" height="32"></rect>
-            <rect x="503" y="1" width="142" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="513" y="21">opt_drop_behavior</text></a><path class="line" d="m17 17 h2 m0 0 h10 m58 0 h10 m0 0 h10 m54 0 h10 m20 0 h10 m0 0 h134 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v12 m164 0 v-12 m-164 12 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m34 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m118 0 h10 m0 0 h10 m142 0 h10 m3 0 h-3"></path>
-         <polygon points="665 17 673 13 673 21"></polygon>
-         <polygon points="665 17 657 13 657 21"></polygon></svg><p>referenced by:
+         <rect x="129" y="3" width="54" height="32" rx="10"></rect>
+         <rect x="127" y="1" width="54" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="137" y="21">TYPE</text>
+         <rect x="129" y="47" width="78" height="32" rx="10"></rect>
+         <rect x="127" y="45" width="78" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="137" y="65">DOMAIN</text>
+         <rect x="267" y="35" width="34" height="32" rx="10"></rect>
+         <rect x="265" y="33" width="34" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="275" y="53">IF</text>
+         <rect x="321" y="35" width="70" height="32" rx="10"></rect>
+         <rect x="319" y="33" width="70" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="329" y="53">EXISTS</text><a xlink:href="#type_name_list" xlink:title="type_name_list">
+            <rect x="431" y="3" width="118" height="32"></rect>
+            <rect x="429" y="1" width="118" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="439" y="21">type_name_list</text></a><a xlink:href="#opt_drop_behavior" xlink:title="opt_drop_behavior">
+            <rect x="569" y="3" width="142" height="32"></rect>
+            <rect x="567" y="1" width="142" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="577" y="21">opt_drop_behavior</text></a><path class="line" d="m17 17 h2 m0 0 h10 m58 0 h10 m20 0 h10 m54 0 h10 m0 0 h24 m-118 0 h20 m98 0 h20 m-138 0 q10 0 10 10 m118 0 q0 -10 10 -10 m-128 10 v24 m118 0 v-24 m-118 24 q0 10 10 10 m98 0 q10 0 10 -10 m-108 10 h10 m78 0 h10 m40 -44 h10 m0 0 h134 m-164 0 h20 m144 0 h20 m-184 0 q10 0 10 10 m164 0 q0 -10 10 -10 m-174 10 v12 m164 0 v-12 m-164 12 q0 10 10 10 m144 0 q10 0 10 -10 m-154 10 h10 m34 0 h10 m0 0 h10 m70 0 h10 m20 -32 h10 m118 0 h10 m0 0 h10 m142 0 h10 m3 0 h-3"></path>
+         <polygon points="729 17 737 13 737 21"></polygon>
+         <polygon points="729 17 721 13 721 21"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#drop_ddl_stmt" title="drop_ddl_stmt">drop_ddl_stmt</a></li>
          </ul>
@@ -11187,6 +11222,7 @@
             <li><a href="#col_def" title="col_def">col_def</a></li>
             <li><a href="#column_table_def" title="column_table_def">column_table_def</a></li>
             <li><a href="#composite_type_list" title="composite_type_list">composite_type_list</a></li>
+            <li><a href="#create_domain_stmt" title="create_domain_stmt">create_domain_stmt</a></li>
             <li><a href="#func_expr_common_subexpr" title="func_expr_common_subexpr">func_expr_common_subexpr</a></li>
             <li><a href="#routine_param_type" title="routine_param_type">routine_param_type</a></li>
             <li><a href="#sequence_option_elem" title="sequence_option_elem">sequence_option_elem</a></li>
@@ -15162,6 +15198,43 @@
          <polygon points="237 5 229 1 229 9"></polygon></svg><p>referenced by:
          </p><ul>
             <li><a href="#create_type_stmt" title="create_type_stmt">create_type_stmt</a></li>
+         </ul>
+      <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="domain_constraint_list_opt" href="#domain_constraint_list_opt">domain_constraint_list_opt:</a></p><svg width="665" height="221">
+         
+         <polygon points="9 33 1 29 1 37"></polygon>
+         <polygon points="17 33 9 29 9 37"></polygon>
+         <rect x="91" y="19" width="80" height="32" rx="10"></rect>
+         <rect x="89" y="17" width="80" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="99" y="37">DEFAULT</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="191" y="19" width="64" height="32"></rect>
+            <rect x="189" y="17" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="199" y="37">a_expr</text></a><rect x="111" y="95" width="48" height="32" rx="10"></rect>
+         <rect x="109" y="93" width="48" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="119" y="113">NOT</text>
+         <rect x="199" y="63" width="56" height="32" rx="10"></rect>
+         <rect x="197" y="61" width="56" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="207" y="81">NULL</text>
+         <rect x="111" y="171" width="110" height="32" rx="10"></rect>
+         <rect x="109" y="169" width="110" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="119" y="189">CONSTRAINT</text><a xlink:href="#name" xlink:title="name">
+            <rect x="241" y="171" width="56" height="32"></rect>
+            <rect x="239" y="169" width="56" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="249" y="189">name</text></a><rect x="337" y="139" width="64" height="32" rx="10"></rect>
+         <rect x="335" y="137" width="64" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="345" y="157">CHECK</text>
+         <rect x="421" y="139" width="26" height="32" rx="10"></rect>
+         <rect x="419" y="137" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="429" y="157">(</text><a xlink:href="#a_expr" xlink:title="a_expr">
+            <rect x="467" y="139" width="64" height="32"></rect>
+            <rect x="465" y="137" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="475" y="157">a_expr</text></a><rect x="551" y="139" width="26" height="32" rx="10"></rect>
+         <rect x="549" y="137" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="559" y="157">)</text>
+         <path class="line" d="m17 33 h2 m60 0 h10 m80 0 h10 m0 0 h10 m64 0 h10 m0 0 h322 m-526 0 h20 m506 0 h20 m-546 0 q10 0 10 10 m526 0 q0 -10 10 -10 m-536 10 v24 m526 0 v-24 m-526 24 q0 10 10 10 m506 0 q10 0 10 -10 m-496 10 h10 m0 0 h58 m-88 0 h20 m68 0 h20 m-108 0 q10 0 10 10 m88 0 q0 -10 10 -10 m-98 10 v12 m88 0 v-12 m-88 12 q0 10 10 10 m68 0 q10 0 10 -10 m-78 10 h10 m48 0 h10 m20 -32 h10 m56 0 h10 m0 0 h322 m-516 -10 v20 m526 0 v-20 m-526 20 v56 m526 0 v-56 m-526 56 q0 10 10 10 m506 0 q10 0 10 -10 m-496 10 h10 m0 0 h196 m-226 0 h20 m206 0 h20 m-246 0 q10 0 10 10 m226 0 q0 -10 10 -10 m-236 10 v12 m226 0 v-12 m-226 12 q0 10 10 10 m206 0 q10 0 10 -10 m-216 10 h10 m110 0 h10 m0 0 h10 m56 0 h10 m20 -32 h10 m64 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m64 0 h10 m0 0 h10 m26 0 h10 m-546 -120 l20 0 m-1 0 q-9 0 -9 -10 l0 -12 q0 -10 10 -10 m546 32 l20 0 m-20 0 q10 0 10 -10 l0 -12 q0 -10 -10 -10 m-546 0 h10 m0 0 h536 m-586 32 h20 m586 0 h20 m-626 0 q10 0 10 10 m606 0 q0 -10 10 -10 m-616 10 v166 m606 0 v-166 m-606 166 q0 10 10 10 m586 0 q10 0 10 -10 m-596 10 h10 m0 0 h576 m23 -186 h-3"></path>
+         <polygon points="655 33 663 29 663 37"></polygon>
+         <polygon points="655 33 647 29 647 37"></polygon></svg><p>referenced by:
+         </p><ul>
+            <li><a href="#create_domain_stmt" title="create_domain_stmt">create_domain_stmt</a></li>
          </ul>
       <p></p><br/><p style="font-size: 14px; font-weight:bold"><a name="opt_temp" href="#opt_temp">opt_temp:</a></p><svg width="203" height="101">
          
