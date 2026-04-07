@@ -1,2 +1,0 @@
-fingerprint_options_list ::=
-	fingerprint_options ( ( ',' fingerprint_options ) )*
