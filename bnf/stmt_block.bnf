@@ -31,7 +31,6 @@ stmt_without_legacy_transaction ::=
 	| declare_cursor_stmt
 	| fetch_cursor_stmt
 	| move_cursor_stmt
-	| lock_stmt
 	| unlisten_stmt
 	| show_commit_timestamp_stmt
 
@@ -180,12 +179,6 @@ fetch_cursor_stmt ::=
 
 move_cursor_stmt ::=
 	'MOVE' cursor_movement_specifier
-
-lock_stmt ::=
-	'LOCK' opt_table relation_expr_list 'IN' lock_mode 'MODE'
-	| 'LOCK' opt_table relation_expr_list 'IN' lock_mode 'MODE' 'NOWAIT'
-	| 'LOCK' opt_table relation_expr_list
-	| 'LOCK' opt_table relation_expr_list 'NOWAIT'
 
 unlisten_stmt ::=
 	'UNLISTEN' type_name
@@ -557,23 +550,6 @@ cursor_movement_specifier ::=
 	| 'FIRST' opt_from_or_in cursor_name
 	| 'LAST' opt_from_or_in cursor_name
 
-opt_table ::=
-	'TABLE'
-	| 
-
-relation_expr_list ::=
-	( relation_expr ) ( ( ',' relation_expr ) )*
-
-lock_mode ::=
-	'ACCESS' 'SHARE'
-	| 'ROW' 'SHARE'
-	| 'ROW' 'EXCLUSIVE'
-	| 'SHARE' 'UPDATE' 'EXCLUSIVE'
-	| 'SHARE' 'ROW' 'EXCLUSIVE'
-	| 'SHARE'
-	| 'EXCLUSIVE'
-	| 'ACCESS' 'EXCLUSIVE'
-
 opt_transaction ::=
 	'TRANSACTION'
 	| 'WORK'
@@ -598,7 +574,6 @@ alter_ddl_stmt ::=
 	| alter_partition_stmt
 	| alter_schema_stmt
 	| alter_type_stmt
-	| alter_domain_stmt
 	| alter_default_privileges_stmt
 	| alter_changefeed_stmt
 	| alter_backup_stmt
@@ -673,7 +648,6 @@ create_ddl_stmt ::=
 	| create_table_stmt
 	| create_table_as_stmt
 	| create_type_stmt
-	| create_domain_stmt
 	| create_view_stmt
 	| create_sequence_stmt
 	| create_func_stmt
@@ -1025,7 +999,7 @@ show_survival_goal_stmt ::=
 	| 'SHOW' 'SURVIVAL' 'GOAL' 'FROM' 'DATABASE' database_name
 
 show_roles_stmt ::=
-	'SHOW' 'ROLES' opt_with_show_users_options opt_limit_clause
+	'SHOW' 'ROLES'
 
 show_savepoint_stmt ::=
 	'SHOW' 'SAVEPOINT' 'STATUS'
@@ -1067,7 +1041,7 @@ show_transfer_stmt ::=
 	| 'SHOW' 'TRANSFER' 'STATE'
 
 show_users_stmt ::=
-	'SHOW' 'USERS' opt_with_show_users_options opt_limit_clause
+	'SHOW' 'USERS'
 
 show_default_session_variables_for_role_stmt ::=
 	'SHOW' 'DEFAULT' 'SESSION' 'VARIABLES' 'FOR' role_or_group_or_user role_spec
@@ -1097,6 +1071,13 @@ show_default_privileges_stmt ::=
 
 show_inspect_errors_stmt ::=
 	'SHOW' 'INSPECT' 'ERRORS' opt_for_table_clause opt_for_job_clause opt_with_details
+
+opt_table ::=
+	'TABLE'
+	| 
+
+relation_expr_list ::=
+	( relation_expr ) ( ( ',' relation_expr ) )*
 
 set_clause_list ::=
 	( set_clause ) ( ( ',' set_clause ) )*
@@ -1254,7 +1235,6 @@ unreserved_keyword ::=
 	| 'ESCAPE'
 	| 'EXCLUDE'
 	| 'EXCLUDING'
-	| 'EXCLUSIVE'
 	| 'EXPLICIT'
 	| 'EXECUTE'
 	| 'EXECUTION'
@@ -1354,7 +1334,6 @@ unreserved_keyword ::=
 	| 'LINESTRINGZ'
 	| 'LINESTRINGZM'
 	| 'LIST'
-	| 'LOCK'
 	| 'LOCAL'
 	| 'LOCKED'
 	| 'LOGICAL'
@@ -1387,7 +1366,6 @@ unreserved_keyword ::=
 	| 'MULTIPOLYGONM'
 	| 'MULTIPOLYGONZ'
 	| 'MULTIPOLYGONZM'
-	| 'NAME'
 	| 'NAMES'
 	| 'NAN'
 	| 'NEVER'
@@ -1777,12 +1755,6 @@ opt_forward_backward ::=
 signed_iconst64 ::=
 	signed_iconst
 
-relation_expr ::=
-	table_name
-	| table_name '*'
-	| 'ONLY' table_name
-	| 'ONLY' '(' table_name ')'
-
 alter_table_stmt ::=
 	alter_onetable_stmt
 	| alter_split_stmt
@@ -1854,23 +1826,6 @@ alter_type_stmt ::=
 	| 'ALTER' 'TYPE' type_name 'RENAME' 'TO' name
 	| 'ALTER' 'TYPE' type_name 'SET' 'SCHEMA' schema_name
 	| 'ALTER' 'TYPE' type_name 'OWNER' 'TO' role_spec
-
-alter_domain_stmt ::=
-	'ALTER' 'DOMAIN' type_name 'SET' 'DEFAULT' a_expr
-	| 'ALTER' 'DOMAIN' type_name 'DROP' 'DEFAULT'
-	| 'ALTER' 'DOMAIN' type_name 'SET' 'NOT' 'NULL'
-	| 'ALTER' 'DOMAIN' type_name 'DROP' 'NOT' 'NULL'
-	| 'ALTER' 'DOMAIN' type_name 'ADD' 'CONSTRAINT' name 'CHECK' '(' a_expr ')' opt_validate_behavior
-	| 'ALTER' 'DOMAIN' type_name 'ADD' 'CHECK' '(' a_expr ')' opt_validate_behavior
-	| 'ALTER' 'DOMAIN' type_name 'ADD' 'CONSTRAINT' name 'NOT' 'NULL' opt_validate_behavior
-	| 'ALTER' 'DOMAIN' type_name 'ADD' 'NOT' 'NULL' opt_validate_behavior
-	| 'ALTER' 'DOMAIN' type_name 'DROP' 'CONSTRAINT' 'IF' 'EXISTS' constraint_name opt_drop_behavior
-	| 'ALTER' 'DOMAIN' type_name 'DROP' 'CONSTRAINT' constraint_name opt_drop_behavior
-	| 'ALTER' 'DOMAIN' type_name 'RENAME' 'CONSTRAINT' constraint_name 'TO' constraint_name
-	| 'ALTER' 'DOMAIN' type_name 'VALIDATE' 'CONSTRAINT' constraint_name
-	| 'ALTER' 'DOMAIN' type_name 'OWNER' 'TO' role_spec
-	| 'ALTER' 'DOMAIN' type_name 'RENAME' 'TO' name
-	| 'ALTER' 'DOMAIN' type_name 'SET' 'SCHEMA' schema_name
 
 alter_default_privileges_stmt ::=
 	'ALTER' 'DEFAULT' 'PRIVILEGES' opt_for_roles opt_in_schemas abbreviated_grant_stmt
@@ -1986,9 +1941,6 @@ create_type_stmt ::=
 	| 'CREATE' 'TYPE' 'IF' 'NOT' 'EXISTS' type_name 'AS' 'ENUM' '(' opt_enum_val_list ')'
 	| 'CREATE' 'TYPE' type_name 'AS' '(' opt_composite_type_list ')'
 	| 'CREATE' 'TYPE' 'IF' 'NOT' 'EXISTS' type_name 'AS' '(' opt_composite_type_list ')'
-
-create_domain_stmt ::=
-	'CREATE' 'DOMAIN' type_name 'AS' typename domain_constraint_list_opt
 
 create_view_stmt ::=
 	'CREATE' opt_temp 'VIEW' view_name opt_column_list opt_view_with 'AS' select_stmt
@@ -2120,8 +2072,6 @@ drop_schema_stmt ::=
 drop_type_stmt ::=
 	'DROP' 'TYPE' type_name_list opt_drop_behavior
 	| 'DROP' 'TYPE' 'IF' 'EXISTS' type_name_list opt_drop_behavior
-	| 'DROP' 'DOMAIN' type_name_list opt_drop_behavior
-	| 'DROP' 'DOMAIN' 'IF' 'EXISTS' type_name_list opt_drop_behavior
 
 drop_func_stmt ::=
 	'DROP' 'FUNCTION' function_with_paramtypes_list opt_drop_behavior
@@ -2331,10 +2281,6 @@ statements_or_queries ::=
 opt_show_ranges_options ::=
 	'WITH' show_ranges_options
 
-opt_with_show_users_options ::=
-	'WITH' show_users_options_list
-	| 
-
 opt_compact ::=
 	'COMPACT'
 	| 
@@ -2376,6 +2322,12 @@ opt_for_job_clause ::=
 opt_with_details ::=
 	'WITH' 'DETAILS'
 	| 
+
+relation_expr ::=
+	table_name
+	| table_name '*'
+	| 'ONLY' table_name
+	| 'ONLY' '(' table_name ')'
 
 set_clause ::=
 	single_set_clause
@@ -2610,8 +2562,6 @@ alter_database_add_super_region ::=
 
 alter_database_alter_super_region ::=
 	'ALTER' 'DATABASE' database_name 'ALTER' 'SUPER' 'REGION' region_name 'VALUES' region_name_list
-	| 'ALTER' 'DATABASE' database_name 'ALTER' 'SUPER' 'REGION' region_name survival_goal_clause
-	| 'ALTER' 'DATABASE' database_name 'ALTER' 'SUPER' 'REGION' region_name 'SURVIVE' 'DEFAULT'
 
 alter_database_drop_super_region ::=
 	'ALTER' 'DATABASE' database_name 'DROP' 'SUPER' 'REGION' region_name
@@ -2627,7 +2577,6 @@ alter_database_set_zone_config_extension_stmt ::=
 	'ALTER' 'DATABASE' database_name 'ALTER' 'LOCALITY' 'GLOBAL' set_zone_config
 	| 'ALTER' 'DATABASE' database_name 'ALTER' 'LOCALITY' 'REGIONAL' set_zone_config
 	| 'ALTER' 'DATABASE' database_name 'ALTER' 'LOCALITY' 'REGIONAL' 'IN' region_name set_zone_config
-	| 'ALTER' 'DATABASE' database_name 'ALTER' 'LOCALITY' 'SUPER' 'REGION' region_name set_zone_config
 
 alter_zone_range_stmt ::=
 	'ALTER' 'RANGE' a_expr set_zone_config
@@ -2649,10 +2598,6 @@ schema_name ::=
 opt_add_val_placement ::=
 	'BEFORE' 'SCONST'
 	| 'AFTER' 'SCONST'
-	| 
-
-opt_validate_behavior ::=
-	'NOT' 'VALID'
 	| 
 
 opt_in_schemas ::=
@@ -2772,7 +2717,6 @@ backup_options ::=
 	| 'UPDATES_CLUSTER_MONITORING_METRICS'
 	| 'UPDATES_CLUSTER_MONITORING_METRICS' '=' a_expr
 	| 'STRICT' 'STORAGE' 'LOCALITY'
-	| 'REVISION' 'STREAM'
 
 opt_template_clause ::=
 	'TEMPLATE' opt_equal non_reserved_word_or_sconst
@@ -2899,9 +2843,6 @@ opt_enum_val_list ::=
 opt_composite_type_list ::=
 	composite_type_list
 	| 
-
-domain_constraint_list_opt ::=
-	(  ) ( ( 'DEFAULT' a_expr | 'NOT' 'NULL' | 'NULL' | 'CONSTRAINT' name 'CHECK' '(' a_expr ')' | 'CHECK' '(' a_expr ')' ) )*
 
 opt_temp ::=
 	'TEMPORARY'
@@ -3272,10 +3213,7 @@ show_job_options ::=
 	| 'RESOLVED' 'TIMESTAMP'
 
 show_ranges_options ::=
-	( 'TABLES' | 'INDEXES' | 'DETAILS' | 'KEYS' | 'ZONE' | 'EXPLAIN' ) ( ( ',' 'TABLES' | ',' 'INDEXES' | ',' 'DETAILS' | ',' 'EXPLAIN' | ',' 'KEYS' | ',' 'ZONE' ) )*
-
-show_users_options_list ::=
-	( show_users_option ) ( ( ',' show_users_option ) )*
+	( 'TABLES' | 'INDEXES' | 'DETAILS' | 'KEYS' | 'EXPLAIN' ) ( ( ',' 'TABLES' | ',' 'INDEXES' | ',' 'DETAILS' | ',' 'EXPLAIN' | ',' 'KEYS' ) )*
 
 partition ::=
 	'PARTITION' partition_name
@@ -3704,7 +3642,6 @@ logical_replication_create_table_options ::=
 	| 'LABEL' '=' string_or_placeholder
 	| 'UNIDIRECTIONAL'
 	| 'BIDIRECTIONAL' 'ON' string_or_placeholder
-	| 'SKIP' 'FOREIGN' 'KEYS'
 
 check_external_connection_options ::=
 	'TRANSFER' '=' string_or_placeholder
@@ -3889,10 +3826,6 @@ show_backup_options ::=
 
 schema_wildcard ::=
 	wildcard_pattern
-
-show_users_option ::=
-	'SOURCE' '=' a_expr
-	| 'LAST' 'LOGIN' 'BEFORE' a_expr
 
 show_hints_options ::=
 	'DETAILS'
@@ -4291,7 +4224,6 @@ bare_label_keywords ::=
 	| 'ESCAPE'
 	| 'EXCLUDE'
 	| 'EXCLUDING'
-	| 'EXCLUSIVE'
 	| 'EXPLICIT'
 	| 'EXECUTE'
 	| 'EXECUTION'
@@ -4425,7 +4357,6 @@ bare_label_keywords ::=
 	| 'LINESTRINGZ'
 	| 'LINESTRINGZM'
 	| 'LIST'
-	| 'LOCK'
 	| 'LOCAL'
 	| 'LOCALITY'
 	| 'LOCALTIME'
@@ -4458,7 +4389,6 @@ bare_label_keywords ::=
 	| 'MULTIPOLYGONM'
 	| 'MULTIPOLYGONZ'
 	| 'MULTIPOLYGONZM'
-	| 'NAME'
 	| 'NAMES'
 	| 'NAN'
 	| 'NATURAL'
@@ -4981,6 +4911,10 @@ opt_alter_column_using ::=
 table_constraint ::=
 	'CONSTRAINT' constraint_name constraint_elem
 	| constraint_elem
+
+opt_validate_behavior ::=
+	'NOT' 'VALID'
+	| 
 
 constraint_elem ::=
 	'CHECK' '(' a_expr ')'
