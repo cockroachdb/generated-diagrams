@@ -1,3 +1,0 @@
-alter_resource_group_stmt ::=
-	'ALTER' 'RESOURCE' 'GROUP' name with_resource_group_options
-	| 'ALTER' 'RESOURCE' 'GROUP' 'IF' 'EXISTS' name with_resource_group_options
