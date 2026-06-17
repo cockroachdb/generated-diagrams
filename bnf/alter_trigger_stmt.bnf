@@ -1,0 +1,2 @@
+alter_trigger_stmt ::=
+	alter_trigger_rename_stmt
