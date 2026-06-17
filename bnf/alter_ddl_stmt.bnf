@@ -14,6 +14,7 @@ alter_ddl_stmt ::=
 	| alter_backup_stmt
 	| alter_func_stmt
 	| alter_proc_stmt
+	| alter_trigger_stmt
 	| alter_backup_schedule
 	| alter_policy_stmt
 	| alter_job_stmt

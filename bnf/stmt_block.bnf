@@ -622,6 +622,7 @@ alter_ddl_stmt ::=
 	| alter_backup_stmt
 	| alter_func_stmt
 	| alter_proc_stmt
+	| alter_trigger_stmt
 	| alter_backup_schedule
 	| alter_policy_stmt
 	| alter_job_stmt
@@ -827,7 +828,11 @@ insert_target ::=
 
 insert_rest ::=
 	select_stmt
+	| 'OVERRIDING' 'SYSTEM' 'VALUE' select_stmt
+	| 'OVERRIDING' 'USER' 'VALUE' select_stmt
 	| '(' insert_column_list ')' select_stmt
+	| '(' insert_column_list ')' 'OVERRIDING' 'SYSTEM' 'VALUE' select_stmt
+	| '(' insert_column_list ')' 'OVERRIDING' 'USER' 'VALUE' select_stmt
 	| 'DEFAULT' 'VALUES'
 
 on_conflict ::=
@@ -1478,6 +1483,7 @@ unreserved_keyword ::=
 	| 'ORDINALITY'
 	| 'OTHERS'
 	| 'OVER'
+	| 'OVERRIDING'
 	| 'OWNED'
 	| 'OWNER'
 	| 'PARALLEL'
@@ -1944,6 +1950,9 @@ alter_proc_stmt ::=
 	| alter_proc_owner_stmt
 	| alter_proc_set_schema_stmt
 
+alter_trigger_stmt ::=
+	alter_trigger_rename_stmt
+
 alter_backup_schedule ::=
 	'ALTER' 'BACKUP' 'SCHEDULE' iconst64 alter_backup_schedule_cmds
 
@@ -2028,8 +2037,8 @@ create_table_stmt ::=
 	| 'CREATE' opt_persistence_temp_table 'TABLE' 'IF' 'NOT' 'EXISTS' table_name '(' opt_table_elem_list ')' opt_partition_by_table opt_table_with opt_create_table_on_commit opt_locality
 
 create_table_as_stmt ::=
-	'CREATE' opt_persistence_temp_table 'TABLE' table_name create_as_opt_col_list opt_table_with 'AS' select_stmt opt_create_table_on_commit
-	| 'CREATE' opt_persistence_temp_table 'TABLE' 'IF' 'NOT' 'EXISTS' table_name create_as_opt_col_list opt_table_with 'AS' select_stmt opt_create_table_on_commit
+	'CREATE' opt_persistence_temp_table 'TABLE' table_name create_as_opt_col_list opt_table_with 'AS' select_stmt opt_create_as_data opt_create_table_on_commit
+	| 'CREATE' opt_persistence_temp_table 'TABLE' 'IF' 'NOT' 'EXISTS' table_name create_as_opt_col_list opt_table_with 'AS' select_stmt opt_create_as_data opt_create_table_on_commit
 
 create_type_stmt ::=
 	'CREATE' 'TYPE' type_name 'AS' 'ENUM' '(' opt_enum_val_list ')'
@@ -2750,6 +2759,10 @@ alter_proc_owner_stmt ::=
 alter_proc_set_schema_stmt ::=
 	'ALTER' 'PROCEDURE' function_with_paramtypes 'SET' 'SCHEMA' schema_name
 
+alter_trigger_rename_stmt ::=
+	'ALTER' 'TRIGGER' name 'ON' table_name 'RENAME' 'TO' name
+	| 'ALTER' 'TRIGGER' 'IF' 'EXISTS' name 'ON' table_name 'RENAME' 'TO' name
+
 iconst64 ::=
 	'ICONST'
 
@@ -2948,6 +2961,9 @@ opt_locality ::=
 create_as_opt_col_list ::=
 	'(' create_as_table_defs ')'
 	| 
+
+opt_create_as_data ::=
+	'WITH' 'NO' 'DATA'
 
 opt_enum_val_list ::=
 	enum_val_list
@@ -4585,6 +4601,7 @@ bare_label_keywords ::=
 	| 'OUT'
 	| 'OUTER'
 	| 'OVERLAY'
+	| 'OVERRIDING'
 	| 'OWNED'
 	| 'OWNER'
 	| 'PARALLEL'

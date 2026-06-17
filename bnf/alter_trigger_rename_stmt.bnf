@@ -1,0 +1,3 @@
+alter_trigger_rename_stmt ::=
+	'ALTER' 'TRIGGER' name 'ON' table_name 'RENAME' 'TO' name
+	| 'ALTER' 'TRIGGER' 'IF' 'EXISTS' name 'ON' table_name 'RENAME' 'TO' name
