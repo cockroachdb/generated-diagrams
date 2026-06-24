@@ -1,3 +1,2 @@
 fingerprint_options ::=
 	'START' 'TIMESTAMP' '=' d_expr
-	| 'EXCLUDE' 'COLUMNS' '=' string_or_placeholder_opt_list
