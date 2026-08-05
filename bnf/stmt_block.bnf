@@ -1211,7 +1211,6 @@ unreserved_keyword ::=
 	| 'AT'
 	| 'ATOMIC'
 	| 'ATTRIBUTE'
-	| 'AUDIT'
 	| 'AUTOMATIC'
 	| 'AVAILABILITY'
 	| 'AVOID_FULL_SCAN'
@@ -4053,7 +4052,6 @@ alter_table_cmd ::=
 	| 'VALIDATE' 'CONSTRAINT' constraint_name
 	| 'DROP' 'CONSTRAINT' 'IF' 'EXISTS' constraint_name opt_drop_behavior
 	| 'DROP' 'CONSTRAINT' constraint_name opt_drop_behavior
-	| 'AUDIT' 'SET' audit_mode
 	| 'EXPERIMENTAL_AUDIT' 'SET' audit_mode
 	| partition_by_table
 	| 'SET' '(' storage_parameter_list ')'
@@ -4256,7 +4254,6 @@ bare_label_keywords ::=
 	| 'AT'
 	| 'ATOMIC'
 	| 'ATTRIBUTE'
-	| 'AUDIT'
 	| 'AUTHORIZATION'
 	| 'AUTOMATIC'
 	| 'AVAILABILITY'
