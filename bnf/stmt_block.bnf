@@ -5070,10 +5070,10 @@ table_constraint ::=
 	| constraint_elem
 
 constraint_elem ::=
-	'CHECK' '(' a_expr ')'
-	| 'UNIQUE' '(' index_params ')' opt_storing opt_partition_by_index opt_where_clause
-	| 'PRIMARY' 'KEY' '(' index_params ')' opt_hash_sharded opt_with_storage_parameter_list
-	| 'FOREIGN' 'KEY' '(' name_list ')' 'REFERENCES' table_name opt_column_list key_match reference_actions
+	'CHECK' '(' a_expr ')' opt_deferrable
+	| 'UNIQUE' '(' index_params ')' opt_storing opt_partition_by_index opt_deferrable opt_where_clause
+	| 'PRIMARY' 'KEY' '(' index_params ')' opt_hash_sharded opt_with_storage_parameter_list opt_deferrable
+	| 'FOREIGN' 'KEY' '(' name_list ')' 'REFERENCES' table_name opt_column_list key_match reference_actions opt_deferrable
 
 audit_mode ::=
 	'READ' 'WRITE'
@@ -5283,6 +5283,13 @@ identity_option_elem ::=
 	| 'RESTART' signed_iconst64
 	| 'RESTART' 'WITH' signed_iconst64
 
+opt_deferrable ::=
+	'DEFERRABLE'
+	| 'DEFERRABLE' 'INITIALLY' 'DEFERRED'
+	| 'DEFERRABLE' 'INITIALLY' 'IMMEDIATE'
+	| 'INITIALLY' 'DEFERRED'
+	| 'INITIALLY' 'IMMEDIATE'
+
 key_match ::=
 	'MATCH' 'SIMPLE'
 	| 'MATCH' 'FULL'
@@ -5416,13 +5423,13 @@ col_qualification_elem ::=
 	'NOT' 'NULL'
 	| 'NULL'
 	| 'NOT' 'VISIBLE'
-	| 'UNIQUE'
-	| 'PRIMARY' 'KEY' opt_with_storage_parameter_list
-	| 'PRIMARY' 'KEY' 'USING' 'HASH' opt_hash_sharded_bucket_count opt_with_storage_parameter_list
-	| 'CHECK' '(' a_expr ')'
+	| 'UNIQUE' opt_deferrable
+	| 'PRIMARY' 'KEY' opt_with_storage_parameter_list opt_deferrable
+	| 'PRIMARY' 'KEY' 'USING' 'HASH' opt_hash_sharded_bucket_count opt_with_storage_parameter_list opt_deferrable
+	| 'CHECK' '(' a_expr ')' opt_deferrable
 	| 'DEFAULT' b_expr
 	| 'ON' 'UPDATE' b_expr
-	| 'REFERENCES' table_name opt_name_parens key_match reference_actions
+	| 'REFERENCES' table_name opt_name_parens key_match reference_actions opt_deferrable
 	| generated_as '(' a_expr ')' opt_virtual_or_stored
 	| generated_always_as 'IDENTITY' '(' opt_sequence_option_list ')'
 	| generated_by_default_as 'IDENTITY' '(' opt_sequence_option_list ')'
