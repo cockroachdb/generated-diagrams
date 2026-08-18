@@ -1197,6 +1197,7 @@ func_params ::=
 
 unreserved_keyword ::=
 	'ABORT'
+	| 'ABSENT'
 	| 'ABSOLUTE'
 	| 'ACTION'
 	| 'ACCESS'
@@ -1737,6 +1738,8 @@ col_name_keyword ::=
 	| 'INTEGER'
 	| 'INTERVAL'
 	| 'ISERROR'
+	| 'JSON_ARRAY'
+	| 'JSON_OBJECT'
 	| 'LEAST'
 	| 'NULLIF'
 	| 'NUMERIC'
@@ -4235,6 +4238,7 @@ family_name ::=
 
 bare_label_keywords ::=
 	'ABORT'
+	| 'ABSENT'
 	| 'ABSOLUTE'
 	| 'ACCESS'
 	| 'ACTION'
@@ -4491,6 +4495,8 @@ bare_label_keywords ::=
 	| 'JOBS'
 	| 'JOIN'
 	| 'JSON'
+	| 'JSON_ARRAY'
+	| 'JSON_OBJECT'
 	| 'KEY'
 	| 'KEYS'
 	| 'KMS'
@@ -5126,6 +5132,13 @@ special_function ::=
 	| 'TRIM' '(' trim_list ')'
 	| 'GREATEST' '(' expr_list ')'
 	| 'LEAST' '(' expr_list ')'
+	| 'JSON_ARRAY' '(' ')'
+	| 'JSON_ARRAY' '(' expr_list json_array_null_clause_opt ')'
+	| 'JSON_ARRAY' '(' expr_list json_array_null_clause_opt 'RETURNING' typename json_format_clause_opt ')'
+	| 'JSON_OBJECT' '(' ')'
+	| 'JSON_OBJECT' '(' expr_list ')'
+	| 'JSON_OBJECT' '(' json_name_and_value_list json_object_null_clause_opt json_key_uniqueness_opt ')'
+	| 'JSON_OBJECT' '(' json_name_and_value_list json_object_null_clause_opt json_key_uniqueness_opt 'RETURNING' typename json_format_clause_opt ')'
 
 opt_class ::=
 	name
@@ -5341,6 +5354,29 @@ trim_list ::=
 	| 'FROM' expr_list
 	| expr_list
 
+json_array_null_clause_opt ::=
+	'NULL' 'ON' 'NULL'
+	| 'ABSENT' 'ON' 'NULL'
+	| 
+
+json_format_clause_opt ::=
+	'FORMAT' 'JSON'
+	| 'FORMAT' 'JSON' 'ENCODING' name
+	| 
+
+json_name_and_value_list ::=
+	( json_name_and_value ) ( ( ',' json_name_and_value ) )*
+
+json_object_null_clause_opt ::=
+	'NULL' 'ON' 'NULL'
+	| 'ABSENT' 'ON' 'NULL'
+	| 
+
+json_key_uniqueness_opt ::=
+	'WITH' 'UNIQUE' opt_keys
+	| 'WITHOUT' 'UNIQUE' opt_keys
+	| 
+
 list_partition ::=
 	partition 'VALUES' 'IN' '(' expr_list ')' opt_partition_by
 
@@ -5411,6 +5447,14 @@ substr_from ::=
 
 substr_for ::=
 	'FOR' a_expr
+
+json_name_and_value ::=
+	a_expr 'VALUE' a_expr
+	| a_expr ':' a_expr
+
+opt_keys ::=
+	'KEYS'
+	| 
 
 opt_partition_by ::=
 	partition_by
