@@ -1290,6 +1290,7 @@ unreserved_keyword ::=
 	| 'DETAILS'
 	| 'DISABLE'
 	| 'DISCARD'
+	| 'DLQ'
 	| 'DOMAIN'
 	| 'DOUBLE'
 	| 'DROP'
@@ -3789,6 +3790,7 @@ logical_replication_create_table_options ::=
 	| 'UNIDIRECTIONAL'
 	| 'BIDIRECTIONAL' 'ON' string_or_placeholder
 	| 'SKIP' 'FOREIGN' 'KEYS'
+	| 'DLQ' '=' db_object_name
 
 check_external_connection_options ::=
 	'TRANSFER' '=' string_or_placeholder
@@ -4368,6 +4370,7 @@ bare_label_keywords ::=
 	| 'DISABLE'
 	| 'DISCARD'
 	| 'DISTINCT'
+	| 'DLQ'
 	| 'DO'
 	| 'DOMAIN'
 	| 'DOUBLE'
