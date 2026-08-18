@@ -1,2 +1,0 @@
-show_triggers_stmt ::=
-	'SHOW' 'TRIGGERS' 'FROM' table_name
