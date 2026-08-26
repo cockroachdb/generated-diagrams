@@ -2959,6 +2959,8 @@ opt_table_with ::=
 
 opt_create_table_on_commit ::=
 	'ON' 'COMMIT' 'PRESERVE' 'ROWS'
+	| 'ON' 'COMMIT' 'DELETE' 'ROWS'
+	| 'ON' 'COMMIT' 'DROP'
 
 opt_locality ::=
 	locality
