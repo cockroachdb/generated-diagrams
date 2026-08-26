@@ -4055,6 +4055,7 @@ alter_table_cmd ::=
 	| 'ALTER' opt_column column_name opt_set_data 'TYPE' typename opt_collate opt_alter_column_using
 	| 'ADD' table_constraint opt_validate_behavior
 	| 'ADD' 'CONSTRAINT' 'IF' 'NOT' 'EXISTS' constraint_name constraint_elem opt_validate_behavior
+	| 'ALTER' 'CONSTRAINT' constraint_name constraint_deferrability
 	| 'ALTER' 'PRIMARY' 'KEY' 'USING' 'COLUMNS' '(' index_params ')' opt_hash_sharded opt_with_storage_parameter_list
 	| 'VALIDATE' 'CONSTRAINT' constraint_name
 	| 'DROP' 'CONSTRAINT' 'IF' 'EXISTS' constraint_name opt_drop_behavior
@@ -5083,6 +5084,14 @@ constraint_elem ::=
 	| 'UNIQUE' '(' index_params ')' opt_storing opt_partition_by_index opt_deferrable opt_where_clause
 	| 'PRIMARY' 'KEY' '(' index_params ')' opt_hash_sharded opt_with_storage_parameter_list opt_deferrable
 	| 'FOREIGN' 'KEY' '(' name_list ')' 'REFERENCES' table_name opt_column_list key_match reference_actions opt_deferrable
+
+constraint_deferrability ::=
+	'DEFERRABLE'
+	| 'DEFERRABLE' 'INITIALLY' 'DEFERRED'
+	| 'DEFERRABLE' 'INITIALLY' 'IMMEDIATE'
+	| 'INITIALLY' 'DEFERRED'
+	| 'INITIALLY' 'IMMEDIATE'
+	| 'NOT' 'DEFERRABLE'
 
 audit_mode ::=
 	'READ' 'WRITE'
