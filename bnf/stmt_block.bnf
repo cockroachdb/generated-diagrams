@@ -1479,6 +1479,7 @@ unreserved_keyword ::=
 	| 'OLD'
 	| 'OLDER'
 	| 'OLD_KMS'
+	| 'ON_CONSTRAINT_CONFLICT'
 	| 'OPERATOR'
 	| 'OPT'
 	| 'OPTION'
@@ -3793,6 +3794,7 @@ logical_replication_create_table_options ::=
 	| 'BIDIRECTIONAL' 'ON' string_or_placeholder
 	| 'SKIP' 'FOREIGN' 'KEYS'
 	| 'DLQ' '=' db_object_name
+	| 'ON_CONSTRAINT_CONFLICT' '=' string_or_placeholder
 
 check_external_connection_options ::=
 	'TRANSFER' '=' string_or_placeholder
@@ -4607,6 +4609,7 @@ bare_label_keywords ::=
 	| 'OLDER'
 	| 'OLD_KMS'
 	| 'ONLY'
+	| 'ON_CONSTRAINT_CONFLICT'
 	| 'OPERATOR'
 	| 'OPT'
 	| 'OPTION'
