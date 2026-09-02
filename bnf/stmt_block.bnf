@@ -1197,7 +1197,6 @@ func_params ::=
 
 unreserved_keyword ::=
 	'ABORT'
-	| 'ABSENT'
 	| 'ABSOLUTE'
 	| 'ACTION'
 	| 'ACCESS'
@@ -1212,7 +1211,6 @@ unreserved_keyword ::=
 	| 'AT'
 	| 'ATOMIC'
 	| 'ATTRIBUTE'
-	| 'AUDIT'
 	| 'AUTOMATIC'
 	| 'AVAILABILITY'
 	| 'AVOID_FULL_SCAN'
@@ -1290,7 +1288,6 @@ unreserved_keyword ::=
 	| 'DETAILS'
 	| 'DISABLE'
 	| 'DISCARD'
-	| 'DLQ'
 	| 'DOMAIN'
 	| 'DOUBLE'
 	| 'DROP'
@@ -1479,7 +1476,6 @@ unreserved_keyword ::=
 	| 'OLD'
 	| 'OLDER'
 	| 'OLD_KMS'
-	| 'ON_CONSTRAINT_CONFLICT'
 	| 'OPERATOR'
 	| 'OPT'
 	| 'OPTION'
@@ -1740,8 +1736,6 @@ col_name_keyword ::=
 	| 'INTEGER'
 	| 'INTERVAL'
 	| 'ISERROR'
-	| 'JSON_ARRAY'
-	| 'JSON_OBJECT'
 	| 'LEAST'
 	| 'NULLIF'
 	| 'NUMERIC'
@@ -1909,7 +1903,6 @@ alter_type_stmt ::=
 	'ALTER' 'TYPE' type_name 'ADD' 'VALUE' 'SCONST' opt_add_val_placement
 	| 'ALTER' 'TYPE' type_name 'ADD' 'VALUE' 'IF' 'NOT' 'EXISTS' 'SCONST' opt_add_val_placement
 	| 'ALTER' 'TYPE' type_name 'DROP' 'VALUE' 'SCONST'
-	| 'ALTER' 'TYPE' type_name 'DROP' 'VALUE' 'IF' 'EXISTS' 'SCONST'
 	| 'ALTER' 'TYPE' type_name 'RENAME' 'VALUE' 'SCONST' 'TO' 'SCONST'
 	| 'ALTER' 'TYPE' type_name 'RENAME' 'TO' name
 	| 'ALTER' 'TYPE' type_name 'SET' 'SCHEMA' schema_name
@@ -2960,8 +2953,6 @@ opt_table_with ::=
 
 opt_create_table_on_commit ::=
 	'ON' 'COMMIT' 'PRESERVE' 'ROWS'
-	| 'ON' 'COMMIT' 'DELETE' 'ROWS'
-	| 'ON' 'COMMIT' 'DROP'
 
 opt_locality ::=
 	locality
@@ -3793,8 +3784,6 @@ logical_replication_create_table_options ::=
 	| 'UNIDIRECTIONAL'
 	| 'BIDIRECTIONAL' 'ON' string_or_placeholder
 	| 'SKIP' 'FOREIGN' 'KEYS'
-	| 'DLQ' '=' db_object_name
-	| 'ON_CONSTRAINT_CONFLICT' '=' string_or_placeholder
 
 check_external_connection_options ::=
 	'TRANSFER' '=' string_or_placeholder
@@ -4059,12 +4048,10 @@ alter_table_cmd ::=
 	| 'ALTER' opt_column column_name opt_set_data 'TYPE' typename opt_collate opt_alter_column_using
 	| 'ADD' table_constraint opt_validate_behavior
 	| 'ADD' 'CONSTRAINT' 'IF' 'NOT' 'EXISTS' constraint_name constraint_elem opt_validate_behavior
-	| 'ALTER' 'CONSTRAINT' constraint_name constraint_deferrability
 	| 'ALTER' 'PRIMARY' 'KEY' 'USING' 'COLUMNS' '(' index_params ')' opt_hash_sharded opt_with_storage_parameter_list
 	| 'VALIDATE' 'CONSTRAINT' constraint_name
 	| 'DROP' 'CONSTRAINT' 'IF' 'EXISTS' constraint_name opt_drop_behavior
 	| 'DROP' 'CONSTRAINT' constraint_name opt_drop_behavior
-	| 'AUDIT' 'SET' audit_mode
 	| 'EXPERIMENTAL_AUDIT' 'SET' audit_mode
 	| partition_by_table
 	| 'SET' '(' storage_parameter_list ')'
@@ -4245,7 +4232,6 @@ family_name ::=
 
 bare_label_keywords ::=
 	'ABORT'
-	| 'ABSENT'
 	| 'ABSOLUTE'
 	| 'ACCESS'
 	| 'ACTION'
@@ -4268,7 +4254,6 @@ bare_label_keywords ::=
 	| 'AT'
 	| 'ATOMIC'
 	| 'ATTRIBUTE'
-	| 'AUDIT'
 	| 'AUTHORIZATION'
 	| 'AUTOMATIC'
 	| 'AVAILABILITY'
@@ -4375,7 +4360,6 @@ bare_label_keywords ::=
 	| 'DISABLE'
 	| 'DISCARD'
 	| 'DISTINCT'
-	| 'DLQ'
 	| 'DO'
 	| 'DOMAIN'
 	| 'DOUBLE'
@@ -4503,8 +4487,6 @@ bare_label_keywords ::=
 	| 'JOBS'
 	| 'JOIN'
 	| 'JSON'
-	| 'JSON_ARRAY'
-	| 'JSON_OBJECT'
 	| 'KEY'
 	| 'KEYS'
 	| 'KMS'
@@ -4609,7 +4591,6 @@ bare_label_keywords ::=
 	| 'OLDER'
 	| 'OLD_KMS'
 	| 'ONLY'
-	| 'ON_CONSTRAINT_CONFLICT'
 	| 'OPERATOR'
 	| 'OPT'
 	| 'OPTION'
@@ -5085,18 +5066,10 @@ table_constraint ::=
 	| constraint_elem
 
 constraint_elem ::=
-	'CHECK' '(' a_expr ')' opt_deferrable
-	| 'UNIQUE' '(' index_params ')' opt_storing opt_partition_by_index opt_deferrable opt_where_clause
-	| 'PRIMARY' 'KEY' '(' index_params ')' opt_hash_sharded opt_with_storage_parameter_list opt_deferrable
-	| 'FOREIGN' 'KEY' '(' name_list ')' 'REFERENCES' table_name opt_column_list key_match reference_actions opt_deferrable
-
-constraint_deferrability ::=
-	'DEFERRABLE'
-	| 'DEFERRABLE' 'INITIALLY' 'DEFERRED'
-	| 'DEFERRABLE' 'INITIALLY' 'IMMEDIATE'
-	| 'INITIALLY' 'DEFERRED'
-	| 'INITIALLY' 'IMMEDIATE'
-	| 'NOT' 'DEFERRABLE'
+	'CHECK' '(' a_expr ')'
+	| 'UNIQUE' '(' index_params ')' opt_storing opt_partition_by_index opt_where_clause
+	| 'PRIMARY' 'KEY' '(' index_params ')' opt_hash_sharded opt_with_storage_parameter_list
+	| 'FOREIGN' 'KEY' '(' name_list ')' 'REFERENCES' table_name opt_column_list key_match reference_actions
 
 audit_mode ::=
 	'READ' 'WRITE'
@@ -5149,13 +5122,6 @@ special_function ::=
 	| 'TRIM' '(' trim_list ')'
 	| 'GREATEST' '(' expr_list ')'
 	| 'LEAST' '(' expr_list ')'
-	| 'JSON_ARRAY' '(' ')'
-	| 'JSON_ARRAY' '(' expr_list json_array_null_clause_opt ')'
-	| 'JSON_ARRAY' '(' expr_list json_array_null_clause_opt 'RETURNING' typename json_format_clause_opt ')'
-	| 'JSON_OBJECT' '(' ')'
-	| 'JSON_OBJECT' '(' expr_list ')'
-	| 'JSON_OBJECT' '(' json_name_and_value_list json_object_null_clause_opt json_key_uniqueness_opt ')'
-	| 'JSON_OBJECT' '(' json_name_and_value_list json_object_null_clause_opt json_key_uniqueness_opt 'RETURNING' typename json_format_clause_opt ')'
 
 opt_class ::=
 	name
@@ -5313,13 +5279,6 @@ identity_option_elem ::=
 	| 'RESTART' signed_iconst64
 	| 'RESTART' 'WITH' signed_iconst64
 
-opt_deferrable ::=
-	'DEFERRABLE'
-	| 'DEFERRABLE' 'INITIALLY' 'DEFERRED'
-	| 'DEFERRABLE' 'INITIALLY' 'IMMEDIATE'
-	| 'INITIALLY' 'DEFERRED'
-	| 'INITIALLY' 'IMMEDIATE'
-
 key_match ::=
 	'MATCH' 'SIMPLE'
 	| 'MATCH' 'FULL'
@@ -5370,29 +5329,6 @@ trim_list ::=
 	a_expr 'FROM' expr_list
 	| 'FROM' expr_list
 	| expr_list
-
-json_array_null_clause_opt ::=
-	'NULL' 'ON' 'NULL'
-	| 'ABSENT' 'ON' 'NULL'
-	| 
-
-json_format_clause_opt ::=
-	'FORMAT' 'JSON'
-	| 'FORMAT' 'JSON' 'ENCODING' name
-	| 
-
-json_name_and_value_list ::=
-	( json_name_and_value ) ( ( ',' json_name_and_value ) )*
-
-json_object_null_clause_opt ::=
-	'NULL' 'ON' 'NULL'
-	| 'ABSENT' 'ON' 'NULL'
-	| 
-
-json_key_uniqueness_opt ::=
-	'WITH' 'UNIQUE' opt_keys
-	| 'WITHOUT' 'UNIQUE' opt_keys
-	| 
 
 list_partition ::=
 	partition 'VALUES' 'IN' '(' expr_list ')' opt_partition_by
@@ -5465,14 +5401,6 @@ substr_from ::=
 substr_for ::=
 	'FOR' a_expr
 
-json_name_and_value ::=
-	a_expr 'VALUE' a_expr
-	| a_expr ':' a_expr
-
-opt_keys ::=
-	'KEYS'
-	| 
-
 opt_partition_by ::=
 	partition_by
 	| 
@@ -5484,13 +5412,13 @@ col_qualification_elem ::=
 	'NOT' 'NULL'
 	| 'NULL'
 	| 'NOT' 'VISIBLE'
-	| 'UNIQUE' opt_deferrable
-	| 'PRIMARY' 'KEY' opt_with_storage_parameter_list opt_deferrable
-	| 'PRIMARY' 'KEY' 'USING' 'HASH' opt_hash_sharded_bucket_count opt_with_storage_parameter_list opt_deferrable
-	| 'CHECK' '(' a_expr ')' opt_deferrable
+	| 'UNIQUE'
+	| 'PRIMARY' 'KEY' opt_with_storage_parameter_list
+	| 'PRIMARY' 'KEY' 'USING' 'HASH' opt_hash_sharded_bucket_count opt_with_storage_parameter_list
+	| 'CHECK' '(' a_expr ')'
 	| 'DEFAULT' b_expr
 	| 'ON' 'UPDATE' b_expr
-	| 'REFERENCES' table_name opt_name_parens key_match reference_actions opt_deferrable
+	| 'REFERENCES' table_name opt_name_parens key_match reference_actions
 	| generated_as '(' a_expr ')' opt_virtual_or_stored
 	| generated_always_as 'IDENTITY' '(' opt_sequence_option_list ')'
 	| generated_by_default_as 'IDENTITY' '(' opt_sequence_option_list ')'
