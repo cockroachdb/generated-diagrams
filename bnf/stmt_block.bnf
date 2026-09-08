@@ -5289,6 +5289,9 @@ interval_second ::=
 
 group_by_item ::=
 	a_expr
+	| 'ROLLUP' '(' expr_list ')'
+	| 'CUBE' '(' expr_list ')'
+	| 'GROUPING' 'SETS' '(' group_by_list ')'
 
 window_definition ::=
 	window_name 'AS' window_specification
