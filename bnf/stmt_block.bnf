@@ -4065,8 +4065,11 @@ alter_table_cmd ::=
 	| 'ALTER' opt_column column_name 'DROP' 'IDENTITY' 'IF' 'EXISTS'
 	| 'ALTER' opt_column column_name 'DROP' 'STORED'
 	| 'ALTER' opt_column column_name 'SET' 'NOT' 'NULL'
-	| 'DROP' opt_column 'IF' 'EXISTS' column_name opt_drop_behavior
-	| 'DROP' opt_column column_name opt_drop_behavior
+	| 'DROP' 'COLUMN' 'IF' 'EXISTS' column_name opt_drop_behavior
+	| 'DROP' 'IF' 'EXISTS' column_name opt_drop_behavior
+	| 'DROP' 'COLUMN' column_name opt_drop_behavior
+	| 'DROP' column_name opt_drop_behavior
+	| 'DROP' 'PARTITION' partition_name
 	| 'ALTER' opt_column column_name opt_set_data 'TYPE' typename opt_collate opt_alter_column_using
 	| 'ADD' table_constraint opt_validate_behavior
 	| 'ADD' 'CONSTRAINT' 'IF' 'NOT' 'EXISTS' constraint_name constraint_elem opt_validate_behavior
