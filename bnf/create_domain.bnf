@@ -1,2 +1,0 @@
-create_domain_stmt ::=
-	'CREATE' 'DOMAIN' type_name 'AS' typename  ( ( 'DEFAULT' a_expr | 'NOT' 'NULL' | 'NULL' | 'CONSTRAINT' name 'CHECK' '(' a_expr ')' | 'CHECK' '(' a_expr ')' ) )*
