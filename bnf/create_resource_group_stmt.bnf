@@ -1,3 +1,0 @@
-create_resource_group_stmt ::=
-	'CREATE' 'RESOURCE' 'GROUP' name with_resource_group_options
-	| 'CREATE' 'RESOURCE' 'GROUP' 'IF' 'NOT' 'EXISTS' name with_resource_group_options
