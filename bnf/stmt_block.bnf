@@ -1294,6 +1294,7 @@ unreserved_keyword ::=
 	| 'DLQ'
 	| 'DOMAIN'
 	| 'DOUBLE'
+	| 'DOWNLOAD'
 	| 'DROP'
 	| 'EACH'
 	| 'ENABLE'
@@ -3310,6 +3311,7 @@ restore_options ::=
 	| 'UNSAFE_RESTORE_INCOMPATIBLE_VERSION'
 	| 'EXECUTION' 'LOCALITY' '=' string_or_placeholder
 	| 'EXPERIMENTAL' 'DEFERRED' 'COPY'
+	| 'DEFERRED' 'DOWNLOAD'
 	| 'EXPERIMENTAL' 'COPY'
 	| 'REMOVE_REGIONS'
 	| 'GRANTS'
@@ -4395,6 +4397,7 @@ bare_label_keywords ::=
 	| 'DO'
 	| 'DOMAIN'
 	| 'DOUBLE'
+	| 'DOWNLOAD'
 	| 'DROP'
 	| 'EACH'
 	| 'ELSE'
