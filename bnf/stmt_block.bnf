@@ -1600,6 +1600,7 @@ unreserved_keyword ::=
 	| 'SEARCH'
 	| 'SECOND'
 	| 'SECURITY'
+	| 'SECURITY_BARRIER'
 	| 'SECURITY_INVOKER'
 	| 'SECONDARY'
 	| 'SERIALIZABLE'
@@ -2624,18 +2625,12 @@ alter_view_owner_stmt ::=
 	| 'ALTER' 'MATERIALIZED' 'VIEW' 'IF' 'EXISTS' relation_expr 'OWNER' 'TO' role_spec
 
 alter_view_set_options_stmt ::=
-	'ALTER' 'VIEW' relation_expr 'SET' '(' 'SECURITY_INVOKER' '=' 'TRUE' ')'
-	| 'ALTER' 'VIEW' relation_expr 'SET' '(' 'SECURITY_INVOKER' '=' 'FALSE' ')'
-	| 'ALTER' 'VIEW' relation_expr 'SET' '(' 'SECURITY_INVOKER' '=' 'ICONST' ')'
-	| 'ALTER' 'VIEW' relation_expr 'SET' '(' 'SECURITY_INVOKER' ')'
-	| 'ALTER' 'VIEW' 'IF' 'EXISTS' relation_expr 'SET' '(' 'SECURITY_INVOKER' '=' 'TRUE' ')'
-	| 'ALTER' 'VIEW' 'IF' 'EXISTS' relation_expr 'SET' '(' 'SECURITY_INVOKER' '=' 'FALSE' ')'
-	| 'ALTER' 'VIEW' 'IF' 'EXISTS' relation_expr 'SET' '(' 'SECURITY_INVOKER' '=' 'ICONST' ')'
-	| 'ALTER' 'VIEW' 'IF' 'EXISTS' relation_expr 'SET' '(' 'SECURITY_INVOKER' ')'
+	'ALTER' 'VIEW' relation_expr 'SET' '(' view_options ')'
+	| 'ALTER' 'VIEW' 'IF' 'EXISTS' relation_expr 'SET' '(' view_options ')'
 
 alter_view_reset_options_stmt ::=
-	'ALTER' 'VIEW' relation_expr 'RESET' '(' 'SECURITY_INVOKER' ')'
-	| 'ALTER' 'VIEW' 'IF' 'EXISTS' relation_expr 'RESET' '(' 'SECURITY_INVOKER' ')'
+	'ALTER' 'VIEW' relation_expr 'RESET' '(' view_option_name_list ')'
+	| 'ALTER' 'VIEW' 'IF' 'EXISTS' relation_expr 'RESET' '(' view_option_name_list ')'
 
 alter_rename_sequence_stmt ::=
 	'ALTER' 'SEQUENCE' relation_expr 'RENAME' 'TO' sequence_name
@@ -3002,10 +2997,7 @@ opt_temp ::=
 	| 
 
 opt_view_with ::=
-	'WITH' '(' 'SECURITY_INVOKER' ')'
-	| 'WITH' '(' 'SECURITY_INVOKER' '=' 'TRUE' ')'
-	| 'WITH' '(' 'SECURITY_INVOKER' '=' 'FALSE' ')'
-	| 'WITH' '(' 'SECURITY_INVOKER' '=' 'ICONST' ')'
+	'WITH' '(' view_options ')'
 
 opt_with_data ::=
 	'WITH' 'DATA'
@@ -3542,6 +3534,12 @@ alter_index_visible ::=
 	| 'INVISIBLE'
 	| 'VISIBLE'
 	| 'VISIBILITY' 'FCONST'
+
+view_options ::=
+	( view_option ) ( ( ',' view_option ) )*
+
+view_option_name_list ::=
+	( view_option_name ) ( ( ',' view_option_name ) )*
 
 sequence_option_list ::=
 	( sequence_option_elem ) ( ( sequence_option_elem ) )*
@@ -4107,6 +4105,18 @@ alter_index_cmd ::=
 	partition_by_index
 	| 'SET' '(' storage_parameter_list ')'
 	| 'RESET' '(' storage_parameter_key_list ')'
+
+view_option ::=
+	'SECURITY_INVOKER'
+	| 'SECURITY_INVOKER' '=' view_option_bool_value
+	| 'SECURITY_INVOKER' '=' 'SCONST'
+	| 'SECURITY_BARRIER'
+	| 'SECURITY_BARRIER' '=' view_option_bool_value
+	| 'SECURITY_BARRIER' '=' 'SCONST'
+
+view_option_name ::=
+	'SECURITY_INVOKER'
+	| 'SECURITY_BARRIER'
 
 sequence_option_elem ::=
 	'AS' typename
@@ -4761,6 +4771,7 @@ bare_label_keywords ::=
 	| 'SEARCH'
 	| 'SECONDARY'
 	| 'SECURITY'
+	| 'SECURITY_BARRIER'
 	| 'SECURITY_INVOKER'
 	| 'SELECT'
 	| 'SEQUENCE'
@@ -5140,6 +5151,11 @@ table_rls_mode ::=
 
 partition_by_index ::=
 	partition_by
+
+view_option_bool_value ::=
+	'TRUE'
+	| 'FALSE'
+	| iconst64
 
 single_sort_clause ::=
 	'ORDER' 'BY' sortby
