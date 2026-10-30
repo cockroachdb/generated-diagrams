@@ -1,3 +1,0 @@
-alter_view_set_options_stmt ::=
-	'ALTER' 'VIEW' relation_expr 'SET' '(' view_options ')'
-	| 'ALTER' 'VIEW' 'IF' 'EXISTS' relation_expr 'SET' '(' view_options ')'
