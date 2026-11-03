@@ -1,2 +1,2 @@
 legacy_end_stmt ::=
-	'END' opt_transaction opt_transaction_chain
+	'END' opt_transaction
