@@ -2,7 +2,7 @@ col_qualification ::=
 	'CONSTRAINT' constraint_name 'NOT' 'NULL'
 	| 'CONSTRAINT' constraint_name 'NULL'
 	| 'CONSTRAINT' constraint_name 'NOT' 'VISIBLE'
-	| 'CONSTRAINT' constraint_name 'UNIQUE' opt_deferrable
+	| 'CONSTRAINT' constraint_name 'UNIQUE' opt_nulls_distinct opt_deferrable
 	| 'CONSTRAINT' constraint_name 'PRIMARY' 'KEY' opt_with_storage_parameter_list opt_deferrable
 	| 'CONSTRAINT' constraint_name 'PRIMARY' 'KEY' 'USING' 'HASH' opt_with_storage_parameter_list opt_deferrable
 	| 'CONSTRAINT' constraint_name 'CHECK' '(' a_expr ')' opt_deferrable
@@ -17,7 +17,7 @@ col_qualification ::=
 	| 'NOT' 'NULL'
 	| 'NULL'
 	| 'NOT' 'VISIBLE'
-	| 'UNIQUE' opt_deferrable
+	| 'UNIQUE' opt_nulls_distinct opt_deferrable
 	| 'PRIMARY' 'KEY' opt_with_storage_parameter_list opt_deferrable
 	| 'PRIMARY' 'KEY' 'USING' 'HASH' opt_with_storage_parameter_list opt_deferrable
 	| 'CHECK' '(' a_expr ')' opt_deferrable
