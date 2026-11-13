@@ -1,2 +1,3 @@
 alter_table_cmd ::=
 	'RENAME' opt_column column_name 'TO' column_name
+	| 'RENAME' opt_column 'IF' 'EXISTS' column_name 'TO' column_name
