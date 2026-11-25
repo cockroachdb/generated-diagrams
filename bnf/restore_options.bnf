@@ -21,4 +21,3 @@ restore_options ::=
 	| 'EXPERIMENTAL' 'COPY'
 	| 'REMOVE_REGIONS'
 	| 'GRANTS'
-	| 'PLACEMENT' 'HOLD'
