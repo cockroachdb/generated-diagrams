@@ -1,3 +1,0 @@
-alter_view_reset_options_stmt ::=
-	'ALTER' 'VIEW' relation_expr 'RESET' '(' view_option_name_list ')'
-	| 'ALTER' 'VIEW' 'IF' 'EXISTS' relation_expr 'RESET' '(' view_option_name_list ')'
