@@ -2135,10 +2135,7 @@ in_expr ::=
 subquery_op ::=
 	all_op
 	| qual_op
-	| 'LIKE'
-	| 'NOT' 'LIKE'
-	| 'ILIKE'
-	| 'NOT' 'ILIKE'
+	| like_op
 
 sub_type ::=
 	'ANY'
@@ -3061,7 +3058,7 @@ case_expr ::=
 	'CASE' case_arg when_clause_list case_default 'END'
 
 operator_op ::=
-	all_op
+	operator_op_name
 
 opt_expr_list ::=
 	expr_list
@@ -3128,6 +3125,12 @@ all_op ::=
 	| '~'
 	| 'SQRT'
 	| 'CBRT'
+
+like_op ::=
+	'LIKE'
+	| 'NOT' 'LIKE'
+	| 'ILIKE'
+	| 'NOT' 'ILIKE'
 
 inspect_option_list ::=
 	( inspect_option ) ( ( ',' inspect_option ) )*
@@ -3719,6 +3722,10 @@ when_clause_list ::=
 case_default ::=
 	'ELSE' a_expr
 	| 
+
+operator_op_name ::=
+	all_op
+	| operator_like_op
 
 tuple1_unambiguous_values ::=
 	a_expr ','
@@ -4760,6 +4767,12 @@ opt_slice_bound ::=
 
 when_clause ::=
 	'WHEN' a_expr 'THEN' a_expr
+
+operator_like_op ::=
+	'LIKE'
+	| 'NOT' 'LIKE'
+	| 'ILIKE'
+	| 'NOT' 'ILIKE'
 
 type_function_name_no_crdb_extra ::=
 	'identifier'
